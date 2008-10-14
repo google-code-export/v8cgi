@@ -1,0 +1,55 @@
+#summary API Documentation
+
+= API Documentation =
+
+Brief list of available functions, objects, properties and methods
+
+== Global functions ==
+  * `include` - include script file
+  * `quit` - terminate execution
+  * `system.env` - hash with environment variables. Read-only.
+  * `system.stdin(count, [binary])` - read `count` bytes from standard input. If `binary == true`, data is returned as an array of numbers.
+  * `system.stdout(data)` - write `data` to standard output. Data can be either string of array of numbers (ascii values).
+
+== File functions ==
+  * `var f = new File(fileName)` - creates new file instance
+  * `f.open(mode)` - opens the file with a given mode
+  * `f.close()` - closes the file
+  * `f.read([count], [binary])` - reads `count` (or all) bytes from file.
+  * `f.write(data)` - writes `data` to the file
+  * `f.remove()` - deletes the file
+  * `f.getSize()` - returns file size
+  * `f.toString()` - returns file name
+
+== MySQL functions ==
+  * `var m = new MySQL()` - creates new mysql instance
+  * `m.connect(host, user, password, db)` - connects to database
+  * `m.error()` - returns error description
+  * `m.errno()` - returns error number
+  * `m.affectedRows()` - returns number of rows affected by a query
+  * `m.insertId()` - returns ID of last inserted row
+  * `m.escape(str)` - escapes a string so it can be used in a query
+  * `var r = m.query(query)` - executes a query
+  * `r.numRows()` - returns number of rows in query result
+  * `r.numFields()` - returns number of fields in query result
+  * `r.fetchNames()` - returns an array with field names
+  * `r.fetchArrays()` - returns query results as an array of arrays
+  * `r.fetchObjects()` - returns query results as an array of hashes
+
+== HTTP functions (in http.js)==
+
+  * `request.get` - hash with GET variables
+  * `request.post` - hash with POST variables
+  * `request.cookie` - hash with cookie variables
+  * `request.method` - HTTP method used (uppercase)
+  * `request.files` - hash with uploaded files. Each file has the following properties:
+    * `.data` - content
+    * `.headers` - hash with headers
+    * `.originalName` - file's original name
+  * `request.header(headerName)` - returns request HTTP header
+
+  * `response.write(data)` - outputs `data`
+  * `response.error(text)` - outputs error `text`
+  * `response.header(headers)` - outputs `headers` (hash) as HTTP response headers
+  * `response.dump(data)` - recursively outputs `data`
+  * `response.escape(data)` - converts *<*, *>*, *&*, *"*, *'* to HTML entities
