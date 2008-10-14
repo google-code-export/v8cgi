@@ -37,3 +37,20 @@ Brief list of available functions, objects, properties and methods
   * `r.fetchObjects()` - returns query results as an array of hashes
 
 == HTTP functions (in http.js)==
+
+  * `request.get` - hash with GET variables
+  * `request.post` - hash with POST variables
+  * `request.cookie` - hash with cookie variables
+  * `request.method` - HTTP method used (uppercase)
+  * `request.files` - hash with uploaded files. Each file has the following properties:
+    * `.data` - content
+    * `.headers` - hash with headers
+    * `.originalName` - file's original name
+  * `request.header(headerName)` - returns request HTTP header
+
+  * `response.write(data)` - outputs `data`
+  * `response.error(text)` - outputs error `text`
+  * `response.header(headers)` - outputs `headers` (hash) as HTTP response headers
+  * `response.dump(data)` - recursively outputs `data`
+  * `response.escape(data)` - converts *<*, *>*, *&*, *"*, *'* to HTML entities
+
