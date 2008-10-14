@@ -1,0 +1,25 @@
+#summary API documentation
+
+= API documentation =
+
+Brief list of available functions, objects, properties and methods
+
+== Global functions ==
+  * `[global].include` - include script file
+  * `[global].quit` - terminate execution
+  * `[global].system.env` - hash with environment variables. Read-only.
+  * `[global].system.stdin(count, [binary])` - read `count` bytes from standard input. If `binary == true`, data is returned as an array of numbers.
+  * `[global].system.stdout(data)` - write `data` to standard output. Data can be either string of array of numbers (ascii values).
+
+  * `[global].File` - file class
+  * `[global].MySQL` - mysql class
+
+== File functions ==
+  * `var f = new File(fileName)` - creates new file instance
+  * `f.open(mode)` - opens the file with a given mode
+  * `f.close()` - closes the file
+  * `f.read([count], [binary])` - reads `count` (or all) bytes from file.
+  * `f.write(data)` - writes `data` to the file
+  * `f.remove()` - deletes the file
+  * `f.getSize()` - returns file size
+  * `f.toString()` - returns file name
