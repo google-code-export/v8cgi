@@ -1,0 +1,9 @@
+#summary What needs to be done
+
+= What needs to be done =
+
+  * better IO: moving, copying, directories
+  * session management
+  * better build process
+  * runtime configuration?
+  * more libraries...
