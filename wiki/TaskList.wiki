@@ -2,7 +2,7 @@
 
 = What needs to be done =
 
-  * better IO: moving, copying, directories
+  * better IO: moving, copyin
   * session management
   * better build process
   * runtime configuration?
