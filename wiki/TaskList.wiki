@@ -7,3 +7,8 @@
   * better build process
   * runtime configuration?
   * more libraries...
+
+== What has been done recently ==
+
+  * rudimentary directory support (create, remove, list)
+  * File::exists, Directory::exists
