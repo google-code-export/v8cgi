@@ -17,9 +17,23 @@ Brief list of available functions, objects, properties and methods
   * `f.close()` - closes the file
   * `f.read([count], [binary])` - reads `count` (or all) bytes from file.
   * `f.write(data)` - writes `data` to the file
+  * `f.rewind()` - rewinds internal pointer to the beginning of file
   * `f.remove()` - deletes the file
   * `f.getSize()` - returns file size
   * `f.toString()` - returns file name
+  * `f.exists()` - tests whether the file exists
+  * `f.move(newName)` - renames file to `newName`
+  * `var f2 = f.copy(newName)` - copies file to `newName` and returns instance of new file
+
+== Directory functions ==
+  * `var d = new File(dirName)` - creates new directory instance
+  * `d.create()` - creates new directory
+  * `d.listFiles()` - returns an array with names of files contained in the directory
+  * `d.listDirectories()` - returns an array with names of directories contained in the directory
+  * `d.toString()` - returns directory name
+  * `d.create()` - creates new directory
+  * `d.exists()` - tests whether the directory exists
+  * `d.remove()` - deletes the directory
 
 == MySQL functions ==
   * `var m = new MySQL()` - creates new mysql instance
