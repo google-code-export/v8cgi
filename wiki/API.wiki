@@ -20,7 +20,7 @@ Brief list of available functions, objects, properties and methods
   * `f.write(data)` - writes `data` to the file
   * `f.rewind()` - rewinds internal pointer to the beginning of file
   * `f.remove()` - deletes the file
-  * `f.getSize()` - returns file size
+  * `f.stat()` - returns object with several stat properties
   * `f.toString()` - returns file name
   * `f.exists()` - tests whether the file exists
   * `f.move(newName)` - renames file to `newName`
@@ -35,6 +35,7 @@ Brief list of available functions, objects, properties and methods
   * `d.create()` - creates new directory
   * `d.exists()` - tests whether the directory exists
   * `d.remove()` - deletes the directory
+  * `d.stat()` - returns object with several stat properties
 
 == MySQL functions ==
   * `var m = new MySQL()` - creates new mysql instance
