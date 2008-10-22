@@ -7,6 +7,8 @@
   * more libraries...
 
 == What has been done recently ==
+  * Base64 encoding/decoding, JSON (de)serialization
+  * File::stat, Directory::stat
   * response cookies, onexit callbacks
   * rudimentary directory support (create, remove, list)
   * File::exists, Directory::exists
