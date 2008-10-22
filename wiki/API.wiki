@@ -8,9 +8,15 @@ Brief list of available functions, objects, properties and methods
   * `include()` - include script file
   * `exit()` - terminate execution
   * `onexit(func)` - adds `func` as onexit callback
-  * `system.env` - hash with environment variables. Read-only.
-  * `system.stdin(count, [binary])` - read `count` bytes from standard input. If `binary == true`, data is returned as an array of numbers.
-  * `system.stdout(data)` - write `data` to standard output. Data can be either string of array of numbers (ascii values).
+
+== System functions ==
+  * `System.env` - hash with environment variables. Read-only.
+  * `System.stdin(count, [binary])` - read `count` bytes from standard input. If `binary == true`, data is returned as an array of numbers.
+  * `System.stdout(data)` - write `data` to standard output. Data can be either string of array of numbers (ascii values).
+
+== Utility functions ==
+  * `Util.serialize(val)` - serializes `val` to JSON
+  * `Util.unserialize(str)` - unserializes `str` back to JS value
 
 == File functions ==
   * `var f = new File(fileName)` - creates new file instance
