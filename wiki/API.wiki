@@ -5,8 +5,9 @@
 Brief list of available functions, objects, properties and methods
 
 == Global functions ==
-  * `include` - include script file
-  * `quit` - terminate execution
+  * `include()` - include script file
+  * `exit()` - terminate execution
+  * `onexit(func)` - adds `func` as onexit callback
   * `system.env` - hash with environment variables. Read-only.
   * `system.stdin(count, [binary])` - read `count` bytes from standard input. If `binary == true`, data is returned as an array of numbers.
   * `system.stdout(data)` - write `data` to standard output. Data can be either string of array of numbers (ascii values).
@@ -67,3 +68,4 @@ Brief list of available functions, objects, properties and methods
   * `response.header(headers)` - outputs `headers` (hash) as HTTP response headers
   * `response.dump(data)` - recursively outputs `data`
   * `response.escape(data)` - converts *<*, *>*, *&*, *"*, *'* to HTML entities
+  * `response.cookie(name, value, expires, path, domain, secure, httponly)` - sets a cookie
