@@ -79,6 +79,7 @@ Brief list of available functions, objects, properties and methods
   * `response.dump(data)` - recursively outputs `data`
   * `response.escape(data)` - converts *<*, *>*, *&*, *"*, *'* to HTML entities
   * `response.cookie(name, value, expires, path, domain, secure, httponly)` - sets a cookie
+
   * `session.set(name, value)` - adds a `name`-`value` pair to session
   * `session.get(name)` - retrieves a session variable
   * `session.clear()` - clears all session data
