@@ -54,6 +54,7 @@ Brief list of available functions, objects, properties and methods
   * `m.affectedRows()` - returns number of rows affected by a query
   * `m.insertId()` - returns ID of last inserted row
   * `m.escape(str)` - escapes a string so it can be used in a query
+
   * `var r = m.query(query)` - executes a query
   * `r.numRows()` - returns number of rows in query result
   * `r.numFields()` - returns number of fields in query result
