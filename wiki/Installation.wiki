@@ -7,6 +7,6 @@ To compile the code, see [http://code.google.com/p/v8cgi/wiki/Compiling Compilin
 After compilation (or if your downloaded binary package):
 
   # copy the binary file to a reasonable location,
-  # copy `v8cgi.conf.yourplatform` to config file location (set at compile time),
+  # copy `v8cgi.conf.yourplatform` to config file location (set at compile time; if unsure, run the binary - it will tell you the correct path),
   # edit the configuration file as needed,
   # copy all .js files in js/ to path specified as `Config.libraryPath`.
