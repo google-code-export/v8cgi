@@ -15,7 +15,7 @@ After compilation (or if your downloaded binary package):
 
 Add the following to apache configuration:
 {{{
-ScriptAlias /v8cgi/ /YOUR_PATH
+ScriptAlias /v8cgi/ /YOUR_PATH/
 AddHandler v8cgi-handler .ssjs
 Action v8cgi-handler /v8cgi/BINARY_NAME
 }}}
