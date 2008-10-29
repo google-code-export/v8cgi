@@ -2,4 +2,6 @@
 
 = Compiling =
 
-Just type `scons`. For a list of available command-line options, try `scons -Q -h`.
+1) Download and build V8, [http://code.google.com/p/v8/]. Create a shared library (`library=shared`).
+
+2) In your v8cgi directory, type `scons`. For a list of available command-line options, try `scons -Q -h`.
