@@ -1,12 +1,12 @@
 #summary What needs to be done
 
 = What needs to be done =
-  * session management
-  * better build process
-  * runtime configuration?
   * more libraries...
 
 == What has been done recently ==
+  * builds on Windows
+  * configuration file
+  * HTTP sessions
   * Base64 encoding/decoding, JSON (de)serialization
   * File::stat, Directory::stat
   * response cookies, onexit callbacks
