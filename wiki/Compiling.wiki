@@ -1,0 +1,5 @@
+#summary How to compile v8cgi
+
+= Compiling =
+
+Just type `scons'. For a list of available command-line options, try `scons -Q -h`.
