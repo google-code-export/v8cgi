@@ -4,7 +4,7 @@
 
 Syntax:
 {{{
-v8cgi.exe [-c configfile] script.to.run.js
+v8cgi.exe [-c configfile] myscript.js
 }}}
 
 If no `-c` option is specified, system-wide config file is used. This is set at compile time. If no system config file exists, v8cgi will refuse to run.
