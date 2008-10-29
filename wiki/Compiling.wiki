@@ -2,4 +2,4 @@
 
 = Compiling =
 
-Just type `scons'. For a list of available command-line options, try `scons -Q -h`.
+Just type `scons`. For a list of available command-line options, try `scons -Q -h`.
