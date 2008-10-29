@@ -10,3 +10,16 @@ After compilation (or if your downloaded binary package):
   # copy `v8cgi.conf.yourplatform` to config file location (set at compile time; if unsure, run the binary - it will tell you the correct path),
   # edit the configuration file as needed,
   # copy all .js files in js/ to path specified as `Config.libraryPath`.
+
+== Apache - using v8cgi as a cgi binary ==
+
+Add the following to apache configuration:
+{{{
+        ScriptAlias /v8cgi/ /YOUR_PATH
+        AddHandler v8cgi-handler .ssjs
+        Action v8cgi-handler /v8cgi/BINARY_NAME
+}}}
+
+while substituting:
+  - YOUR_PATH with path to your v8cgi directory,
+  - BINARY_NAME with name of your v8cgi binary.
