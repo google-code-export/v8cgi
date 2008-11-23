@@ -1,19 +1,19 @@
 #summary Library "template.js"
 
-== Template functions (in template.js)==
+= Template functions (in template.js) =
 
   * `var t = new Template(options)` - new template; allowed options:
     * `.path` - path to template files
     * `.suffix` - template file suffix (defult: `.template`)
   * `t.process(file, data)` - processes template file `file`; second argument is used to pass arbitrary data to template
 
-== Template language syntax ==
+= Template language syntax =
 
   * `$(JS expression)` - outputs value of the expression
   * `$code(JS expression)` - evaluates code without outputting anything
   * `$include(filename)` - includes other file
 
-=== Example ===
+== Example ==
 
 {{{
 <strong>This is a random number: $(Math.random())</strong>
