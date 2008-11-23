@@ -29,4 +29,28 @@
 == Examples ==
 {{{
 var mysql = new MySQL().connect(HOST, USER, PASSWORD, DB);
+var users = new Table("users", mysql);
+var articles = new Table("articles", mysql);
+articles.addRelation("id_user", users, "id");
+
+var q = users.select("*").toString(); 
+// result: SELECT `users`.* FROM `users`
+
+var q = users.select("id", "name").toString(); 
+// result: SELECT `users`.`id`, `users`.`name` FROM `users`
+
+var q = users.select("id", "name")
+        .where("id", ">", 6)
+        .toString();
+// result: SELECT `users`.`id`, `users`.`name` FROM `users` WHERE `users`.`id` > '6'
+
+var q = articles.select({"name":"article_name"})
+        .join(users)
+        .field({"name":"user_name"})
+        .order("name", "ASC", articles)
+        .limit(10)
+        .toString();
+// result: SELECT `articles`.`name` AS 'article_name', `users`.`name` AS 'user_name' FROM `articles` LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id` ORDER BY `articles`.`name` ASC LIMIT 10
+
+
 }}}
