@@ -1,6 +1,6 @@
 #summary Library "util.js"
 
-= API - util.js =
+= Utility functions (in util.js) =
 
   * `Util.serialize(val)` - serializes `val` to JSON
   * `Util.unserialize(str)` - unserializes `str` back to JS value
