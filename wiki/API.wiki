@@ -16,11 +16,6 @@ Brief list of available functions, objects, properties and methods
   * `System.stdin(count, [binary])` - read `count` bytes from standard input. If `binary == true`, data is returned as an array of numbers. If `count` == 0, one line is read.
   * `System.stdout(data)` - write `data` to standard output. Data can be either string of array of numbers (ascii values).
 
-== Utility functions ==
-  * `Util.serialize(val)` - serializes `val` to JSON
-  * `Util.unserialize(str)` - unserializes `str` back to JS value
-  * `Util.md5(str)` - calculates MD5 hash
-  * `Util.sha1(str)` - calculates SHA1 hash
 
 == File functions ==
   * `var f = new File(fileName)` - creates new file instance
@@ -88,3 +83,6 @@ Brief list of available functions, objects, properties and methods
   * `session.save()` - dumps session data to disk; this is done automatically on script exit
   * `session.getId()` - returns current session id
   * `session.setId(id)` - sets a new session id. If `id` is not specified, random one is generated.
+
+== Utility functions ==
+These are defined in library `util.js` and are documented on [http://code.google.com/p/v8cgi/wiki/API_Util separate wikipage]
