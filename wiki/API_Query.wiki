@@ -4,3 +4,24 @@
 
   * `var t = new Table(name, database)` - db table with a given `name`; second argument is an instance of `MySQL`
   * `t.addRelation(ownField, foreignTable, foreignField)` - creates a relation to other table
+  * `t.select(field, field, ...)` - returns a pre-made SELECT query
+  * `t.insert({name:value, name:value, ...})` - returns a pre-made INSERT query
+  * `t.update({name:value, name:value, ...})` - returns a pre-made UPDATE query
+  * `t.delete()` - returns a pre-made DELETE query
+
+  * `Query.SELECT`, `Query.INSERT`, `Query.UPDATE`, `Query.DELETE` - constants
+  * `var q = new Query(type, database)` - creates new query with a given type constant; second argument is an instance of `MySQL`
+  * `q.table(table)` - adds a table to query
+  * `q.join(table)` - alias for `q.table()`
+  * `q.field(field, field, ...)` - adds fields to query:
+    * `field = "string"` - normal field definition,
+    * `field = {name:value, name:value, ...}` - definition for INSERT/UPDATE queries
+    * `field = {name:alias, name:alias, ...}` - definition with aliases
+  * `q.where(field, operator, value, [mode], [table])` - WHERE clause
+  * `q.having(field, operator, value, [mode], [table])` - HAVING clause
+  * `q.order(field, [mode], [table])` - ORDER clause
+  * `q.limit(count)` - LIMIT clause
+  * `q.offset(count)` - OFFSET clause
+  * `q.group(field, [table])` - GROUP clause
+  * `q.toString()` - creates an SQL string
+  * `q.execute()` - executes a query
