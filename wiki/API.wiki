@@ -59,9 +59,11 @@ Brief list of available functions, objects, properties and methods
   * `r.fetchObjects()` - returns query results as an array of hashes
 
 == HTTP functions ==
+
 These are defined in library `http.js` and are documented on [http://code.google.com/p/v8cgi/wiki/API_HTTP separate wikipage].
 
 == Utility functions ==
+
 These are defined in library `util.js` and are documented on [http://code.google.com/p/v8cgi/wiki/API_Util separate wikipage].
 
 == Template functions ==
@@ -69,4 +71,5 @@ These are defined in library `util.js` and are documented on [http://code.google
 These are defined in library `template.js` and are documented on [http://code.google.com/p/v8cgi/wiki/API_Template separate wikipage].
 
 == SQL Query functions ==
+
 These are defined in library `query.js` and are documented on [http://code.google.com/p/v8cgi/wiki/API_Query separate wikipage].
