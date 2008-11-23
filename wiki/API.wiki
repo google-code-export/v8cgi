@@ -1,5 +1,7 @@
 #summary API Documentation
 
+<wiki:toc max_depth="1" />
+
 = API Documentation =
 
 Brief list of available functions, objects, properties and methods
