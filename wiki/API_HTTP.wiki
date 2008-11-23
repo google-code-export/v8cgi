@@ -1,6 +1,6 @@
 #summary Library "http.js"
 
-== HTTP functions (in http.js)==
+= HTTP functions (in http.js) =
 
   * `request.get` - hash with GET variables
   * `request.post` - hash with POST variables
