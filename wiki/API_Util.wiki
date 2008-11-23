@@ -1,0 +1,10 @@
+#summary Library "util.js"
+
+= API - util.js =
+
+  * `Util.serialize(val)` - serializes `val` to JSON
+  * `Util.unserialize(str)` - unserializes `str` back to JS value
+  * `Util.md5(str)` - calculates MD5 hash
+  * `Util.sha1(str)` - calculates SHA1 hash
+  * `Util.base64encode(str)` - encodes string in Base64
+  * `Util.base64decode(str)` - decodes string from Base64
