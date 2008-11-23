@@ -1,0 +1,6 @@
+#summary Library "query.js"
+
+== SQL Query functions (in query.js)==
+
+  * `var t = new Table(name, database)` - db table with a given `name`; second argument is an instance of `MySQL`
+  * `t.addRelation(ownField, foreignTable, foreignField)` - creates a relation to other table
