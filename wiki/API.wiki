@@ -66,12 +66,12 @@ These are defined in library `http.js` and are documented on [API_HTTP separate 
 
 == Utility functions ==
 
-These are defined in library `util.js` and are documented on [http://code.google.com/p/v8cgi/wiki/API_Util separate wikipage].
+These are defined in library `util.js` and are documented on [API_Util separate wikipage].
 
 == Template functions ==
 
-These are defined in library `template.js` and are documented on [http://code.google.com/p/v8cgi/wiki/API_Template separate wikipage].
+These are defined in library `template.js` and are documented on [API_Template separate wikipage].
 
 == SQL Query functions ==
 
-These are defined in library `query.js` and are documented on [http://code.google.com/p/v8cgi/wiki/API_Query separate wikipage].
+These are defined in library `query.js` and are documented on [API_Query separate wikipage].
