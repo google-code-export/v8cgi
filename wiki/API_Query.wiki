@@ -11,8 +11,8 @@
 
   * `Query.SELECT`, `Query.INSERT`, `Query.UPDATE`, `Query.DELETE` - constants
   * `var q = new Query(type, database)` - creates new query with a given type constant; second argument is an instance of `MySQL`
-  * `q.table(table)` - adds a table to query
-  * `q.join(table)` - alias for `q.table()`
+  * `q.table(table, [type])` - adds a table to query; `type` is a join prefix string (e.g. "LEFT" etc.)
+  * `q.join(table, [type])` - alias for `q.table()`
   * `q.field(field, field, ...)` - adds fields to query:
     * `field = "string"` - normal field definition,
     * `field = {name:value, name:value, ...}` - definition for INSERT/UPDATE queries
