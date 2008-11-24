@@ -62,7 +62,7 @@ Brief list of available functions, objects, properties and methods
 
 == HTTP functions ==
 
-These are defined in library `http.js` and are documented on [http://code.google.com/p/v8cgi/wiki/API_HTTP separate wikipage].
+These are defined in library `http.js` and are documented on [API_HTTP separate wikipage].
 
 == Utility functions ==
 
