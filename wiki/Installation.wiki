@@ -2,7 +2,7 @@
 
 = Installation =
 
-To compile the code, see [http://code.google.com/p/v8cgi/wiki/Compiling Compiling].
+To compile the code, see [Compiling].
 
 After compilation (or if your downloaded binary package):
 
