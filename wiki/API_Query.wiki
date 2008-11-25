@@ -45,7 +45,7 @@ var q = users.select("id", "name")
 /* result: SELECT `users`.`id`, `users`.`name` FROM `users` WHERE `users`.`id` > '6' */
 
 var q = articles.select({"name":"article_name"})
-        .join(users)
+        .join(users, "LEFT")
         .field({"name":"user_name"})
         .order("name", "ASC", articles)
         .limit(10)
