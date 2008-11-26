@@ -8,3 +8,5 @@
   * `Util.sha1(str)` - calculates SHA1 hash
   * `Util.base64encode(str)` - encodes string in Base64
   * `Util.base64decode(str)` - decodes string from Base64
+  * `Util.utf8decode(str)` - decodes all unicode characters into one-byte characters
+  * `Util.utf8encode(str)` - encodes relevant one-byte charcater sequences into unicode characters
