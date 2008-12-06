@@ -1,4 +1,5 @@
 #summary How to compile v8cgi
+#labels Featured
 
 = Compiling =
 
