@@ -1,4 +1,5 @@
 #summary How to install v8cgi
+#labels Featured
 
 = Installation =
 
