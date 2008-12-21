@@ -101,7 +101,7 @@ var q = users.insert({"name":"John", "mail":"john@doe.com"}).toString();
 /* result: INSERT INTO `users` (`name`, `mail`) VALUES ('John', 'john@doe.com') */
 
 var q = users.update({"name":"Eric"})
-          .where("%f LIKE %s", "name", "%o%")
+          .where("%f LIKE %s", "name", "%a%")
           .toString();
-/* result: UPDATE `users` SET `name`='Eric' WHERE `name` LIKE 'undefined%'  */
+/* result: UPDATE `users` SET `name`='Eric' WHERE `name` LIKE '%a%'  */
 }}}
