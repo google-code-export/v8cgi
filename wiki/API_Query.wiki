@@ -31,7 +31,7 @@
 
 == Examples ==
 
-There are two basic approaches to query creation - using `Query()` and using `Table()`. Some setup can be useful for both of these; say we have two tables (`users` and `articles`), linked together by the fact that `users.id = articles.is_user`:
+There are two basic (and equivalent) approaches to query creation - using `Query()` and using `Table()`. Some setup can be useful for both of these; say we have two tables (`users` and `articles`), linked together by the fact that `users.id = articles.is_user`:
 
 {{{
 var mysql = new MySQL().connect(HOST, USER, PASSWORD, DB);
