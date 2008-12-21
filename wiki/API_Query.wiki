@@ -31,7 +31,7 @@
 
 == Examples ==
 
-There are two basic approaches to query creation. Some setup can be useful for both of these; say we have two tables (`users` and `articles`), linked together by the fact that `users.id = articles.is_user`:
+There are two basic approaches to query creation - using `Query()` and using `Table()`. Some setup can be useful for both of these; say we have two tables (`users` and `articles`), linked together by the fact that `users.id = articles.is_user`:
 
 {{{
 var mysql = new MySQL().connect(HOST, USER, PASSWORD, DB);
@@ -61,34 +61,47 @@ var q = new Query(Query.SELECT)
 /* result: SELECT `id`, UNIX_TIMESTAMP(`ts`) AS `unix_ts` FROM `articles` AS `articles#1` WHERE `id` > 10 */
 }}}
 
+Time to join our two tables to create a complex query:
+
+{{{
+var q = new Query(Query.SELECT)
+        .field("%f AS %f", "articles.name", "article_name")
+        .field("%f AS %f", "users.name", "user_name")
+        .table("articles")
+        .join("users", "LEFT")
+        .order("%f ASC", "user_name")
+        .limit(10)
+        .toString();
+/* result:
+    SELECT `articles`.`name` AS `article_name`, `users`.`name` AS `user_name`
+    FROM `articles` AS `articles#1` 
+    LEFT JOIN `users` AS `users#1` ON `articles#1`.`id_user` = `users#1`.`id` 
+    ORDER BY `user_name` ASC 
+    LIMIT 10 
+*/
+}}}
+
+To simplify some stuff, we may also use the `Table()` class:
 
 {{{
 var users = new Table("users");
-var articles = new Table("articles");
 }}}
 
-var q = users.select("*").toString(); 
-/* result: SELECT `users`.* FROM `users` */
+User-listing query can now be written as:
 
-var q = users.select("id", "name").toString(); 
-/* result: SELECT `users`.`id`, `users`.`name` FROM `users` */
+{{{
+var q = users.select("*").limit(5).toString(); 
+/* result: SELECT * FROM `users` AS `users#1` LIMIT 5 */
+}}}
 
-var q = users.select("id", "name")
-        .where("id", ">", 6)
-        .toString();
-/* result: SELECT `users`.`id`, `users`.`name` FROM `users` WHERE `users`.`id` > '6' */
+`Table()`-based queries are well suited for INSERT/UPDATE scenarios:
 
-var q = articles.select({"name":"article_name"})
-        .join(users, "LEFT")
-        .field({"name":"user_name"})
-        .order("name", "ASC", articles)
-        .limit(10)
-        .toString();
-/* result: 
-    SELECT `articles`.`name` AS 'article_name', `users`.`name` AS 'user_name' 
-    FROM `articles` 
-    LEFT JOIN `users` ON `articles`.`id_user` = `users`.`id` 
-    ORDER BY `articles`.`name` ASC 
-    LIMIT 10
-*/
+{{{
+var q = users.insert({"name":"John", "mail":"john@doe.com"}).toString();
+/* result: INSERT INTO `users` (`name`, `mail`) VALUES ('John', 'john@doe.com') */
+
+var q = users.update({"name":"Eric"})
+          .where("%f LIKE %s", "name", "%o%")
+          .toString();
+/* result: UPDATE `users` SET `name`='Eric' WHERE `name` LIKE 'undefined%'  */
 }}}
