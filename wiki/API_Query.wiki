@@ -11,8 +11,8 @@
   * `q.table(name, [jointype], [joinfield])` - adds a table with given `name` to query; `jointype` is a join prefix string (e.g. "LEFT" etc.), `joinfield` forces a concrete relation which uses given field
   * `q.join()` - alias for `q.table()`
   * `q.field(fieldDefinition)` - adds a field to query. If only one argument is specified, it gets qualified. If multiple arguments are specified, printf()-like expansion takes place. Allowed formatting sequences:
-    * *%f* - field name (__field__ or __table.field__)
-    * *%s* - string value (will get escaped and qualified)
+    * `*%f*` - field name (__field__ or __table.field__)
+    * `*%s*` - string value (will get escaped and qualified)
   * `q.value(value, [noescape])` - adds value to INSERT or UPDATE query. The value will be escaped unless `noescape` is set to `true`
   * `q.where(conditionDefinition)` - WHERE clause, expanded as in `.field()`
   * `q.having(conditionDefinition)` - HAVING clause, expanded as in `.field()`
