@@ -31,13 +31,41 @@
 
 == Examples ==
 
-
+There are two basic approaches to query creation. Some setup can be useful for both of these; say we have two tables (`users` and `articles`), linked together by the fact that `users.id = articles.is_user`:
 
 {{{
 var mysql = new MySQL().connect(HOST, USER, PASSWORD, DB);
-var users = new Table("users", mysql);
-var articles = new Table("articles", mysql);
-articles.addRelation("id_user", users, "id");
+Query.setDB(mysql);
+Query.addRelation("users", "id", "articles", "id_user")
+}}}
+
+We can now start creating queries - instances of the `Query` class.
+
+{{{
+var q = new Query(Query.SELECT)
+          .field("*")
+          .table("users")
+          .toString();
+/* result: SELECT * FROM `users` AS `users#1` */
+}}}
+
+Note that all tables are automatically aliased with ordinal numbering. Some more advanced example:
+
+{{{
+var q = new Query(Query.SELECT)
+          .field("id")
+          .field("UNIX_TIMESTAMP(%f) AS %f", "ts", "unix_ts")
+          .table("articles")
+          .where("%f > 10", "id")
+          .toString();
+/* result: SELECT `id`, UNIX_TIMESTAMP(`ts`) AS `unix_ts` FROM `articles` AS `articles#1` WHERE `id` > 10 */
+}}}
+
+
+{{{
+var users = new Table("users");
+var articles = new Table("articles");
+}}}
 
 var q = users.select("*").toString(); 
 /* result: SELECT `users`.* FROM `users` */
