@@ -2,31 +2,37 @@
 
 = SQL Query functions (in query.js)=
 
-  * `var t = new Table(name, database)` - db table with a given `name`; second argument is an instance of `MySQL`
-  * `t.addRelation(ownField, foreignTable, foreignField)` - creates a relation to other table
+  * `Query.SELECT`, `Query.INSERT`, `Query.UPDATE`, `Query.DELETE` - constants
+  * `Query.addRelation(table1, field1, table2, field2)` - creates a relation between to tables, will be used in JOIN statements
+  * `Query.findRelation(table1, table2, [field])` - finds a relation between `table1` and `table2` which optionally uses `field`
+  * `Query.setDB(database)` - attaches an instance of `MySQL` to Query builder
+
+  * `var q = new Query(type)` - creates new query with a given type constant
+  * `q.table(name, [jointype], [joinfield])` - adds a table with given `name` to query; `jointype` is a join prefix string (e.g. "LEFT" etc.), `joinfield` forces a concrete relation which uses given field
+  * `q.join()` - alias for `q.table()`
+  * `q.field(fieldDefinition)` - adds a field to query. If only one argument is specified, it gets qualified. If multiple arguments are specified, printf()-like expansion takes place. Allowed formatting sequences:
+    * **%f** - field name (__field__ or __table.field__)
+    * **%s** - string value (will get escaped and qualified)
+  * `q.value(value, [noescape])` - adds value to INSERT or UPDATE query. The value will be escaped unless `noescape` is set to `true`
+  * `q.where(conditionDefinition)` - WHERE clause, expanded as in `.field()`
+  * `q.having(conditionDefinition)` - HAVING clause, expanded as in `.field()`
+  * `q.order(fieldDefinition)` - ORDER clause, expanded as in `.field()`
+  * `q.group(fieldName)` - GROUP clause
+  * `q.limit(count)` - LIMIT clause
+  * `q.offset(count)` - OFFSET clause
+  * `q.toString()` - creates an SQL string
+  * `q.execute()` - executes a query
+
+  * `var t = new Table(name)` - db table with a given `name`
   * `t.select(field, field, ...)` - returns a pre-made SELECT query
   * `t.insert({name:value, name:value, ...})` - returns a pre-made INSERT query
   * `t.update({name:value, name:value, ...})` - returns a pre-made UPDATE query
   * `t.delete()` - returns a pre-made DELETE query
 
-  * `Query.SELECT`, `Query.INSERT`, `Query.UPDATE`, `Query.DELETE` - constants
-  * `var q = new Query(type, database)` - creates new query with a given type constant; second argument is an instance of `MySQL`
-  * `q.table(table, [type])` - adds a table to query; `type` is a join prefix string (e.g. "LEFT" etc.)
-  * `q.join(table, [type])` - alias for `q.table()`
-  * `q.field(field, field, ...)` - adds fields to query:
-    * `field = "string"` - simple definition for SELECT queries,
-    * `field = {name:value, name:value, ...}` - definition for INSERT/UPDATE queries
-    * `field = {name:alias, name:alias, ...}` - definition for SELECT queries with aliases
-  * `q.where(field, operator, value, [mode], [table])` - WHERE clause
-  * `q.having(field, operator, value, [mode], [table])` - HAVING clause
-  * `q.order(field, [mode], [table])` - ORDER clause
-  * `q.limit(count)` - LIMIT clause
-  * `q.offset(count)` - OFFSET clause
-  * `q.group(field, [table])` - GROUP clause
-  * `q.toString()` - creates an SQL string
-  * `q.execute()` - executes a query
-
 == Examples ==
+
+
+
 {{{
 var mysql = new MySQL().connect(HOST, USER, PASSWORD, DB);
 var users = new Table("users", mysql);
