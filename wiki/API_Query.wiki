@@ -13,6 +13,7 @@
   * `q.field(fieldDefinition)` - adds a field to query. If only one argument is specified, it gets qualified. If multiple arguments are specified, printf()-like expansion takes place. Allowed formatting sequences:
     * *`%f`* - field name (__field__ or __table.field__)
     * *`%s`* - string value (will get escaped and qualified)
+    * *`%n`* - number value (parseFloat() and qualified)
   * `q.value(value, [noescape])` - adds value to INSERT or UPDATE query. The value will be escaped unless `noescape` is set to `true`
   * `q.where(conditionDefinition)` - WHERE clause, expanded as in `.field()`
   * `q.having(conditionDefinition)` - HAVING clause, expanded as in `.field()`
