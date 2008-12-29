@@ -64,7 +64,7 @@ Brief list of available functions, objects, properties and methods
   * `r.fetchArrays()` - returns query results as an array of arrays
   * `r.fetchObjects()` - returns query results as an array of hashes
 
-== JavaScript enhancement functions ==
+== !JavaScript enhancement functions ==
 
 These are defined in library `js.js` and are documented on [API_JS separate wikipage].
 
