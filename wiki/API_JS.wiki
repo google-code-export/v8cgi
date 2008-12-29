@@ -1,0 +1,8 @@
+#summary Library "js.js"
+
+= !JavaScript enhancement functions (in js.js)=
+
+  * `String.prototype.lpad(char, count)` - left padds a string to a length of `count` with `char`. Default values: `char='0'`, `count=2`
+  * `String.prototype.rpad(char, count)` - right padds a string, similar to `lpad`
+  * `String.prototype.trim()` - returns a string with whitespace removed from beginning and end
+  * `Date.prototype.format(pattern)` - formats a date, `pattern` is compatible with PHP [http://php.net/date date()] function (not all modifiers are supported)
