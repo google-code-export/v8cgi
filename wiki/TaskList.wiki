@@ -4,6 +4,7 @@
   * more libraries...
 
 == What has been done recently ==
+  * release 0.0.3 fixes fatal bug in afread()
   * [http://code.google.com/p/v8cgi/wiki/API_JS prototype enhancements]
   * SQL [http://code.google.com/p/v8cgi/wiki/API_Query query helper]
   * basic [http://code.google.com/p/v8cgi/wiki/API_Template templating]
