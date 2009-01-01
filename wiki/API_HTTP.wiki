@@ -15,7 +15,7 @@
   * `response.write(data)` - outputs `data`
   * `response.error(text)` - outputs error `text`
   * `response.header(headers)` - outputs `headers` (hash) as HTTP response headers
-  * `response.dump(data)` - recursively outputs `data`
+  * `response.dump(data, [nowrite])` - recursively outputs and returns stringified `data`. If `nowrite == true`, nothing is written to standard output.
   * `response.escape(data)` - converts *<*, *>*, *&*, *"*, *'* to HTML entities
   * `response.cookie(name, value, expires, path, domain, secure, httponly)` - sets a cookie
 
