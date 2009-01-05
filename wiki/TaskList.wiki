@@ -6,6 +6,7 @@
   * FastCGI
   * sleep()
   * mail()
+  * .so/.dll loading
 
 == What has been done recently ==
   * release 0.0.3 fixes fatal bug in afread()
