@@ -1,7 +1,11 @@
 #summary What needs to be done
 
 = What needs to be done =
-  * more libraries...
+  * Sockets
+  * GD
+  * FastCGI
+  * sleep()
+  * mail()
 
 == What has been done recently ==
   * release 0.0.3 fixes fatal bug in afread()
