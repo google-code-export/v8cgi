@@ -18,8 +18,8 @@ Brief list of available functions, objects, properties and methods
   * `System.env` - hash with environment variables. Read-only.
   * `System.stdin(count, [binary])` - read `count` bytes from standard input. If `binary == true`, data is returned as an array of numbers. If `count` == 0, one line is read.
   * `System.stdout(data)` - write `data` to standard output. Data can be either string of array of numbers (ascii values).
-<wiki:comment>
   * `System.sleep(num)` - delays execution for `num` seconds
+<wiki:comment>
   * `System.usleep(num)` - delays execution for `num` microseconds
 </wiki:comment>
 
