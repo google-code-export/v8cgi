@@ -1,13 +1,13 @@
 #summary What needs to be done
 
 = What needs to be done (ordered by descending probability of implementation) =
-  * sleep()
   * FastCGI
   * Sockets
   * mail()
   * GD
 
 == What has been done recently ==
+  * sleep()
   * .so/.dll loading
   * release 0.0.3 fixes fatal bug in afread()
   * [http://code.google.com/p/v8cgi/wiki/API_JS prototype enhancements]
