@@ -10,7 +10,7 @@ Brief list of available functions, objects, properties and methods
 == Global functions ==
   * `global` - reference to global object
   * `include()` - include script file
-  * `library()` - include system library file
+  * `library()` - include system library (.js/.so/.dll) file
   * `exit()` - terminate execution
   * `onexit(func)` - adds `func` as onexit callback
 
