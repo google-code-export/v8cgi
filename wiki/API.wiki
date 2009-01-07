@@ -7,14 +7,16 @@
 
 Brief list of available functions, objects, properties and methods
 
-== Global functions ==
+== Built-in functions ==
+
+=== Global functions ===
   * `global` - reference to global object
   * `include()` - include script file
   * `library()` - include system library (.js/.so/.dll) file
   * `exit()` - terminate execution
   * `onexit(func)` - adds `func` as onexit callback
 
-== System functions ==
+=== System functions ===
   * `System.env` - hash with environment variables. Read-only.
   * `System.stdin(count, [binary])` - read `count` bytes from standard input. If `binary == true`, data is returned as an array of numbers. If `count` == 0, one line is read.
   * `System.stdout(data)` - write `data` to standard output. Data can be either string of array of numbers (ascii values).
@@ -23,7 +25,7 @@ Brief list of available functions, objects, properties and methods
   * `System.usleep(num)` - delays execution for `num` microseconds
 </wiki:comment>
 
-== File functions ==
+=== File functions ===
   * `var f = new File(fileName)` - creates new file instance
   * `f.open(mode)` - opens the file with a given mode
   * `f.close()` - closes the file
@@ -37,7 +39,7 @@ Brief list of available functions, objects, properties and methods
   * `f.move(newName)` - renames file to `newName`
   * `var f2 = f.copy(newName)` - copies file to `newName` and returns instance of new file
 
-== Directory functions ==
+=== Directory functions ===
   * `var d = new File(dirName)` - creates new directory instance
   * `d.create()` - creates new directory
   * `d.listFiles()` - returns an array with names of files contained in the directory
