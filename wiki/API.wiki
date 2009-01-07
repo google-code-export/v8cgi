@@ -1,13 +1,15 @@
 #summary API Documentation
 #labels Featured
 
-<wiki:toc max_depth="2" />
+<wiki:toc max_depth="3" />
 
 = API Documentation =
 
 Brief list of available functions, objects, properties and methods
 
 == Built-in functions ==
+
+These are automatically available once you launch v8cgi.
 
 === Global functions ===
   * `global` - reference to global object
@@ -50,7 +52,14 @@ Brief list of available functions, objects, properties and methods
   * `d.remove()` - deletes the directory
   * `d.stat()` - returns object with several stat properties
 
-== MySQL functions ==
+== Loadable functions ==
+
+These are defined in library files (`.js`, `.so`, `.dll`) and can be loaded with `library()` call.
+
+=== MySQL functions  ===
+
+Defined in library `libmysql.so` or `mysql.dll`.
+
   * `var m = new MySQL()` - creates new mysql instance
   * `m.connect(host, user, password, db)` - connects to database
   * `m.error()` - returns error description
@@ -66,22 +75,22 @@ Brief list of available functions, objects, properties and methods
   * `r.fetchArrays()` - returns query results as an array of arrays
   * `r.fetchObjects()` - returns query results as an array of hashes
 
-== !JavaScript enhancement functions ==
+=== !JavaScript enhancement functions ===
 
-These are defined in library `js.js` and are documented on [API_JS separate wikipage].
+Defined in library `js.js`,documented on [API_JS separate wikipage].
 
-== HTTP functions ==
+=== HTTP functions ===
 
-These are defined in library `http.js` and are documented on [API_HTTP separate wikipage].
+Defined in library `http.js`, documented on [API_HTTP separate wikipage].
 
-== Utility functions ==
+=== Utility functions ===
 
-These are defined in library `util.js` and are documented on [API_Util separate wikipage].
+Defined in library `util.js`, documented on [API_Util separate wikipage].
 
-== Template functions ==
+=== Template functions ===
 
-These are defined in library `template.js` and are documented on [API_Template separate wikipage].
+Defined in library `template.js`, documented on [API_Template separate wikipage].
 
-== SQL Query functions ==
+=== SQL Query functions ===
 
-These are defined in library `query.js` and are documented on [API_Query separate wikipage].
+Defined in library `query.js`, documented on [API_Query separate wikipage].
