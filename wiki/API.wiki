@@ -77,8 +77,8 @@ These are automatically available once you launch v8cgi.
   * `sock.send(data, [address], [port])` - send `data` to socket
   * `sock.receive(num)` - retrieve max `num` bytes from socket
   * `sock.getPeerName()` - returns array with peer address components
-  * `sock.getOption(name, [length])` - returns a value of SO_ option
-  * `sock.setOption(name, value)` - sets a `value` of SO_ option
+  * `sock.getOption(name, [length])` - returns a value of `SO_*` option
+  * `sock.setOption(name, value)` - sets a `value` of `SO_*` option
   * `sock.close()` - close a socket
 
 == Loadable functions ==
