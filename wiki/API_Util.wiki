@@ -10,3 +10,4 @@
   * `Util.base64decode(str)` - decodes string from Base64
   * `Util.utf8decode(str)` - decodes all unicode characters into one-byte characters
   * `Util.utf8encode(str)` - encodes relevant one-byte charcater sequences into unicode characters
+  * `Util.mail(to, subject, data, [additionalHeaders])` - sends an email
