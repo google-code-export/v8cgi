@@ -1,12 +1,12 @@
 #summary What needs to be done
 
 = What needs to be done (ordered by descending probability of implementation) =
-  * Sockets
-  * mail()
   * FastCGI
   * GD
 
 == What has been done recently ==
+  * Sockets
+  * mail()
   * sleep()
   * .so/.dll loading
   * release 0.0.3 fixes fatal bug in afread()
