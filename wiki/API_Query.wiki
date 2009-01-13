@@ -29,6 +29,7 @@
   * `t.insert({name:value, name:value, ...})` - returns a pre-made INSERT query
   * `t.update({name:value, name:value, ...})` - returns a pre-made UPDATE query
   * `t.delete()` - returns a pre-made DELETE query
+  * `t.remove()` - alias for `t.delete()`
 
 == Examples ==
 
