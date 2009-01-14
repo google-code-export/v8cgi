@@ -1,10 +1,10 @@
 #summary What needs to be done
 
 = What needs to be done (ordered by descending probability of implementation) =
-  * FastCGI
   * GD
 
 == What has been done recently ==
+  * FastCGI
   * mail()
   * Sockets
   * sleep()
