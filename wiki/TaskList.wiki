@@ -4,6 +4,7 @@
   * GD
 
 == What has been done recently ==
+  * Caching
   * FastCGI
   * mail()
   * Sockets
