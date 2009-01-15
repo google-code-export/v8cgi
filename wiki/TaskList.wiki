@@ -1,6 +1,7 @@
 #summary What needs to be done
 
 = What needs to be done (ordered by descending probability of implementation) =
+  * HTTP Client
   * GD
 
 == What has been done recently ==
