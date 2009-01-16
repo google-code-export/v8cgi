@@ -1,0 +1,13 @@
+#summary Library "session.js"
+
+= Session functions (in session.js) =
+
+Load this library only *after* `http.js`!
+
+  * `session = new Session(request, response)` - creates or resumes a session. This is done automatically.
+  * `session.set(name, value)` - adds a `name`-`value` pair to session
+  * `session.get(name)` - retrieves a session variable
+  * `session.clear()` - clears all session data
+  * `session.save()` - dumps session data to disk; this is done automatically on script exit
+  * `session.getId()` - returns current session id
+  * `session.setId(id)` - sets a new session id. If `id` is not specified, random one is generated.
