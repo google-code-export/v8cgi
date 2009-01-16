@@ -114,6 +114,10 @@ Defined in library `js.js`,documented on [API_JS separate wikipage].
 
 Defined in library `http.js`, documented on [API_HTTP separate wikipage].
 
+=== Session functions ===
+
+Defined in library `session.js`, documented on [API_Session separate wikipage].
+
 === Utility functions ===
 
 Defined in library `util.js`, documented on [API_Util separate wikipage].
