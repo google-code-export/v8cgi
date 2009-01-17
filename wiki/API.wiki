@@ -121,6 +121,10 @@ Classes: *MySQL*. Defined in library `libmysql.so` or `mysql.dll`.
 
 Defined in library `js.js`,documented on [API_JS separate wikipage].
 
+=== HTML functions ===
+
+Defined in library `html.js`, documented on [API_HTML separate wikipage].
+
 === HTTP functions ===
 
 Defined in library `http.js`, documented on [API_HTTP separate wikipage].
