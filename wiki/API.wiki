@@ -15,10 +15,10 @@ These are automatically available once you launch v8cgi.
   * `global` - reference to global object
   * `include()` - include script file
   * `library()` - include system library (.js/.so/.dll) file
+  * `onexit(func)` - adds `func` as onexit callback
 <wiki:comment>
   * `exit()` - terminate execution
 </wiki:comment>
-  * `onexit(func)` - adds `func` as onexit callback
 
 === System functions ===
   * `System.env` - hash with environment variables. Read-only.
