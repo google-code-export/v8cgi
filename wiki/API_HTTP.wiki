@@ -2,10 +2,6 @@
 
 = HTTP functions (in http.js) =
 
-== Common HTTP functionality ==
-
-_tbd_
-
 == Server-side HTTP ==
 
 Classes: *HTTP.!ServerRequest*, *HTTP.!ServerResponse*. These should be used in CGI/FastCGI scenario to process request and create a response page.
