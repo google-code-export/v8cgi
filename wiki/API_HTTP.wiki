@@ -21,7 +21,7 @@ These classes should be used in CGI/FastCGI scenario to process request and crea
     * `.originalName` - file's original name
   * `request.header(headerName)` - returns request HTTP header
 
-  * `var response = new *HTTP.ServerResponse*(output)` - creates a new response instance. If running in CGI mode, this is done automatically.
+  * `var response = new `*`HTTP.ServerResponse`*`(output)` - creates a new response instance. If running in CGI mode, this is done automatically.
   * `response.write(data)` - outputs `data`
   * `response.header(headers)` - outputs `headers` (hash) as HTTP response headers
   * `response.escape(data)` - converts *<*, *>*, *&*, *"*, *'* to HTML entities
