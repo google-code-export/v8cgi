@@ -2,6 +2,14 @@
 
 = HTTP functions (in http.js) =
 
+== Common HTTP functionality ==
+
+_tbd_
+
+== Server-side HTTP ==
+
+These classes should be used in CGI/FastCGI scenario to process request and create a response page.
+
   * `var request = new HTTP.ServerRequest(input, headers)` - creates a new response structure. If running in CGI mode, this is done automatically.
   * `request.get` - hash with GET variables
   * `request.post` - hash with POST variables
@@ -18,3 +26,9 @@
   * `response.header(headers)` - outputs `headers` (hash) as HTTP response headers
   * `response.escape(data)` - converts *<*, *>*, *&*, *"*, *'* to HTML entities
   * `response.cookie(name, value, expires, path, domain, secure, httponly)` - sets a cookie
+
+== Client-side HTTP ==
+
+These classes should be used to create a HTTP request and process/access received data.
+
+_tbd_
