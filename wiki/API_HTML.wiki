@@ -1,0 +1,6 @@
+#summary Library "html.js"
+
+= HTML functions (in html.js) =
+
+  * `HTML.escape(data)` - converts *<*, *>*, *&*, *"*, *'* to HTML entities
+  * `HTML.unescape(data)` - inverse of `HTML.escape`
