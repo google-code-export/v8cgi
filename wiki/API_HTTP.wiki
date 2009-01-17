@@ -29,6 +29,6 @@ Classes: *HTTP.!ServerRequest*, *HTTP.!ServerResponse*. These should be used in 
 
 == Client-side HTTP ==
 
-Classes: *HTTP.ClientRequest*, *HTTP.ClientResponse*. These should be used to create a HTTP request and process/access received data.
+Classes: *HTTP.!ClientRequest*, *HTTP.!ClientResponse*. These should be used to create a HTTP request and process/access received data.
 
 _tbd_
