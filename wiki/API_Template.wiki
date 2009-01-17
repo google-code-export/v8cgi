@@ -2,6 +2,8 @@
 
 = Template functions (in template.js) =
 
+Classes: *Template*.
+
   * `var t = new Template(options)` - new template; allowed options:
     * `.path` - path to template files
     * `.suffix` - template file suffix (defult: `.template`)
