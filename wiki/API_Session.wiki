@@ -2,7 +2,7 @@
 
 = Session functions (in session.js) =
 
-Classes: *Sessio*. Load this library only *after* `http.js`!
+Classes: *Session*. Load this library only *after* `http.js`!
 
   * `session = new Session(request, response)` - creates or resumes a session. This is done automatically.
   * `session.set(name, value)` - adds a `name`-`value` pair to session
