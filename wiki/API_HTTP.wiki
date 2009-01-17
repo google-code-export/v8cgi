@@ -8,7 +8,7 @@ _tbd_
 
 == Server-side HTTP ==
 
-Classes: *HTTP.ServerRequest*, *HTTP.ServerResponse*. These should be used in CGI/FastCGI scenario to process request and create a response page.
+Classes: *HTTP.!ServerRequest*, *HTTP.!ServerResponse*. These should be used in CGI/FastCGI scenario to process request and create a response page.
 
   * `var request = new HTTP.ServerRequest(input, headers)` - creates a new response structure. If running in CGI mode, this is done automatically.
   * `request.get` - hash with GET variables
