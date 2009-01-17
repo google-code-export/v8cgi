@@ -10,7 +10,7 @@ _tbd_
 
 These classes should be used in CGI/FastCGI scenario to process request and create a response page.
 
-  * `var request = new *HTTP.ServerRequest*(input, headers)` - creates a new response structure. If running in CGI mode, this is done automatically.
+  * `var request = new `*`HTTP.ServerRequest`*`(input, headers)` - creates a new response structure. If running in CGI mode, this is done automatically.
   * `request.get` - hash with GET variables
   * `request.post` - hash with POST variables
   * `request.cookie` - hash with cookie variables
