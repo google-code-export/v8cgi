@@ -1,6 +1,8 @@
 #summary Library "query.js"
 
-= SQL Query functions (in query.js)=
+= SQL Query functions (in query.js) =
+
+Classes: *Query*, *Table*.
 
   * `Query.SELECT`, `Query.INSERT`, `Query.UPDATE`, `Query.DELETE` - constants
   * `Query.addRelation(table1, field1, table2, field2)` - creates a relation between to tables, will be used in JOIN statements
