@@ -29,8 +29,8 @@ These are automatically available once you launch v8cgi.
   * `System.usleep(num)` - delays execution for `num` microseconds
 </wiki:comment>
 
-=== File functions ===
-  * `var f = new `*`File(fileName)`*` - creates new file instance
+=== File functions (classes: *File*, *Directory*) ===
+  * `var f = new File(fileName)` - creates new file instance
   * `f.open(mode)` - opens the file with a given mode
   * `f.close()` - closes the file
   * `f.read([count], [binary])` - reads `count` (or all) bytes from file.
@@ -44,7 +44,7 @@ These are automatically available once you launch v8cgi.
   * `var f2 = f.copy(newName)` - copies file to `newName` and returns instance of new file
 
 === Directory functions ===
-  * `var d = new `*`Directory`*`(dirName)` - creates new directory instance
+  * `var d = new Directory(dirName)` - creates new directory instance
   * `d.create()` - creates new directory
   * `d.listFiles()` - returns an array with names of files contained in the directory
   * `d.listDirectories()` - returns an array with names of directories contained in the directory
@@ -54,7 +54,7 @@ These are automatically available once you launch v8cgi.
   * `d.remove()` - deletes the directory
   * `d.stat()` - returns object with several stat properties
 
-=== Socket functions ===
+=== Socket functions (classes: *Socket*)  ===
   * Constants:
     * Socket.PF_INET
     * Socket.PF_INET6
@@ -71,7 +71,7 @@ These are automatically available once you launch v8cgi.
   * `Socket.getAddrInfo(name, [family])` - convert hostname to address
   * `Socket.getNameInfo(addr, family)` - convert address to cname
   * `Socket.getHostName()` - return current hostname
-  * `var sock = new `*`Socket`*`(family, type, proto)` - create new socket
+  * `var sock = new Socket(family, type, proto)` - create new socket
   * `sock.connect(address, [port])` - connect to target `address`
   * `sock.bind(address, [port])` - bind to target `address`
   * `sock.listen([backlog])` - listen for incoming connections
@@ -87,11 +87,11 @@ These are automatically available once you launch v8cgi.
 
 These are defined in library files (`.js`, `.so`, `.dll`) and can be loaded with `library()` call.
 
-=== MySQL functions  ===
+=== MySQL functions (classes: *MySQL*) ===
 
 Defined in library `libmysql.so` or `mysql.dll`.
 
-  * `var m = new `*`MySQL()`*` - creates new mysql instance
+  * `var m = new MySQL()` - creates new mysql instance
   * `m.connect(host, user, password, db)` - connects to database
   * `m.error()` - returns error description
   * `m.errno()` - returns error number
