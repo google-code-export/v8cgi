@@ -31,7 +31,7 @@ These are automatically available once you launch v8cgi.
 
 === File functions ===
 
-Classes: *File*
+Classes: *File*.
 
   * `var f = new File(fileName)` - creates new file instance
   * `f.open(mode)` - opens the file with a given mode
@@ -48,7 +48,7 @@ Classes: *File*
 
 === Directory functions ===
 
-Classes: *Directory*
+Classes: *Directory*.
 
   * `var d = new Directory(dirName)` - creates new directory instance
   * `d.create()` - creates new directory
@@ -62,7 +62,7 @@ Classes: *Directory*
 
 === Socket functions ===
 
-Classes: *Socket* 
+Classes: *Socket*.
 
   * Constants:
     * Socket.PF_INET
