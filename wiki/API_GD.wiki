@@ -27,6 +27,10 @@ Classes: *Image*. For exact documentation, see http://libgd.org/Reference or htt
   * `var image = new Image(Image.TRUECOLOR | Image.PALETTE, w, h)`
   * `var image = new Image(Image.JPEG | Image.PNG | Image.GIF, file)`
   * `var data = image.save(Image.JPEG | Image.PNG | Image.GIF, [file])`
+  * `image.destroy()`
+
+  * `var color = Image.trueColor(r, g, b)`
+  * `var color = Image.trueColorAlpha(r, g, b, a)`
 
   * `var color = image.colorAllocate(r, g, b)`
   * `var color = image.colorAllocateAlpha(r, g, b, a)`
