@@ -117,6 +117,10 @@ Classes: *MySQL*. Defined in library `libmysql.so` or `mysql.dll`.
   * `r.fetchArrays()` - returns query results as an array of arrays
   * `r.fetchObjects()` - returns query results as an array of hashes
 
+=== GD functions ===
+
+Defined in library `libgd.so` or `gd.dll`, documented on [API_GD separate wikipage].
+
 === !JavaScript enhancement functions ===
 
 Defined in library `js.js`,documented on [API_JS separate wikipage].
