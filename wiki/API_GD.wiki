@@ -74,3 +74,13 @@ Classes: *Image*. For exact documentation, see http://libgd.org/Reference or htt
   * `image = image.setClip(x1, y1, x2, y2)`
   * `var arr = image.getClip()`
   * `var bounds = image.string(color, fontfile, size, angle, x, y, text)`
+
+  * `image = image.copy(sourceImage, dstx, dsty, srcx, srcy, w, h)`
+  * `image = image.copyResized(sourceImage, dstx, dsty, srcx, srcy, dstw, dsth, srcw, srch)`
+  * `image = image.copyResampled(sourceImage, dstx, dsty, srcx, srcy, dstw, dsth, srcw, srch)`
+  * `image = image.copyRotated(sourceImage, dstx, dsty, srcx, srcy, srcw, srch, angle)`
+  * `image = image.copyMerge(sourceImage, dstx, dsty, srcx, srcy, w, h, percent)`
+  * `image = image.copyMergeGray(sourceImage, dstx, dsty, srcx, srcy, w, h, percent)`
+  * `image = image.copyPalette(sourceImage)`
+  * `image = image.squareToCircle(radius)`
+  * `image = image.sharpen(percent)`
