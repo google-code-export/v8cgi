@@ -2,7 +2,7 @@
 
 = GD functions (in libgs.so or gd.dll)=
 
-Classes: *Image*.
+Classes: *Image*. For exact documentation, see http://libgd.org/Reference or http://www.boutell.com/gd/manual2.0.33.html
 
   * Constants:
     * Image.TRUECOLOR
@@ -24,4 +24,29 @@ Classes: *Image*.
     * Image.COLOR_TILED
     * Image.COLOR_TRANSPARENT
 
+  * `var image = new Image(Image.TRUECOLOR | Image.PALETTE, w, h)`
+  * `var image = new Image(Image.JPEG | Image.PNG | Image.GIF, file)`
+  * `var data = image.save(Image.JPEG | Image.PNG | Image.GIF, [file])`
 
+  * `var color = image.colorAllocate(r, g, b)`
+  * `var color = image.colorAllocateAlpha(r, g, b, a)`
+  * `var color = image.colorClosest(r, g, b)`
+  * `var color = image.colorClosestAlpha(r, g, b, a)`
+  * `var color = image.colorClosestHWB(r, g, b)`
+  * `var color = image.colorExact(r, g, b)`
+  * `var color = image.colorResolve(r, g, b)`
+  * `var color = image.colorResolveAlpha(r, g, b, a)`
+  * `var color = image.colorsTotal()`
+  * `var amount = image.red(color)`
+  * `var amount = image.green(color)`
+  * `var amount = image.blue(color)`
+  * `var amount = image.alpha(color)`
+  * `var bool = image.getInterlaced()`
+  * `var color = image.getTransparent()`
+  * `image = image.colorDeallocate(color)`
+  * `image = image.colorTransparent(color)`
+  * `var color = image.getPixel(x, y)`
+  * `var bool = image.boundsSafe(x, y)`
+  * `var w = image.sx()`
+  * `var h = image.sy()`
+  * `var bool = image.trueColor()`
