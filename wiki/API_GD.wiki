@@ -50,3 +50,27 @@ Classes: *Image*. For exact documentation, see http://libgd.org/Reference or htt
   * `var w = image.sx()`
   * `var h = image.sy()`
   * `var bool = image.trueColor()`
+
+  * `image = image.setPixel(x, y, color)`
+  * `image = image.line(x1, y1, x2, y2, color)`
+  * `image = image.polygon(points, color)` - points = [{x:,y:}, {x:,y:}, ...]
+  * `image = image.openPolygon(points, color)`
+  * `image = image.rectangle(x1, y1, x2, y2, color)`
+  * `image = image.filledRectangle(x1, y1, x2, y2, color)`
+  * `image = image.filledPolygon(points, color)`
+  * `image = image.arc(cx, cy, w, h, s, e, color)`
+  * `image = image.filledArc(cx, cy, w, h, s, e, color, style)`
+  * `image = image.filledEllipse(cx, cy, w, h, color)`
+  * `image = image.fillToBorder(x, y, border, color)`
+  * `image = image.fill(x, y, color)`
+  * `image = image.setAntialiased(color)`
+  * `image = image.setAntialiasedDontBlend(color, color2)`
+  * `image = image.setBrush(image2)`
+  * `image = image.setTile(image2)`
+  * `image = image.setStyle(arrayOfColors)`
+  * `image = image.setThickness(thickness)`
+  * `image = image.alphaBlending(flag)`
+  * `image = image.saveAlpha(flag)`
+  * `image = image.setClip(x1, y1, x2, y2)`
+  * `var arr = image.getClip()`
+  * `var bounds = image.string(color, fontfile, size, angle, x, y, text)`
