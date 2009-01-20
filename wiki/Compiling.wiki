@@ -16,6 +16,17 @@
   # Get FastCGI development headers (debian: libfcgi-dev)
   # use `scons fcgi=1`
 
+== GD ==
+
+  # Get FastCGI development headers (debian: libfcgi-dev)
+  # use `scons gd=1`
+  # on Windows, it might be necessary to edit the gd.h file:
+
+{{{
+#undef BGD_DECLARE
+#define BGD_DECLARE(rt) rt __stdcall
+}}}
+
 == MSVC Express 2008 ==
 
 Try setting these env. paths before compilation:
