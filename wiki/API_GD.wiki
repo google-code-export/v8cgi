@@ -1,0 +1,27 @@
+#summary Library "libgd.so" or "gd.dll"
+
+= GD functions (in libgs.so or gd.dll)=
+
+Classes: *Image*.
+
+  * Constants:
+    * Image.TRUECOLOR
+    * Image.PALETTE
+    * Image.MAXCOLORS
+    * Image.TRUECOLOR
+    * Image.JPEG
+    * Image.PNG
+    * Image.GIF
+    * Image.ARC_ARC
+    * Image.ARC_PIE
+    * Image.ARC_CHORD
+    * Image.ARC_NOFILL
+    * Image.ARC_EDGED
+    * Image.COLOR_ANTIALIASED
+    * Image.COLOR_BRUSHED
+    * Image.COLOR_STYLED
+    * Image.COLOR_STYLEDBRUSHED
+    * Image.COLOR_TILED
+    * Image.COLOR_TRANSPARENT
+
+
