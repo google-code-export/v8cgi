@@ -1,7 +1,7 @@
 #summary What needs to be done
 
 = What needs to be done (ordered by descending probability of implementation) =
-  * better file copying (without my_*)
+  * better file copying (without my_`*`)
   * mmap on windows
   * fcgi on windows
   * zlib
