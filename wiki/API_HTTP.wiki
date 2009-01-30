@@ -32,7 +32,7 @@ Classes: *HTTP.!ClientRequest*, *HTTP.!ClientResponse*. These should be used to 
   * `request.post` - hash with POST variables
   * `request.cookie` - hash with cookie variables
   * `request.method` - HTTP method to be used (uppercase)
-  * `var response = request.send(follow)` - sends a request, returns an instance of `HTTP.!ClientResponse`. If `follow` is true, redirects are transparently followed.
+  * `var response = request.send(follow)` - sends a request, returns an instance of `HTTP.ClientResponse`. If `follow` is true, redirects are transparently followed.
 
   * `response.data` - response body
   * `response.status` - HTTP response status code
