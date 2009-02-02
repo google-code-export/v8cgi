@@ -21,6 +21,14 @@
   # Get GD development headers (debian: libgd2-dev)
   # use `scons gd=1`
 
+== Apache module ==
+Apache support is experimental and only available in latest SVN revisions.
+
+  # Get Apache and APR development headers
+  # use `scons module=1`
+  # load the resulting `mod_v8cgi.so` into apache
+  # assign a `v8cgi-script` handler
+
 == MSVC Express 2008 ==
 
 Make sure all relevant includes and libraries are accessible. Try setting these env. paths before compilation:
