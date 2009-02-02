@@ -18,7 +18,7 @@
 
 == GD ==
 
-  # Get FastCGI development headers (debian: libfcgi-dev)
+  # Get GD development headers (debian: libgd2-dev)
   # use `scons gd=1`
 
 == MSVC Express 2008 ==
