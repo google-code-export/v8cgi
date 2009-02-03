@@ -5,8 +5,10 @@
   * mmap on windows
   * fcgi on windows
   * zlib
+  * Apache module in windows
 
 == What has been done recently ==
+  * Apache module
   * GD
   * HTTP Client
   * Caching
