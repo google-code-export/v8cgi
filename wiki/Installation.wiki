@@ -12,6 +12,15 @@ After compilation (or if your downloaded binary package):
   # edit the configuration file as needed,
   # copy all files in lib/ to path specified as `Config.libraryPath`.
 
+== Apache - using v8cgi as a module ==
+
+  # compile or download mod_v8cgi (.dll on Windows, .so on Linux)
+  # load the resulting module into Apache: `LoadModule v8cgi-module /path/to/the/v8cgi_module.so`
+  # assign a `v8cgi-script` handler as necessary
+
+*On windows, make sure that v8.dll and bgd.dll are in system path!*
+
+
 == Apache - using v8cgi as a cgi binary ==
 
 Add the following to apache configuration:
