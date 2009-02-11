@@ -13,8 +13,11 @@ These are automatically available once you launch v8cgi.
 
 === Global functions ===
   * `global` - reference to global object
-  * `include()` - include script file
-  * `library()` - include system library (.js/.so/.dll) file
+  * `include()` - include other file. Four locations are searched for this:
+    # current directory for requested file;
+    # current directory for requested file with additional suffix `.js`, `.so`, `.dll`;
+    # library directory (set in config file) for requested file;
+    # library directory for requested file with additional suffix `.js`, `.so`, `.dll`.
   * `onexit(func)` - adds `func` as onexit callback
 <wiki:comment>
   * `exit()` - terminate execution
