@@ -1,7 +1,6 @@
 #summary What needs to be done
 
 = What needs to be done (ordered by descending probability of implementation) =
-  * better suffix test for DSO loading
   * do not attempt to load directories as script files
   * SSJS require()
   * better file copying (without `my_*`)
@@ -11,6 +10,7 @@
   * libxml
 
 == What has been done recently ==
+  * better suffix test for DSO loading
   * Merged JS/binary/library include
   * Apache module on windows
   * Apache module
