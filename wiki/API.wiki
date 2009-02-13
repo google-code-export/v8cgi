@@ -18,7 +18,7 @@ These are automatically available once you launch v8cgi.
     # current directory for requested file with additional suffix `.js`, `.so`, `.dll`;
     # library directory (set in config file) for requested file;
     # library directory for requested file with additional suffix `.js`, `.so`, `.dll`.
-  * `require()` - includes other file in a way compatible with [https://wiki.mozilla.org/ServerJS/Modules/SecurableModules]. File contents are executed within a separate scope; loaded file must register its exports in a `exports` object. This is the value returned from `require()`
+  * `require()` - includes other file in a way compatible with [https://wiki.mozilla.org/ServerJS/Modules/SecurableModules]. File contents are executed within a separate scope; loaded file must register its exports in an `exports` object, which is returned from this call.
   * `onexit(func)` - adds `func` as onexit callback
 <wiki:comment>
   * `exit()` - terminate execution
