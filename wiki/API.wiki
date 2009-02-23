@@ -108,6 +108,7 @@ Classes: *MySQL*. Defined in library `libmysql.so` or `mysql.dll`.
 
   * `var m = new MySQL()` - creates new mysql instance
   * `m.connect(host, user, password, db)` - connects to database
+  * `m.close()` - closes connection to server
   * `m.error()` - returns error description
   * `m.errno()` - returns error number
   * `m.affectedRows()` - returns number of rows affected by a query
