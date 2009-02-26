@@ -104,7 +104,7 @@ These are defined in library files (`.js`, `.so`, `.dll`) and can be loaded with
 
 === MySQL functions  ===
 
-Classes: *MySQL*. Defined in library `libmysql.so` or `mysql.dll`.
+Classes: *MySQL*. Defined in library `libmysql.so` or `libmysql.dll`.
 
   * `var m = new MySQL()` - creates new mysql instance
   * `m.connect(host, user, password, db)` - connects to database
