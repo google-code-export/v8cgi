@@ -1,7 +1,7 @@
 #summary API Documentation
 #labels Featured
 
-<wiki:toc max_depth="3" />
+<wiki:toc max_depth="4" />
 
 = API Documentation =
 
