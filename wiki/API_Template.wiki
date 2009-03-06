@@ -8,6 +8,7 @@ Classes: *Template*.
     * `.path` - path to template files
     * `.suffix` - template file suffix (defult: `.template`)
   * `t.process(file, data)` - processes template file `file`; second argument is used to pass arbitrary data to template
+  * `t.processString(str, data)` - processes template `str`; second argument is used to pass arbitrary data to template
 
 = Template language syntax =
 
