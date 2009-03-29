@@ -26,7 +26,7 @@ These are automatically available once you launch v8cgi.
 
 === System functions ===
   * `System.env` - hash with environment variables. Read-only.
-  * `System.stdin(count, [binary])` - read `count` bytes from standard input. If `binary == true`, data is returned as an array of numbers. If `count` == 0, one line is read.
+  * `System.stdin(count, [binary])` - read `count` bytes from standard input. If `binary == true`, data is returned as an array of numbers. If `count` == 0, data is read until EOF.
   * `System.stdout(data)` - write `data` to standard output. Data can be either string of array of numbers (ascii values).
   * `System.sleep(num)` - delays execution for `num` seconds
 <wiki:comment>
