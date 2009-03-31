@@ -100,7 +100,7 @@ Classes: *Socket*.
 
 == Loadable functions ==
 
-These are defined in library files (`.js`, `.so`, `.dll`) and can be loaded with `library()` call.
+These are defined in library files (`.js`, `.so`, `.dll`) and can be loaded with `include()` or `require()` call.
 
 === MySQL functions  ===
 
