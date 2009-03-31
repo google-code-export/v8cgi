@@ -20,7 +20,7 @@ Classes: *HTTP.!ServerRequest*, *HTTP.!ServerResponse*. These should be used in 
   * `var response = new HTTP.ServerResponse(output)` - creates a new response instance. If running in CGI mode, this is done automatically.
   * `response.write(data)` - outputs `data`
   * `response.header(headers)` - outputs `headers` (hash) as HTTP response headers
-  * `response.cookie(name, value, expires, path, domain, secure, httponly)` - sets a cookie
+  * `response.cookie(name, value, expires, path, domain, secure, httponly)` - sets a cookie (`expires` is a JS date object)
   * `response.status(statusCode, [textualRepresentation])` - sets a HTTP response status
 
 == Client-side HTTP ==
