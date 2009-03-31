@@ -1,12 +1,11 @@
 #summary What needs to be done
 
 = What needs to be done (ordered by descending probability of implementation) =
-  * better file copying (without `my_*`)
+  * file copying without `mmap_*` (until mmap works on windows)
   * mmap on windows
   * ~~fcgi on windows~~
-  * zlib ?
-  * libxml ?
-  * gtkmm ?
+  * zlib (not before Binary datatype is standardized)
+  * libxml
 
 == What has been done recently ==
   * better GC handling
