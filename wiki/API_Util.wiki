@@ -3,7 +3,7 @@
 = Utility functions (in util.js) =
 
   * `Util.serialize(val, [pretty])` - serializes `val` to JSON. If `pretty == true`, formatting is applied.
-  * `Util.unserialize(str)` - unserializes `str` back to JS value
+  * `Util.deserialize(str)` - deserializes `str` back to JS value
   * `Util.md5(str)` - calculates MD5 hash
   * `Util.sha1(str)` - calculates SHA1 hash
   * `Util.base64encode(str)` - encodes string in Base64
