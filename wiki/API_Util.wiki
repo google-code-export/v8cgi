@@ -10,4 +10,7 @@
   * `Util.base64decode(str)` - decodes string from Base64
   * `Util.utf8decode(str)` - decodes all unicode characters into one-byte characters
   * `Util.utf8encode(str)` - encodes relevant one-byte charcater sequences into unicode characters
-  * `Util.mail(to, subject, data, [additionalHeaders])` - sends an email
+  * `Util.mail(to, subject, data, [additionalHeaders], [auth])` - sends an email. To perform an ESMTP authorization, set `auth` as a hash with three fields:
+    * type: "login",
+    * user: your user name,
+    * password: your password
