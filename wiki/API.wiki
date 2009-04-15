@@ -48,6 +48,7 @@ Classes: *File*.
   * `f.toString()` - returns file name
   * `f.exists()` - tests whether the file exists
   * `f.move(newName)` - renames file to `newName`
+  * `f.isFile()` - tests whether the path is really a file
   * `var f2 = f.copy(newName)` - copies file to `newName` and returns instance of new file
 
 === Directory functions ===
@@ -62,6 +63,7 @@ Classes: *Directory*.
   * `d.create()` - creates new directory
   * `d.exists()` - tests whether the directory exists
   * `d.remove()` - deletes the directory
+  * `d.isdirectory()` - tests whether the path is really a directory
   * `d.stat()` - returns object with several stat properties
 
 === Socket functions ===
