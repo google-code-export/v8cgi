@@ -100,11 +100,18 @@ Classes: *Socket*.
   * `sock.setOption(name, value)` - sets a `value` of `SO_*` option
   * `sock.close()` - close a socket
 
-== Loadable functions ==
+== Modules ==
 
-These are defined in library files (`.js`, `.so`, `.dll`) and can be loaded with `include()` or `require()` call.
+v8cgi comes with a set of modules which act as code libraries, containing extended functionality, classes, methods and functions.
 
-=== MySQL functions  ===
+Modules are represented by files (`.js`, `.so`, `.dll`) and can be loaded with `include()` or `require()` call.
+
+=== MySQL ===
+Documented on [API_MySQL separate wikipage]
+
+=== GD functions ===
+
+Documented on [API_GD separate wikipage].
 
 Classes: *MySQL*. Defined in library `libmysql.so` or `libmysql.dll`.
 
@@ -124,9 +131,6 @@ Classes: *MySQL*. Defined in library `libmysql.so` or `libmysql.dll`.
   * `r.fetchArrays()` - returns query results as an array of arrays
   * `r.fetchObjects()` - returns query results as an array of hashes
 
-=== GD functions ===
-
-Defined in library `libgd.so` or `gd.dll`, documented on [API_GD separate wikipage].
 
 === !JavaScript enhancement functions ===
 
