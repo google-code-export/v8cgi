@@ -1,6 +1,8 @@
 #summary Module "html"
 
-= HTML functions (in html.js) =
+= HTML module =
+
+Defined in file `html.js`.
 
   * `HTML.escape(data)` - converts *<*, *>*, *&*, *"*, *'* to HTML entities
   * `HTML.unescape(data)` - inverse of `HTML.escape`
