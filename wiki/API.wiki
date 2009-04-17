@@ -133,5 +133,5 @@ Documented on [API_Template separate wikipage].
 === SQL Query ===
 Documented on [API_Query separate wikipage].
 
-=== GetOpt ===
+=== !GetOpt ===
 Documented on [API_GetOpt separate wikipage].
