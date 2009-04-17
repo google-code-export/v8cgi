@@ -1,6 +1,8 @@
 #summary Module "query"
 
-= SQL Query functions (in query.js) =
+= SQL Query module =
+
+Defined in file `query.js`.
 
 Classes: *Query*, *Table*.
 
