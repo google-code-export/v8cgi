@@ -4,7 +4,7 @@
 
 Defined in file `getopt.js`.
 
-Classes: *GetOpt*. 
+Classes: *!GetOpt*. 
 
   * `GetOpt.NO_ARGUMENT`, `GetOpt.OPTIONAL_ARGUMENT`, `GetOpt.REQUIRED_ARGUMENT` - constants
   * `var options = new GetOpt()` - creates new !GetOpt instance
