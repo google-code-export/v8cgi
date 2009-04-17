@@ -1,4 +1,4 @@
-#summary Library "html.js"
+#summary Module "html"
 
 = HTML functions (in html.js) =
 
