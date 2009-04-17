@@ -1,8 +1,10 @@
 #summary Module "session"
 
-= Session functions (in session.js) =
+= Session module =
 
-Classes: *Session*. Load this library only *after* `http.js`!
+Defined in file `session.js`.
+
+Classes: *Session*. Load this library only *after* `http`!
 
   * `session = new Session(request, response)` - creates or resumes a session. This is done automatically.
   * `session.set(name, value)` - adds a `name`-`value` pair to session
