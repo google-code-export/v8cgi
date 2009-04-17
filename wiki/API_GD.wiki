@@ -1,6 +1,6 @@
-#summary Library "libgd.so" or "gd.dll"
+#summary Module "gd.so" or "gd.dll"
 
-= GD functions (in libgd.so or libgd.dll)=
+= GD functions (in gd.so or gd.dll)=
 
 Classes: *Image*. For exact documentation, see http://libgd.org/Reference or http://www.boutell.com/gd/manual2.0.33.html
 
