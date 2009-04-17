@@ -1,6 +1,8 @@
 #summary Module "template"
 
-= Template functions (in template.js) =
+= Template module =
+
+Defined in file `template.js`.
 
 Classes: *Template*.
 
