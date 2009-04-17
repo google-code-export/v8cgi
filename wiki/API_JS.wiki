@@ -1,6 +1,8 @@
 #summary Module "js"
 
-= !JavaScript enhancement functions (in js.js)=
+= !JavaScript enhancements =
+
+Defined in file `js.js`.
 
   * `String.prototype.lpad(char, count)` - left padds a string to a length of `count` with `char`. Default values: `char='0'`, `count=2`
   * `String.prototype.rpad(char, count)` - right padds a string, similar to `lpad`
