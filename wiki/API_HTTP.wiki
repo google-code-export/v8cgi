@@ -1,4 +1,4 @@
-#summary Library "http.js"
+#summary Module "http"
 
 = HTTP functions (in http.js) =
 
