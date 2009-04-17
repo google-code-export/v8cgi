@@ -1,4 +1,4 @@
-#summary Library "js.js"
+#summary Module "js"
 
 = !JavaScript enhancement functions (in js.js)=
 
