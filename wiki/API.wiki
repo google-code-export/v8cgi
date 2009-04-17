@@ -33,7 +33,7 @@ These are automatically available once you launch v8cgi.
   * `System.usleep(num)` - delays execution for `num` microseconds
 </wiki:comment>
 
-=== File functions ===
+=== Files ===
 
 Classes: *File*.
 
@@ -51,7 +51,7 @@ Classes: *File*.
   * `f.isFile()` - tests whether the path is really a file
   * `var f2 = f.copy(newName)` - copies file to `newName` and returns instance of new file
 
-=== Directory functions ===
+=== Directories ===
 
 Classes: *Directory*.
 
@@ -66,7 +66,7 @@ Classes: *Directory*.
   * `d.isdirectory()` - tests whether the path is really a directory
   * `d.stat()` - returns object with several stat properties
 
-=== Socket functions ===
+=== Sockets ===
 
 Classes: *Socket*.
 
@@ -112,7 +112,7 @@ Documented on [API_MySQL separate wikipage]
 === GD ===
 Documented on [API_GD separate wikipage].
 
-=== !JavaScript prototype enhancements ===
+=== !JavaScript enhancements ===
 Documented on [API_JS separate wikipage].
 
 === HTML ===
