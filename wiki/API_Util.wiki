@@ -1,6 +1,8 @@
 #summary Module "util"
 
-= Utility functions (in util.js) =
+= Utility module =
+
+Defined in file `util.js`.
 
   * `Util.serialize(val, [pretty])` - serializes `val` to JSON. If `pretty == true`, formatting is applied.
   * `Util.deserialize(str)` - deserializes `str` back to JS value
