@@ -2,7 +2,9 @@
 
 = MySQL module =
 
-Defined in module `mysql.so` or `mysql.dll`. Classes: *MySQL*. 
+Defined in file `mysql.so` or `mysql.dll`.
+
+Classes: *MySQL*. 
 
   * `var m = new MySQL()` - creates new mysql instance
   * `m.connect(host, user, password, db)` - connects to database
