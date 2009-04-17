@@ -1,4 +1,4 @@
-#summary Module "gd.so" or "gd.dll"
+#summary Module "gd"
 
 = GD functions (in gd.so or gd.dll)=
 
