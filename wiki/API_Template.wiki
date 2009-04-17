@@ -1,4 +1,4 @@
-#summary Library "template.js"
+#summary Module "template"
 
 = Template functions (in template.js) =
 
