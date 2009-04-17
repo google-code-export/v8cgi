@@ -1,4 +1,4 @@
-#summary Library "session.js"
+#summary Module "session"
 
 = Session functions (in session.js) =
 
