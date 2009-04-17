@@ -1,6 +1,8 @@
 #summary Module "gd"
 
-= GD functions (in gd.so or gd.dll)=
+= GD module =
+
+Defined in module `gd.so` or `gd.dll`. 
 
 Classes: *Image*. For exact documentation, see http://libgd.org/Reference or http://www.boutell.com/gd/manual2.0.33.html
 
