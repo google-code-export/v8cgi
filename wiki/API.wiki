@@ -109,53 +109,26 @@ Modules are represented by files (`.js`, `.so`, `.dll`) and can be loaded with `
 === MySQL ===
 Documented on [API_MySQL separate wikipage]
 
-=== GD functions ===
-
+=== GD ===
 Documented on [API_GD separate wikipage].
 
-Classes: *MySQL*. Defined in library `libmysql.so` or `libmysql.dll`.
+=== !JavaScript prototype enhancements ===
+Documented on [API_JS separate wikipage].
 
-  * `var m = new MySQL()` - creates new mysql instance
-  * `m.connect(host, user, password, db)` - connects to database
-  * `m.close()` - closes connection to server
-  * `m.error()` - returns error description
-  * `m.errno()` - returns error number
-  * `m.affectedRows()` - returns number of rows affected by a query
-  * `m.insertId()` - returns ID of last inserted row
-  * `m.escape(str)` - escapes a string so it can be used in a query
+=== HTML ===
+Documented on [API_HTML separate wikipage].
 
-  * `var r = m.query(query)` - executes a query
-  * `r.numRows()` - returns number of rows in query result
-  * `r.numFields()` - returns number of fields in query result
-  * `r.fetchNames()` - returns an array with field names
-  * `r.fetchArrays()` - returns query results as an array of arrays
-  * `r.fetchObjects()` - returns query results as an array of hashes
+=== HTTP ===
+Documented on [API_HTTP separate wikipage].
 
+=== Session ===
+Documented on [API_Session separate wikipage].
 
-=== !JavaScript enhancement functions ===
+=== Utility ===
+Documented on [API_Util separate wikipage].
 
-Defined in library `js.js`,documented on [API_JS separate wikipage].
+=== Template ===
+Documented on [API_Template separate wikipage].
 
-=== HTML functions ===
-
-Defined in library `html.js`, documented on [API_HTML separate wikipage].
-
-=== HTTP functions ===
-
-Defined in library `http.js`, documented on [API_HTTP separate wikipage].
-
-=== Session functions ===
-
-Defined in library `session.js`, documented on [API_Session separate wikipage].
-
-=== Utility functions ===
-
-Defined in library `util.js`, documented on [API_Util separate wikipage].
-
-=== Template functions ===
-
-Defined in library `template.js`, documented on [API_Template separate wikipage].
-
-=== SQL Query functions ===
-
-Defined in library `query.js`, documented on [API_Query separate wikipage].
+=== SQL Query ===
+Documented on [API_Query separate wikipage].
