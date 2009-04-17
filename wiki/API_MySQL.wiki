@@ -1,0 +1,21 @@
+#summary Module "mysql"
+
+= MySQL module =
+
+Classes: *MySQL*. Defined in module `mysql.so` or `mysql.dll`.
+
+  * `var m = new MySQL()` - creates new mysql instance
+  * `m.connect(host, user, password, db)` - connects to database
+  * `m.close()` - closes connection to server
+  * `m.error()` - returns error description
+  * `m.errno()` - returns error number
+  * `m.affectedRows()` - returns number of rows affected by a query
+  * `m.insertId()` - returns ID of last inserted row
+  * `m.escape(str)` - escapes a string so it can be used in a query
+
+  * `var r = m.query(query)` - executes a query
+  * `r.numRows()` - returns number of rows in query result
+  * `r.numFields()` - returns number of fields in query result
+  * `r.fetchNames()` - returns an array with field names
+  * `r.fetchArrays()` - returns query results as an array of arrays
+  * `r.fetchObjects()` - returns query results as an array of hashes
