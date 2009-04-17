@@ -1,6 +1,8 @@
 #summary Module "http"
 
-= HTTP functions (in http.js) =
+= HTTP module =
+
+Defined in file `http.js`.
 
 == Server-side HTTP ==
 
