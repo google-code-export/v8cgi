@@ -1,4 +1,4 @@
-#summary Library "util.js"
+#summary Module "util"
 
 = Utility functions (in util.js) =
 
