@@ -17,6 +17,10 @@ After compilation (or if your downloaded binary package):
   # compile or download mod_v8cgi (.dll on Windows, .so on Linux)
   # load the resulting module into Apache: `LoadModule v8cgi_module /path/to/the/v8cgi_module.so`
   # assign a `v8cgi-script` handler as necessary
+  # optionally, you can specify a different config file for v8cgi in Apache's configuration file: 
+{{{
+v8cgi_Config /path/to/v8cgi.conf
+}}}
 
 *On windows, make sure that v8.dll and bgd.dll are in system path!*
 
