@@ -1,4 +1,4 @@
-#summary Library "query.js"
+#summary Module "query"
 
 = SQL Query functions (in query.js) =
 
