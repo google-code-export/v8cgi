@@ -72,17 +72,14 @@ v8cgi comes with a set of modules which act as code libraries, containing extend
 
 Modules are represented by files (`.js`, `.so`, `.dll`) and can be loaded with `include()` or `require()` call.
 
-=== Sockets ===
-Documented on [API_Socket separate wikipage]
-
-=== MySQL ===
-Documented on [API_MySQL separate wikipage]
+=== Assert ===
+Documented on [API_Assert separate wikipage].
 
 === GD ===
 Documented on [API_GD separate wikipage].
 
-=== !JavaScript enhancements ===
-Documented on [API_JS separate wikipage].
+=== !GetOpt ===
+Documented on [API_GetOpt separate wikipage].
 
 === HTML ===
 Documented on [API_HTML separate wikipage].
@@ -90,17 +87,23 @@ Documented on [API_HTML separate wikipage].
 === HTTP ===
 Documented on [API_HTTP separate wikipage].
 
+=== !JavaScript enhancements ===
+Documented on [API_JS separate wikipage].
+
+=== MySQL ===
+Documented on [API_MySQL separate wikipage]
+
+=== Query ===
+Documented on [API_Query separate wikipage].
+
 === Session ===
 Documented on [API_Session separate wikipage].
 
-=== Utility ===
-Documented on [API_Util separate wikipage].
+=== Sockets ===
+Documented on [API_Socket separate wikipage]
 
 === Template ===
 Documented on [API_Template separate wikipage].
 
-=== SQL Query ===
-Documented on [API_Query separate wikipage].
-
-=== !GetOpt ===
-Documented on [API_GetOpt separate wikipage].
+=== Utility ===
+Documented on [API_Util separate wikipage].
