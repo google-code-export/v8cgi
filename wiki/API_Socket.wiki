@@ -1,6 +1,6 @@
 #summary Module "socket"
 
-= Sockets module =
+= Socket module =
 
 Defined in file `socket.so` or `socket.dll`. 
 
