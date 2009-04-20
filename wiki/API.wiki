@@ -106,6 +106,9 @@ v8cgi comes with a set of modules which act as code libraries, containing extend
 
 Modules are represented by files (`.js`, `.so`, `.dll`) and can be loaded with `include()` or `require()` call.
 
+=== Sockets ===
+Documented on [API_Socket separate wikipage]
+
 === MySQL ===
 Documented on [API_MySQL separate wikipage]
 
