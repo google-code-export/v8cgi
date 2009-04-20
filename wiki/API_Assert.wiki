@@ -1,0 +1,10 @@
+#summary Module "assert"
+
+= Assertion module =
+
+Defined in file `assert.js`.
+
+  * `fail(message, [origin])` - fails with a descriptive `message`.
+  * `assert([message], expression)` - tests `expression`; if not true, assertion fails with optional `message`
+  * `assertEquals([message], expected, value)` - tests equality of `expected` and `value`
+  * `assertThrows([message], callback)` - verifies that `callback` throws an exception
