@@ -1,6 +1,7 @@
 #summary What needs to be done
 
-= What needs to be done (ordered by descending probability of implementation) =
+= What needs to be done (ordered by descending probability of implementation) 
+  * SQLite
   * file copying without `mmap_*` (until mmap works on windows)
   * mmap on windows
   * ~~fcgi on windows~~
