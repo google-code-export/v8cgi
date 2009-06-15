@@ -10,7 +10,7 @@
 
   # Get MySQL development headers (debian: libmysqlclient-dev)
   # use `scons mysql=1`
-  # optionally specify MySQL header path with `scons mysql=1 mysqlpath=/path/to/mysql/libs`
+  # optionally specify MySQL header path with `scons mysql=1 mysql_path=/path/to/mysql/libs`
 
 == FastCGI ==
 
@@ -26,7 +26,7 @@
 
   # Get Apache and APR development headers
   # use `scons module=1`
-  # optionally specify Apache and APR header path with `scons module=1 apachepath=/path/to/apache/libs aprpath=/path/to/apr/libs`
+  # optionally specify Apache and APR header path with `scons module=1 apache_path=/path/to/apache/libs apr_path=/path/to/apr/libs`
 
 == MSVC Express 2008 ==
 
