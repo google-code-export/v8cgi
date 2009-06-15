@@ -6,6 +6,12 @@
   # Download and build V8, [http://code.google.com/p/v8/]. Create a shared library (`library=shared`). Copy it to `/usr/lib/libv8.so`.
   # In your v8cgi directory, type `scons`. This builds CGI binary, Apache module, MySQL and GD support. You can turn individual components on/off using command-line options. For a list of available command-line options, try `scons -Q -h`.
 
+== Context reusing ==
+
+This is a new experimental feature, available from rev. 454. If you choose to reuse context, the global JS object will be shared amongst request. At the beginning of each request, global object is cleared (all its properties are deleted). This brings significant performance boost (up to 4x better performance in certain scenarios).
+
+To enable context reusing, compile with `reuse_context=1`.
+
 == MySQL ==
 
   # Get MySQL development headers (debian: libmysqlclient-dev)
