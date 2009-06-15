@@ -1,6 +1,8 @@
 #summary What needs to be done
 
 = What needs to be done (ordered by descending probability of implementation) 
+  * Thorough testing of reuse_context
+  * Moving exports cache to global cache
   * SQLite
   * file copying without `mmap_*` (until mmap works on windows)
   * mmap on windows
@@ -9,6 +11,7 @@
   * libxml
 
 == What has been done recently ==
+  * reuse_context implementation
   * better GC handling
   * removed System.header relic 
   * MySQL connection closing
