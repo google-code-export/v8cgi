@@ -1,9 +1,5 @@
 #summary Module "util"
 
-= Utility module =
-
-Defined in file `util.js`.
-
 <font color="#cc2255">
 == This module *might* get obsoleted in future ==
 More specifically:
@@ -12,6 +8,10 @@ More specifically:
   * `utf8encode()` and `utf8decode()` functions will be probably supported by Binary module
   * `mail()` should be separated into a "mail" module
 </font>
+
+= Utility module =
+
+Defined in file `util.js`.
 
   * `Util.serialize(val, [pretty])` - serializes `val` to JSON. If `pretty == true`, formatting is applied.
   * `Util.deserialize(str)` - deserializes `str` back to JS value
