@@ -4,6 +4,8 @@
 
 Defined in file `util.js`.
 
+== <font color="red">xxx</font> ==
+
   * `Util.serialize(val, [pretty])` - serializes `val` to JSON. If `pretty == true`, formatting is applied.
   * `Util.deserialize(str)` - deserializes `str` back to JS value
   * `Util.md5(str)` - calculates MD5 hash
