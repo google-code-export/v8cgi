@@ -4,7 +4,7 @@
 
 Defined in file `util.js`.
 
-<font color="#aa5555">
+<font color="#cc2255">
 == This module *might* get obsoleted in future ==
 More specifically:
   * `serialize()` and `deserialize()` functions are already natively supported by V8, see http://wiki.ecmascript.org/doku.php?id=es3.1:json_support
