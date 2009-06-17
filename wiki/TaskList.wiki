@@ -2,7 +2,6 @@
 
 = What needs to be done (ordered by descending probability of implementation) 
   * Thorough testing of reuse_context
-  * SQLite
   * file copying without `mmap_*` (until mmap works on windows)
   * mmap on windows
   * ~~fcgi on windows~~
@@ -10,6 +9,7 @@
   * libxml
 
 == What has been done recently ==
+  * SQLite
   * Moving exports cache to global cache
   * reuse_context implementation
   * better GC handling
