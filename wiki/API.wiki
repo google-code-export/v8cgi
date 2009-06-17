@@ -65,7 +65,7 @@ Classes: *Directory*.
   * `d.create()` - creates new directory
   * `d.exists()` - tests whether the directory exists
   * `d.remove()` - deletes the directory
-  * `d.isdirectory()` - tests whether the path is really a directory
+  * `d.isDirectory()` - tests whether the path is really a directory
   * `d.stat()` - returns object with several stat properties
 
 == Modules ==
