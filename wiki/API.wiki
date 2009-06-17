@@ -49,6 +49,7 @@ Classes: *File*.
   * `f.toString()` - returns file name
   * `f.exists()` - tests whether the file exists
   * `f.move(newName)` - renames file to `newName`
+  * `f.copy(newName)` - copies file to `newName`, returns copied file object
   * `f.isFile()` - tests whether the path is really a file
   * `var f2 = f.copy(newName)` - copies file to `newName` and returns instance of new file
 
