@@ -6,7 +6,7 @@ Defined in file `sqlite.so` or `sqlite.dll`.
 
 Classes: *SQLite*. 
 
-  * `var m = new SQLite() - creates new mysql instance
+  * `var m = new SQLite()` - creates new sqlite instance
   * `m.open(filename)` - opens/creates a database
   * `m.close()` - closes database file
   * `m.changed()` - returns number of rows affected by a query
