@@ -102,7 +102,10 @@ Documented on [API_Query separate wikipage].
 Documented on [API_Session separate wikipage].
 
 === Sockets ===
-Documented on [API_Socket separate wikipage]
+Documented on [API_Socket separate wikipage].
+
+=== SQLite ===
+Documented on [API_SQLite separate wikipage].
 
 === Template ===
 Documented on [API_Template separate wikipage].
