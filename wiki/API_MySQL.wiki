@@ -7,6 +7,7 @@ Defined in file `mysql.so` or `mysql.dll`.
 Classes: *MySQL*. 
 
   * `var m = new MySQL()` - creates new mysql instance
+  * `m.queryCount` - number of executed queries
   * `m.connect(host, user, password, db)` - connects to database
   * `m.close()` - closes connection to server
   * `m.affectedRows()` - returns number of rows affected by a query
