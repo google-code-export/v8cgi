@@ -6,14 +6,14 @@ Defined in file `sqlite.so` or `sqlite.dll`.
 
 Classes: *SQLite*. 
 
-  * `var m = new SQLite()` - creates new sqlite instance
-  * `m.queryCount` - number of executed queries
-  * `m.open(filename)` - opens/creates a database
-  * `m.close()` - closes database file
-  * `m.changed()` - returns number of rows affected by a query
-  * `m.insertId()` - returns ID of last inserted row
+  * `var db = new SQLite()` - creates new sqlite instance
+  * `db.queryCount` - number of executed queries
+  * `db.open(filename)` - opens/creates a database
+  * `db.close()` - closes database file
+  * `db.changed()` - returns number of rows affected by a query
+  * `db.insertId()` - returns ID of last inserted row
 
-  * `var r = m.query(query)` - executes a query
+  * `var r = db.query(query)` - executes a query
   * `r.numRows()` - returns number of rows in query result
   * `r.numFields()` - returns number of fields in query result
   * `r.fetchNames()` - returns an array with field names
