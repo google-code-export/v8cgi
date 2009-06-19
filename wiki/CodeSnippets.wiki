@@ -4,6 +4,21 @@
 
 This page shows some simple Javascript code examples to be used with v8cgi. 
 
+== HTTP ==
+
+=== Handle uploaded file(s) ===
+{{{
+for (var file in request.files) {
+  var items = request.files[file];
+  if (!(items instanceof Array)) { items = [items]; }
+  for (var i=0;i<items.length;i++) {
+    var item = items[i];
+    var str = JSON.stringify(item);
+    response.write("request.files[" + file + "]: " + str + "\n");
+  }
+}
+}}}
+
 == SQLite ==
 
 === In-memory table + error handling ===
@@ -15,9 +30,9 @@ try {
   System.stdout("[sqlite error] "+e);
 }
 
-db.query("create table test (one varchar(10), two integer primary key)");                                                                                                                 
-db.query("insert into test (one, two) values ('a', 1)");                                                                                                                                 
-db.query("insert into test (one) values ('b')");                                                                                                                                         
+db.query("create table test (one varchar(10), two integer primary key)");
+db.query("insert into test (one, two) values ('a', 1)");
+db.query("insert into test (one) values ('b')");
 
 var result = db.query("select two from test");
 var str = JSON.stringify(result.fetchObjects());
