@@ -30,7 +30,7 @@ Classes: *Socket*.
   * `sock.listen([backlog])` - listen for incoming connections
   * `var sock2 = sock.accept()` - accept a new connection
   * `sock.send(data, [address], [port])` - send `data` to socket
-  * `sock.receive(num)` - retrieve max `num` bytes from socket
+  * `sock.receive(num, [binary])` - retrieve max `num` bytes from socket. If `binary` is true, data is returned as an array of bytes.
   * `sock.getPeerName()` - returns array with peer address components
   * `sock.getOption(name, [length])` - returns a value of `SO_*` option
   * `sock.setOption(name, value)` - sets a `value` of `SO_*` option
