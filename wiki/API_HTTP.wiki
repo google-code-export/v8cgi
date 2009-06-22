@@ -18,6 +18,7 @@ Classes: *HTTP.!ServerRequest*, *HTTP.!ServerResponse*. These should be used in 
     * `.headers` - hash with headers
     * `.originalName` - file's original name
   * `request.header(headerName)` - returns request HTTP header
+  * `request.headers()` - returns all request HTTP headers
 
   * `var response = new HTTP.ServerResponse(output)` - creates a new response instance. If running in CGI mode, this is done automatically.
   * `response.write(data)` - outputs `data`
@@ -34,9 +35,11 @@ Classes: *HTTP.!ClientRequest*, *HTTP.!ClientResponse*. These should be used to 
   * `request.post` - hash with POST variables
   * `request.cookie` - hash with cookie variables
   * `request.method` - HTTP method to be used (uppercase)
+  * `request.header(headers)` - sets HTTP requests header(s), specified as a hash
   * `var response = request.send(follow)` - sends a request, returns an instance of `HTTP.ClientResponse`. If `follow` is true, redirects are transparently followed.
 
   * `response.data` - response body
   * `response.status` - HTTP response status code
   * `response.statusReason` - returns a textual representation of HTTP response status
   * `response.header(name)` - returns a given response header
+  * `response.headers(name)` - returns all response headers
