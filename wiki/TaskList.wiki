@@ -1,6 +1,7 @@
 #summary What needs to be done
 
 == What needs to be done (ordered by descending probability of implementation) ==
+  * test before using Cast()
   * Thorough testing of reuse_context
   * Thorough testing of sqlite
   * file copying without `mmap_*` (until mmap works on windows)
