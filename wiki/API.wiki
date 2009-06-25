@@ -30,9 +30,9 @@ These are automatically available once you launch v8cgi.
   * `system.stdout(data)` - write `data` to standard output. Data can be either string of array of numbers (ascii values).
   * `system.getcwd()` - returns current working directory
   * `system.sleep(num)` - delays execution for `num` seconds
+  * `system.args` - array with command-line arguments
 <wiki:comment>
   * `system.usleep(num)` - delays execution for `num` microseconds
-  * `system.args` - array with command-line arguments
 </wiki:comment>
 
 === Files ===
