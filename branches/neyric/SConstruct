@@ -26,6 +26,12 @@ if sys.platform.find("win") != -1 and sys.platform.find("darwin") == -1:
 	apr_include = "c:/"
 	config_path = "c:/v8cgi.conf"
 	os_string = "windows"
+if sys.platform.find("darwin") != -1:
+	mysql_include = "/opt/local/include/mysql5/mysql"
+	apache_include = "/opt/local/apache2/include"
+	apr_include = "/opt/local/include/apr-1"
+	config_path = "/etc/v8cgi.conf"
+	os_string = "darwin"	
 else:
 	mysql_include = "/usr/include/mysql"
 	apache_include = "/usr/include/apache2"
@@ -52,7 +58,7 @@ opts.Add(("apache_path", "Apache header path", apache_include))
 opts.Add(("apr_path", "APR header path", apr_include))
 
 opts.Add(PathOption("v8_path", "Directory with V8", "../v8"))
-opts.Add(EnumOption("os", "Operating system", os_string, allowed_values = ["windows", "posix"]))
+opts.Add(EnumOption("os", "Operating system", os_string, allowed_values = ["windows", "posix", "darwin"]))
 opts.Add(("config_file", "Config file", config_path))
 
 env = Environment(options=opts)
@@ -103,12 +109,17 @@ if env["os"] == "posix":
 	env.Append(
 		LIBS = ["pthread", "rt"]
 	)
+if env["os"] == "darwin":
+	env.Append(
+		CPPPATH = "/opt/local/include/",
+		LIBPATH = ["/opt/local/lib/", env["v8_path"]],
+		LIBS = "pthread"
+	)
 # if
 
-if ((env["os"] != "windows") and not (conf.CheckLib("v8"))):
-	print("Cannot find V8 library!")
-	sys.exit(1)
-# if
+#if ((env["os"] != "windows") and not (conf.CheckLib("v8"))):
+#	print "Cannot find V8 library!"
+#	sys.exit(1)
 
 env = conf.Finish()
 
@@ -168,16 +179,28 @@ if env["mysql"] == 1:
 			LIBS = ["wsock32", "user32", "advapi32"],
 			LINKFLAGS = ["/nodefaultlib:\"libcmtd\""]
 		)
+	if env["os"] == "darwin":
+			e.Append(
+				LIBPATH = ["/opt/local/lib/", "/opt/local/lib/mysql5/mysql"]
+			)
 	# if
 	e.Append(
 		CPPPATH = env["mysql_path"],
 		LIBS = "mysqlclient"
 	)
-	e.SharedLibrary(
-		target = "lib/mysql", 
-		source = ["src/js_gc.cc", "src/lib/mysql/js_mysql.cc"],
-		SHLIBPREFIX=""
-	)
+	
+	if env["os"] == "darwin":
+		e.SharedLibrary(
+			target = "lib/mysql.so", 
+			source = ["src/js_gc.cc", "src/lib/mysql/js_mysql.cc"],
+			SHLIBPREFIX=""
+		)
+	else:
+		e.SharedLibrary(
+			target = "lib/mysql", 
+			source = ["src/js_gc.cc", "src/lib/mysql/js_mysql.cc"],
+			SHLIBPREFIX=""
+		)
 # if
 
 if env["sqlite"] == 1:
@@ -198,20 +221,34 @@ if env["gd"] == 1:
 	e.Append(
 		LIBS = [libname]
 	)
-	e.SharedLibrary(
-		target = "lib/gd", 
-		source = ["src/js_common.cc", "src/lib/gd/js_gd.cc"],
-		SHLIBPREFIX=""
-	)
+	if env["os"] == "darwin":
+		e.SharedLibrary(
+			target = "lib/gd.so", 
+			source = ["src/js_common.cc", "src/lib/gd/js_gd.cc"],
+			SHLIBPREFIX=""
+		)
+	else:
+		e.SharedLibrary(
+			target = "lib/gd", 
+			source = ["src/js_common.cc", "src/lib/gd/js_gd.cc"],
+			SHLIBPREFIX=""
+		)
 # if
 
 if env["socket"] == 1:
 	e = env.Clone()
-	e.SharedLibrary(
-		target = "lib/socket", 
-		source = ["src/lib/socket/js_socket.cc"],
-		SHLIBPREFIX=""
-	)
+	if env["os"] == "darwin":
+		e.SharedLibrary(
+			target = "lib/socket.so", 
+			source = ["src/lib/socket/js_socket.cc"],
+			SHLIBPREFIX=""
+		)
+	else:
+		e.SharedLibrary(
+			target = "lib/socket", 
+			source = ["src/lib/socket/js_socket.cc"],
+			SHLIBPREFIX=""
+		)
 # if
 
 if env["module"] == 1:
@@ -219,6 +256,11 @@ if env["module"] == 1:
 	e.Append(
 		CPPPATH = [env["apache_path"], env["apr_path"]]
 	)
+	if env["os"] == "darwin":
+		e.Append(
+			LINKFLAGS = "-bundle_loader /opt/local/apache2/bin/httpd",
+			LIBS = ["apr-1", "aprutil-1"]
+		)
 	if env["os"] == "windows":
 		e.Append(
 			LIBS = ["libapr-1", "libhttpd"]
@@ -228,11 +270,18 @@ if env["module"] == 1:
 	s = []
 	s[:] = sources[:]
 	s.append("src/mod_v8cgi.cc")
-	e.SharedLibrary(
-		target = "mod_v8cgi", 
-		source = s,
-		SHLIBPREFIX=""
-	)
+	if env["os"] == "darwin":
+		e.LoadableModule(
+			target = "mod_v8cgi.so", 
+			source = s,
+			SHLIBPREFIX=""
+		)
+	else:
+		e.SharedLibrary(
+			target = "mod_v8cgi", 
+			source = s,
+			SHLIBPREFIX=""
+		)
 # if
 
 if env["cgi"] == 1:
