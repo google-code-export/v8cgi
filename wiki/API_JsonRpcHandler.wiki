@@ -1,0 +1,20 @@
+#summary Json-Rpc handler API
+
+= Json-Rpc handler API =
+
+
+=== Code example ===
+{{{
+
+ var jsonRpcHandler = require("jsonRpcHandler.js").jsonRpcHandler;
+
+ jsonRpcHandler({
+
+	multiply: function(opts) {
+		// Do what you want...
+		return opts.a*opts.b;
+	}
+	
+ );
+
+}}
