@@ -6,3 +6,4 @@ Defined in file `html.js`.
 
   * `HTML.escape(data)` - converts *<*, *>*, *&*, *"*, *'* to HTML entities
   * `HTML.unescape(data)` - inverse of `HTML.escape`
+  * `HTML.dump(object)` - dumps object contents formatted in HTML
