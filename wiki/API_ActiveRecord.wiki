@@ -1,14 +1,14 @@
 #summary ActiveRecord.js library
 
-= ActiveRecord.js library =
+= !ActiveRecord.js library =
 
 Defined in file active_record.js.
 
 More info on [http://www.activerecordjs.org/record.html activerecordjs.org].
 
-A new adapter has been added to support v8cgi's MySql module: ActiveRecord.Adapters.v8cgiMySQL
+A new adapter has been added to support v8cgi's !MySql module: !ActiveRecord.Adapters.v8cgiMySQL
 
-Classes: *ActiveRecord*. 
+Classes: *!ActiveRecord*. 
 
   * `ActiveRecord.connect(adapter, {user: 'myUsername', pass: 'myPass', name: 'dbName'})` - adapter should be ActiveRecord.Adapters.v8cgiMySQL
   * `ActiveRecord.create(tableName, oAttributes[, methods])` - creates a model
