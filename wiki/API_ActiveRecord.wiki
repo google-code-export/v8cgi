@@ -1,8 +1,8 @@
-#summary ActiveRecord.js library
+#summary Module "active_record"
 
-= !ActiveRecord.js library =
+= !ActiveRecord.js module =
 
-Defined in file active_record.js.
+Defined in file `active_record.js`.
 
 More info on [http://www.activerecordjs.org/record.html activerecordjs.org].
 
