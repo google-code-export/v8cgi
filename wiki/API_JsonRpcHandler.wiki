@@ -1,4 +1,4 @@
-#summary Module "jsonRPcHandler"
+#summary Module "jsonRpcHandler"
 
 = Json-Rpc handler module =
 
