@@ -10,7 +10,7 @@ A new adapter has been added to support v8cgi's !MySql module: !ActiveRecord.Ada
 
 Classes: *!ActiveRecord*. 
 
-  * `ActiveRecord.connect(adapter, {user: 'myUsername', pass: 'myPass', name: 'dbName'})` - adapter should be ActiveRecord.Adapters.v8cgiMySQL
+  * `ActiveRecord.connect(adapter, {user: 'myUsername', pass: 'myPass', name: 'dbName'})` - adapter should be !ActiveRecord.Adapters.v8cgiMySQL
   * `ActiveRecord.create(tableName, oAttributes[, methods])` - creates a model
 
 
