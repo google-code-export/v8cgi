@@ -75,6 +75,9 @@ v8cgi comes with a set of modules which act as code libraries, containing extend
 
 Modules are represented by files (`.js`, `.so`, `.dll`) and can be loaded with `include()` or `require()` call.
 
+=== !ActiveRecord ===
+Documented on [API_ActiveRecord separate wikipage].
+
 === Assert ===
 Documented on [API_Assert separate wikipage].
 
@@ -92,6 +95,9 @@ Documented on [API_HTTP separate wikipage].
 
 === !JavaScript enhancements ===
 Documented on [API_JS separate wikipage].
+
+=== JSON RPC Handler ===
+Documented on [API_JsonRpcHandler separate wikipage].
 
 === MySQL ===
 Documented on [API_MySQL separate wikipage]
