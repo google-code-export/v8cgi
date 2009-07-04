@@ -1,7 +1,8 @@
-#summary Json-Rpc handler API
+#summary Module "jsonRPcHandler"
 
-= Json-Rpc handler API =
+= Json-Rpc handler module =
 
+Defined in file `jsonRpcHandler.js`.
 
 === Code example ===
 {{{
