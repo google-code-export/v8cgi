@@ -32,7 +32,7 @@ Classes: *HTTP.!ClientRequest*, *HTTP.!ClientResponse*. These should be used to 
 
   * `var request = new HTTP.ClientRequest(url)` - creates a request
   * `request.get` - hash with GET variables
-  * `request.post` - hash with POST variables
+  * `request.post` - hash with POST variables. To send a custom post body, just set `request.post = "anyCustomData"`
   * `request.cookie` - hash with cookie variables
   * `request.method` - HTTP method to be used (uppercase)
   * `request.header(headers)` - sets HTTP requests header(s), specified as a hash
