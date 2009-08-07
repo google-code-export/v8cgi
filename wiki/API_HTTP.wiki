@@ -19,6 +19,7 @@ Classes: *HTTP.!ServerRequest*, *HTTP.!ServerResponse*. These should be used in 
     * `.originalName` - file's original name
   * `request.header(headerName)` - returns request HTTP header
   * `request.headers()` - returns all request HTTP headers
+  * `request.requestBody(length)` - returns `length` bytes from the request body. This is irrelevant for POST method; its data is processed automatically. Use `requestBody()` for PUT requests.
 
   * `var response = new HTTP.ServerResponse(output)` - creates a new response instance. If running in CGI mode, this is done automatically.
   * `response.write(data)` - outputs `data`
