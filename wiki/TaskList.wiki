@@ -1,7 +1,7 @@
 #summary What needs to be done
 
 == What needs to be done (ordered by descending probability of implementation) ==
-  * process module
+  * better process module
   * test before using Cast()
   * Thorough testing of reuse_context
   * Thorough testing of sqlite
@@ -12,6 +12,8 @@
   * libxml
 
 == What has been done recently ==
+  * basic process module
+  * pgsql support
   * builds on MacOS
   * JSON-RPC handler
   * [http://activerecordjs.org/record.html ActiveRecord.js] library
