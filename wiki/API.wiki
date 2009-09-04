@@ -100,6 +100,9 @@ Documented on [API_JsonRpcHandler separate wikipage].
 === MySQL ===
 Documented on [API_MySQL separate wikipage]
 
+=== Process ===
+Documented on [API_Process separate wikipage].
+
 === Query ===
 Documented on [API_Query separate wikipage].
 
