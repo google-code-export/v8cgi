@@ -12,6 +12,7 @@
   * libxml
 
 == What has been done recently ==
+  * context-independent compiled scripts
   * basic process module
   * pgsql support
   * builds on MacOS
