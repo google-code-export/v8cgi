@@ -18,6 +18,12 @@ To enable context reusing, compile with `reuse_context=1`.
   # use `scons mysql=1`
   # optionally specify MySQL header path with `scons mysql=1 mysql_path=/path/to/mysql/libs`
 
+== PostgreSQL ==
+
+  # Get PostgreSQL development headers (debian: libpq-dev)
+  # use `scons mgsql=1`
+  # optionally specify PostgreSQL header path with `scons pgsql=1 pgsql_path=/path/to/pgsql/libs`
+
 == SQLite ==
 
   # Get SQLite3 development headers (debian: libsqlite3-dev)
