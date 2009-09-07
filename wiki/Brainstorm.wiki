@@ -1,0 +1,29 @@
+#Brainstorm ideas for v8cgi
+
+= Introduction =
+
+This page to document ideas to implement in v8cgi.
+
+
+== Error Handling ==
+
+=== The situation ===
+
+Currently, v8cgi simply shows a 500 page if there's any errors in the javascript.
+
+I noticed that if a try/catch is put around the code, you can catch all errors!
+
+=== Resolution ===
+
+I suggest that the through some mechanism, a try/catch is automatically inserted around the main javascript file to be executed.  The catch block would invoke a default onError() handler that would print a nice error page.  If v8cgi is configured for "production" mode, the error page would be something like the current 500 page (apache's).  If not, then the error page could dump out the exception.
+
+Note that code can throw two ways:
+
+  * throw "some message";
+  * throw new Error("some message");
+
+*If the second is thrown, then a javascript stack trace is available to the error handler!*
+
+Thus, v8cgi source should be examined and the second type of exception thrown anywhere an exception is currently thrown (may already be the case).
+
+The application should be able to provide its own error handler.
