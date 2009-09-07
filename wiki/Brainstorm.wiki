@@ -27,3 +27,20 @@ Note that code can throw two ways:
 Thus, v8cgi source should be examined and the second type of exception thrown anywhere an exception is currently thrown (may already be the case).
 
 The application should be able to provide its own error handler.
+
+== Output Buffering ==
+
+=== The situation ===
+
+The response object has no concept of output buffering.  The concept is similar to PHP's:
+  * ob_start()
+  * ob_get_contents()
+  * ob_end_clean()
+  * ob_end_flush()
+
+Using this scheme allows the server to know content-length, and allows error handlers to do an ob_end_clean() and then print a nice error page.
+
+=== Resolution ===
+
+ob_start() should be done automatically at script start.  ob_end_flush() should be done automatically right at script exit.
+
