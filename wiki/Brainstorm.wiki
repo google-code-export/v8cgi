@@ -44,3 +44,27 @@ Using this scheme allows the server to know content-length, and allows error han
 
 ob_start() should be done automatically at script start.  ob_end_flush() should be done automatically right at script exit.
 
+== Application-Wide Session ==
+
+=== The situation ===
+
+For lack of a better description, this is a hash array stored in memory.  All v8cgi threads running can store to this hash array, any javascript object.
+
+The API might look like:
+
+  * system.shared.get(key)
+  * system.shared.put(key, obj)
+  * system.shared.lock(type) // type is one of read or write
+  * system.shared.unlock()
+
+Note that the lock must be cleared onexit().
+
+We have sockets.  Consider code like this:
+{{{
+ var socket = socket.open(...);
+ var cacheable = { type: 'aim', socket: socket };
+ system.shared.put('aimsocket', cacheable);
+}}}
+
+You can't serialize and write an open socket to a file on disk!
+
