@@ -79,6 +79,9 @@ Documented on [API_ActiveRecord separate wikipage].
 === Assert ===
 Documented on [API_Assert separate wikipage].
 
+=== DOM ===
+Documented on [API_DOM separate wikipage].
+
 === GD ===
 Documented on [API_GD separate wikipage].
 
