@@ -19,8 +19,7 @@ Classes: PostgreSQL
  * res.fetchAll() - returns an array of hash objects containing all the rows and columns from the query result
  * res.fetchRow(<row>) - returns a hash object containing the fields of the specified row or, if not specified, the next row based on the internal row pointer, from the query result
 
- * var res = db.queryParams('<SQL query string with substitution placeholders>',[<array containing substitution values>]); - executes the specified SQL query with the specified substitution values (similar to an "anonymous" prepared query; c.f. PHP's pg_query_params
-function)
+ * var res = db.queryParams('<SQL query string with substitution placeholders>',[<array containing substitution values>]); - executes the specified SQL query with the specified substitution values (similar to an "anonymous" prepared query; c.f. PHP's pg_query_params function)
 
  * var pquery = db.prepare('<prepared query name','<SQL prepared query string>'); - creates a prepared query having the specified name and assigns a corresponding handle object to the variable "pquery" 
 * var res = pquery.execute([<array containing substitution values>]); - executes the prepared query, substituting the values in the specified array for the corresponding placeholders in the prepared query
