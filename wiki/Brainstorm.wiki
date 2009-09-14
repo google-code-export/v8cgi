@@ -78,3 +78,5 @@ We have sockets.  Consider code like this:
 }}}
 
 You can't serialize and write an open socket to a file on disk!
+
+See: http://www.nabble.com/Instance-a-c%2B%2B-object-on-Apache-shared-memory-td18377523.html
