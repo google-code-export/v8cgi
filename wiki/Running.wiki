@@ -2,9 +2,14 @@
 
 = Running v8cgi =
 
-Syntax:
+Syntax (Linux/BSD/MacOS/Posix):
+{{{
+v8cgi [-c configfile] myscript.js
+}}}
+
+Syntax (Windows):
 {{{
 v8cgi.exe [-c configfile] myscript.js
 }}}
 
-If no `-c` option is specified, system-wide config file is used. This is set at compile time. If no system config file exists, v8cgi will refuse to run.
+If no `-c` option is specified, then the system-wide config file is used. The location for this file is set at compile time. If no system config file exists, then v8cgi will refuse to run.
