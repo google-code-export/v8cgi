@@ -6,7 +6,7 @@ Defined in file `pgsql.so` or `pgsql.dll`.
 
 Classes: PostgreSQL
 
- * var db = new PostgreSQL('host=/var/run/postgresql/ port=5432 dbname=v8cgi user=v8 password=v8 timeout=5'); - creates a new PostgreSQL connection using the specified connection string
+ * `var db = new PostgreSQL('host=/var/run/postgresql/ port=5432 dbname=v8cgi user=v8 password=v8 timeout=5');` - creates a new PostgreSQL connection using the specified connection string
  * var db = new PostgreSQL(); - alternatively, creates a new PostgreSQL object without yet connecting to a database server
  * db.connect('<pg connection string>'); - establishes a new PostgreSQL connection using the specified connection string
  * db.connect({'host':'/var/run/postgresql/', 'port':'5432', 'dbname':'v8cgi'}); - alternative syntax using a hash object for specifying connection parameters
