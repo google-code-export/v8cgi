@@ -1,0 +1,12 @@
+#summary Module "dom"
+#labels Featured
+
+= DOM module =
+
+Defined in file `dom.so` or `dom.dll`. 
+
+Global objects: *DOMImplementationRegistry*, *DOMImplementation*, *DOMImplementationLS*, *DOMException*, and *LSException*. For detailed information, see:
+  * [http://www.w3.org/TR/DOM-Level-3-Core/ecma-script-binding.html Document Object Model (DOM) Level 3 Core Specification Version 1.0, Appendix H: ECMAScript Language Binding]
+  * [http://www.w3.org/TR/DOM-Level-3-LS/ Document Object Model (DOM) Level 3 Load and Save Specification, Appendix C: ECMAScript Language Binding]
+  * [http://www.w3.org/TR/DOM-Level-2-Traversal-Range/ecma-script-binding.html Document Object Model (DOM) Level 2 Traversal and Range Specification, Appendix C: ECMAScript Language Binding]
+  * [http://xerces.apache.org/xerces-c/ApacheDOMC++Binding.html Apache Recommended C++ Language bindings for the Document Object Model Level 3]
