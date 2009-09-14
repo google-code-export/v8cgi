@@ -4,11 +4,11 @@
 = Compiling =
 
   # Download and build V8, [http://code.google.com/p/v8/]. Create a shared library (`library=shared`). Copy it to `/usr/lib/libv8.so`.
-  # In your v8cgi directory, type `scons`. This builds CGI binary, Apache module, MySQL, SQLite and GD support. You can turn individual components on/off using command-line options. <font color="red">There are many command line options available for building v8cgi; to see a list of them with brief explanation, try `scons -Q -h`.</font>
+  # In your v8cgi directory, type `scons`. This builds the CGI binary, Apache module, MySQL, SQLite, PostgreSQL, GD and DOM support. You can turn individual components on/off using command-line options. <font color="red">There are many command line options available for building v8cgi; to see a list of them with brief explanation, try `scons -Q -h`.</font>
 
 == Context reusing ==
 
-This is a new experimental feature, available from rev. 454. If you choose to reuse context, the global JS object will be shared amongst request. At the beginning of each request, global object is cleared (all its properties are deleted). This brings significant performance boost (up to 4x better performance in certain scenarios).
+This is a new experimental feature, available since rev. 454. If you choose to reuse context, the global JS object will be shared amongst requests. At the beginning of each request, the global object is cleared (all its properties are deleted). This brings a significant performance boost (up to 4x better performance in certain scenarios).
 
 To enable context reusing, compile with `reuse_context=1`.
 
@@ -21,7 +21,7 @@ To enable context reusing, compile with `reuse_context=1`.
 == PostgreSQL ==
 
   # Get PostgreSQL development headers (debian: libpq-dev)
-  # use `scons mgsql=1`
+  # use `scons pgsql=1`
   # optionally specify PostgreSQL header path with `scons pgsql=1 pgsql_path=/path/to/pgsql/libs`
 
 == SQLite ==
@@ -38,6 +38,11 @@ To enable context reusing, compile with `reuse_context=1`.
 
   # Get GD development headers (debian: libgd2-dev)
   # use `scons gd=1`
+
+== DOM ==
+
+  # Get Xerces-C++ development headers (debian: libxerces-c-dev)
+  # use `scons dom=1`
 
 == Apache module ==
 
