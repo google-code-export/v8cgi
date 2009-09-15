@@ -47,14 +47,12 @@ NOTE: replace ~/src with path to where you checkout and build v8 and v8cgi!
 
 NOTE: If you don't like to use vi to edit files, use gedit instead.
 
----------------------------------------------------------------------------
-
-- prerequisites:
+*prerequisites:*
 {{{
 sudo apt-get install mysqlclient15-dev libgd2-xpm-dev apache-threaded-dev
 }}}
 
-- build (replace ~/src with path to where you compile these):
+*build (replace ~/src with path to where you compile these): *
 {{{
 mkdir ~/src
 cd ~/src
@@ -63,7 +61,9 @@ svn checkout v8cgi (see actual command at google code)
 chdir v8
 scons arch=x64 library=shared
 }}}
-        OR if not x64 OS:
+
+OR if not x64 OS:
+
 {{{
 scons library=shared
 sudo libv8.so /usr/lib/libv8.so
@@ -78,7 +78,7 @@ sudo vi /etc/v8cgi.config
 Config["libraryPath"] = '~/src/v8cgi/lib';
 }}}
 
-- configure apache module:
+*configure apache module:*
 {{{
 sudo vi /etc/apache2/mods-available/v8cgi.load
 * The only line in the file should be:
@@ -89,16 +89,17 @@ sudo vi /etc/apache2/mods-available/v8cgi.conf
 AddHandler v8cgi-script .sjs .jst
 }}}
 
-- enable the mod:
+*enable the mod:*
 {{{
 sudo a2enmod v8cgi
 }}}
 
-- create/edit virtual host file
+*create/edit virtual host file:*
 {{{
 sudo vi /etc/apache2/sites-available/v8cgi
 }}}
-* This configuration should work, remember to replace ~/src with where you built v8 and v8cgi
+
+This configuration should work, remember to replace ~/src with where you built v8 and v8cgi
 
 {{{
 <VirtualHost *:80>
@@ -126,7 +127,7 @@ sudo vi /etc/apache2/sites-available/v8cgi
 </VirtualHost>
 }}}
 
-- configure v8cgi hostname
+*configure v8cgi hostname:*
 {{{
 sudo vi /etc/hosts
 }}}
@@ -135,11 +136,11 @@ sudo vi /etc/hosts
 127.0.0.1       localhost freewill v8cgi
 }}}
 
-- restart apache:
+*restart apache:*
 {{{
 sudo /etc/init.d/apache2 restart
 }}}
 
-- Check it out:
+*Check it out:*
 point browser at
 http://v8cgi/
