@@ -27,7 +27,7 @@ var SQLite = require("sqlite").SQLite;
 try {
   var db = new SQLite().open(":memory:");
 } catch(e) {
-  System.stdout("[sqlite error] "+e);
+  system.stdout("[sqlite error] "+e);
 }
 
 db.query("create table test (one varchar(10), two integer primary key)");
@@ -36,5 +36,5 @@ db.query("insert into test (one) values ('b')");
 
 var result = db.query("select two from test");
 var str = JSON.stringify(result.fetchObjects());
-System.stdout(str);
+system.stdout(str);
 }}}
