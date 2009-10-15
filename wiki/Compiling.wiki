@@ -44,6 +44,11 @@ To enable context reusing, compile with `reuse_context=1`.
   # Get Xerces-C++ development headers (debian: libxerces-c-dev)
   # use `scons dom=1`
 
+== OpenGL ==
+
+  # Get glut-dev and libglew-dev development headers (debian: freeglut3-dev, libglew1.5-dev)
+  # use `scons gl=1`
+
 == Apache module ==
 
   # Get Apache and APR development headers
