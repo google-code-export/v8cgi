@@ -61,7 +61,6 @@ Classes: *Directory*.
   * `d.listFiles()` - returns an array with names of files contained in the directory
   * `d.listDirectories()` - returns an array with names of directories contained in the directory
   * `d.toString()` - returns directory name
-  * `d.create()` - creates new directory
   * `d.exists()` - tests whether the directory exists
   * `d.remove()` - deletes the directory
   * `d.isDirectory()` - tests whether the path is really a directory
