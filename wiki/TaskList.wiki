@@ -8,6 +8,7 @@
   * mainfile + conffile executed as modules
   * "module" metavariable, as per commonjs specification
   * multiple include paths
+  * Binary (as per commonjs spec)
 
 == Minor tasks ==
   * better process module
