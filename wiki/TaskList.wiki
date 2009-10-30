@@ -18,6 +18,7 @@
   * zlib (not before Binary datatype is standardized)
 
 = What has been done recently =
+  * MSVC -> MinGW
   * v8 debugging agent
   * Thorough testing of sqlite
   * configuration options for HTTP handler and error reporting
