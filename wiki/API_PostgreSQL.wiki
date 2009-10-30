@@ -27,3 +27,50 @@ Classes: PostgreSQL
  * `db.deallocate('<prepared query name>');` or `pquery.deallocate();` - deletes the specified prepared query
 
  * `var res = db.send('<SQL query string>');` - sends the specified SQL query to the database server asynchronously
+
+=== Example ===
+
+{{{
+include('pgsql') ; // load the library, or configure on your v8cgi.conf
+var db = new PostgreSQL() ;
+try {
+  db.connect(
+    { 'host':'localhost'
+    , 'port':'5432'
+    , 'user':'test'
+    , 'password':'Testing-=123'
+    ,'dbname':'test'
+    }
+  ) ;
+} catch(e) {
+  response.write('cannot connect to database') ;
+  exit(1) ;
+  // warning: print e would show your username and password if any
+}
+
+// execute normal query
+var qs =
+  [ 'SELECT tables.relname::TEXT as "tablename"'
+  , '   FROM pg_class AS tables'
+  , '     JOIN pg_namespace AS schemas'
+  , '       ON tables.relnamespace = schemas.oid'
+  , '       AND schemas.nspname = $$public$$' 
+  , '       AND tables.relkind = $$r$$'
+  , '   ORDER BY tables.oid DESC'
+  ].join('\n') ;
+response.write( '<pre>' + qs + '</pre>' ) ;
+var res = db.query( qs ) ;
+//response.write( 'res : ' + HTML.dump(res) ) ;
+//response.write( 'res.numRows() : ' + res.numRows() + '<br/> ' ) ;
+//response.write( 'res.numFields() : ' + res.numFields() + '<br/>' ) ;
+//response.write( 'res.fetchAll() : ' + HTML.dump(res.fetchAll()) ) ;
+
+// fetch all result
+for(var x=0;x<res.numRows();++x) { // for each row
+  var row = res.fetchRow(x) ;
+  response.write( x + ' ' ) ;
+  for(var y=0;y<res.numFields();++y) { // for each field
+    response.write( row[y] + '<br/>' ) ;
+  } 
+}
+}}}
