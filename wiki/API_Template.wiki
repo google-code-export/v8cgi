@@ -18,7 +18,7 @@ Classes: *Template*.
   * `$code(JS expression)` - evaluates code without outputting anything
   * `$include(filename)` - includes other file
 
-== Example ==
+== Example 1 ==
 
 {{{
 <strong>This is a random number: $(Math.random())</strong>
@@ -28,4 +28,27 @@ $code( for(var i=0;i<10;i++) { )
 $code( } )
 
 $include(some_other_template)
+}}}
+
+== Example 2 ==
+
+server side javascript:
+{{{
+include('template'); // load the library
+var t = new Template( { 'path' : '/path/to/template/files/' , 'suffix' : 'html' } );
+var d = { 'title': 'my site' , 'content' : HTML.dump( global ) };
+response.write( t.process('testing' , d ) );
+}}}
+
+template file (/path/to/template/files/testing.html):
+{{{
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <title> $( data.title ) </title>
+</head>
+<body>
+    $( data.content )
+</body>
+</html>
 }}}
