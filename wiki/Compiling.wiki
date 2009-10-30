@@ -55,7 +55,7 @@ To enable context reusing, compile with `reuse_context=1`.
   # use `scons module=1`
   # optionally specify Apache and APR header path with `scons module=1 apache_path=/path/to/apache/libs apr_path=/path/to/apr/libs`
 
-== ~MSVC Express 2008~ ==
+== ~~MSVC Express 2008~~ ==
 
 <font color="red">This section is OBSOLETE, v8cgi is now compiled with MinGW on Windows.</font>
 
