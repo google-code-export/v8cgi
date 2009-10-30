@@ -34,9 +34,9 @@ $include(some_other_template)
 
 server side javascript:
 {{{
-include('template'); // load the library
+include('template'); // load the library, or configure on your v8cgi.conf
 var t = new Template( { 'path' : '/path/to/template/files/' , 'suffix' : 'html' } );
-var d = { 'title': 'my site' , 'content' : HTML.dump( global ) };
+var d = { 'title': 'my site' , 'content' : HTML.dump( global ) /* not secure */ };
 response.write( t.process('testing' , d ) );
 }}}
 
