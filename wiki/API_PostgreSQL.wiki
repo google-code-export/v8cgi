@@ -75,4 +75,5 @@ for(var x=0;x<res.numRows();++x) { // for each row
     response.write( row[y] + '<br/>' ) ;
   } 
 }
+db.close() ;
 }}}
