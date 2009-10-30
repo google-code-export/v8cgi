@@ -39,7 +39,7 @@ try {
     , 'port':'5432'
     , 'user':'test'
     , 'password':'Testing-=123'
-    ,'dbname':'test'
+    , 'dbname':'test'
     }
   ) ;
 } catch(e) {
@@ -59,6 +59,8 @@ var qs =
   , '   ORDER BY tables.oid DESC'
   ].join('\n') ;
 response.write( '<pre>' + qs + '</pre>' ) ;
+
+// execute query
 var res = db.query( qs ) ;
 //response.write( 'res : ' + HTML.dump(res) ) ;
 //response.write( 'res.numRows() : ' + res.numRows() + '<br/> ' ) ;
