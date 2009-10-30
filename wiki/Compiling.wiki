@@ -4,7 +4,7 @@
 = Compiling =
 
   # Download and build V8, [http://code.google.com/p/v8/]. Create a shared library (`library=shared`). Copy it to `/usr/lib/libv8.so`.
-  # In your v8cgi directory, type `scons`. This builds the CGI binary, Apache module, MySQL, SQLite, PostgreSQL, GD and DOM support. You can turn individual components on/off using command-line options. <font color="red">There are many command line options available for building v8cgi; to see a list of them with brief explanation, try `scons -Q -h`.</font>
+  # In your v8cgi directory, type `scons`. This builds the CGI binary, Apache module, MySQL, SQLite, GD and DOM support. You can turn individual components on/off using command-line options. <font color="red">There are many command line options available for building v8cgi; to see a list of them with brief explanation, try `scons -Q -h`.</font>
 
 == Context reusing ==
 
@@ -55,7 +55,9 @@ To enable context reusing, compile with `reuse_context=1`.
   # use `scons module=1`
   # optionally specify Apache and APR header path with `scons module=1 apache_path=/path/to/apache/libs apr_path=/path/to/apr/libs`
 
-== MSVC Express 2008 ==
+== ~MSVC Express 2008~ ==
+
+<font color="red">This section is OBSOLETE, v8cgi is now compiled with MinGW on Windows.</font>
 
 Make sure all relevant includes and libraries are accessible. Try setting these env. paths before compilation:
 {{{
