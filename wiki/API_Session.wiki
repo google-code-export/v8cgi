@@ -16,31 +16,32 @@ Classes: *Session*. Load this library only *after* `http`!
 
 === Example ===
 
+try to use open new tab and open the page to test your session.
 {{{
 include('session') ; // load the library, or configure on your v8cgi.conf
 var action = request.get['action'] ;
 var name = session.get('name') ;
 switch(action) {
-  case 'logout': // when ?action=logout
+  case 'logout':     // when ?action=logout
     session.clear() ;
-    response.write(' you have logged out! <a href="?">click here to back to main</a>') ;
+    response.write(' you have logged out! <a href="?">back to main</a>') ;
     break;
-  case 'login': // when ?action=login&name=username
+  case 'login':      // when ?action=login&name=username
     session.set('name',request.get['name']) ;
     name = session.get('name') ;
   default:
-    if( name == null ) { // when there are no session
+    if( name == null ) { // when there is no session
       response.write(' <form>') ;
       response.write(' <input type="text" name="name" value="">') ;
       response.write(' <input type="submit" name="action" value="login">') ;
       response.write(' </form>') ;
-    } else { // when there is session
+    } else {             // when there is session
       response.write(' Hi, '+name) ;
+      //response.write(' session.getId() : '+session.getId()) ;
       response.write(' <a href="?page=this">this</a>') ;
       response.write(' <a href="?page=that">that</a>') ;
       response.write(' <a href="?action=logout">logout</a>') ;    
     }    
     break;
 }
-// try to use open new tab and open the page to test your session..
 }}}
