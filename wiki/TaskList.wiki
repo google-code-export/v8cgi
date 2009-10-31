@@ -5,8 +5,6 @@
 == Major tasks ==
   * reworked code layout (specific subclass for cgi binary)
   * MacOSX compilation & installation
-  * mainfile + conffile executed as modules
-  * "module" metavariable, as per commonjs specification
   * multiple include paths
   * Binary (as per commonjs spec)
 
@@ -14,10 +12,14 @@
   * better process module
   * test before using Cast()
   * file copying without `mmap_*` (until mmap works on windows)
+
+== Far tasks ==
   * mmap on windows
-  * zlib (not before Binary datatype is standardized)
+  * zlib
 
 = What has been done recently =
+  * mainfile + conffile executed as modules
+  * "module" metavariable, as per commonjs specification
   * MSVC -> MinGW
   * v8 debugging agent
   * Thorough testing of sqlite
