@@ -18,7 +18,7 @@ Classes: *Session*. Load this library only *after* `http`!
 
 try to use open new tab and open the page to test your session.
 {{{
-include('session') ; // load the library, or configure on your v8cgi.conf
+include('session') ; // load the library manually, do not insert it on v8cgi.conf
 var action = request.get['action'] ;
 var name = session.get('name') ;
 switch(action) {
