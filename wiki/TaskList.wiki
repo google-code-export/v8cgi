@@ -5,12 +5,10 @@
 == Major tasks ==
   * reworked code layout (specific subclass for cgi binary)
   * MacOSX compilation & installation
-  * multiple include paths
   * Binary (as per commonjs spec)
 
 == Minor tasks ==
   * better process module
-  * test before using Cast()
   * file copying without `mmap_*` (until mmap works on windows)
 
 == Far tasks ==
@@ -18,6 +16,8 @@
   * zlib
 
 = What has been done recently =
+  * test before using Cast()
+  * multiple include paths
   * mainfile + conffile executed as modules
   * "module" metavariable, as per commonjs specification
   * MSVC -> MinGW
