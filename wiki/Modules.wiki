@@ -1,4 +1,5 @@
 #summary Modules writing howto
+#labels Featured
 
 = Modules =
 
@@ -10,7 +11,7 @@ Every module is a simple JS file, having a ".js" extension. Even the v8cgi confi
 
 How this works: v8cgi wraps the code of a module in an anonymous function, which is then executed. Every module is therefore separated from global scope and from other modules as well.
 
-== Exports ==
+== exports ==
 
 Inside a module, there is a free variable `exports`, which is a JS Object. This is the primary and only way for a module to provide some functionality to outside world. Every class, variable and function which is to be used outside of the module must be assigned as a property to the `exports` variable.
 
