@@ -3,7 +3,6 @@
 = What needs to be done =
 
 == Major tasks ==
-  * reworked code layout (specific subclass for cgi binary)
   * MacOSX compilation & installation
   * Binary (as per commonjs spec)
 
@@ -16,6 +15,7 @@
   * zlib
 
 = What has been done recently =
+  * reworked code layout (specific subclass for cgi binary)
   * test before using Cast()
   * multiple include paths
   * mainfile + conffile executed as modules
