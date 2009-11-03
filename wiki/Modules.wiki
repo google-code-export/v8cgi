@@ -28,7 +28,7 @@ Modules can be identified in three distinct ways:
 = Example =
 
 == module.js ==
-
+{{{
 exports.SomeClass = function() {
 }
 
@@ -38,9 +38,9 @@ exports.functionA = function() {
 
 var functionB = function() {
 }
-
+}}}
 == main.js ==
-
+{{{
 /* access only one exported part of module */
 var SomeClass = require("./module").SomeClass();
 
@@ -50,3 +50,4 @@ moduleExports.functionA();
 
 /* there is NO way to access functionB, because it is not exported */
 moduleExports.functionB(); /* ERROR, there is no such property */
+}}}
