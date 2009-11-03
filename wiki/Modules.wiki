@@ -21,8 +21,8 @@ Modules are loaded using the `require()` function. This function takes one argum
 *NOTE:* exports are cached. Repeated calls to `require()` return always the same object.
 
 Modules can be identified in three distinct ways:
-# *require("./module")* - module names starting with a dot are searched relative to the current module
-# *require("module")* - module names not starting with a dot are searched relative to global search roots, defined in `require.paths`
-# *require("/module")* - absolute module names are treated "as is". This is v8cgi's extension to CommonJS Modules spec.
+  # *require("./module")* - module names starting with a dot are searched relative to the current module
+  # *require("module")* - module names not starting with a dot are searched relative to global search roots, defined in `require.paths`
+  # *require("/module")* - absolute module names are treated "as is". This is v8cgi's extension to CommonJS Modules spec.
 
 == Example ==
