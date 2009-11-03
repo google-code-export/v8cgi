@@ -12,12 +12,17 @@ How this works: v8cgi wraps the code of a module in an anonymous function, which
 
 == Exports ==
 
-Inside a module, there is a free variable "exports", which is a JS Object. This is the primary and only way for a module to provide some functionality to outside world. Every class, variable and function which is to be used outside of the module must be assigned as a property to the "exports" variable.
+Inside a module, there is a free variable `exports`, which is a JS Object. This is the primary and only way for a module to provide some functionality to outside world. Every class, variable and function which is to be used outside of the module must be assigned as a property to the `exports` variable.
 
 == require() ==
 
-Modules are loaded using the "require()" function. This function takes one argument - name of the module being loaded - and returns module's exports.
+Modules are loaded using the `require()` function. This function takes one argument - name of the module being loaded - and returns module's exports.
 
-*NOTE:* exports are cached. Repeated calls to require() return always the same object.
+*NOTE:* exports are cached. Repeated calls to `require()` return always the same object.
+
+Modules can be identified in three distinct ways:
+# *require("./module")* - module names starting with a dot are searched relative to the current module
+# *require("module")* - module names not starting with a dot are searched relative to global search roots, defined in `require.paths`
+# *require("/module")* - absolute module names are treated "as is". This is v8cgi's extension to CommonJS Modules spec.
 
 == Example ==
