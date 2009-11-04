@@ -12,6 +12,8 @@ In order to use v8cgi, you first have to get the binary. Windows users can just 
 
 When you have a v8cgi working, you need to setup the configuration file. It needs to be placed to a pre-defined location, which is set at compile time. If unsure, just run v8cgi - it will tell you if the configuration file is not at the correct location.
 
+You should check the configuration file and edit it if necessary. The most important value is `require.paths`, which corresponds to the directory in which v8cgi modules are located.
+
 = Running =
 
 == As a command-line program ==
