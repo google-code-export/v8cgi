@@ -1,0 +1,47 @@
+#summary Apache configuration for v8cgi
+
+= Apache configuration =
+
+There are three main ways of using v8cgi with Apache.
+
+*On windows, all necessary dlls must be available in system path!*
+
+== 1. Apache module ==
+
+This is the preferred way.
+
+  # compile or download mod_v8cgi (.dll on Windows, .so on Linux)
+  # load the resulting module into Apache: 
+{{{
+LoadModule v8cgi_module /path/to/the/v8cgi_module.so
+}}}
+  # assign a `v8cgi-script` handler as necessary
+{{{
+AddHandler v8cgi-script .ssjs .sjs
+}}}
+  # optionally, you can specify a different config file for v8cgi in Apache's configuration file: 
+{{{
+v8cgi_Config /path/to/v8cgi.conf
+}}}
+
+== 2. CGI binary - traditional approach ==
+
+This variant is not specific to v8cgi. Apache configured in this way will just *execute* all assigned files (*.ssjs in the example below) and return output.
+
+{{{
+AddHandler cgi-script .ssjs
+}}}
+
+Note that .ssjs files have to be executable (`chown +r`) and they must contain a valid [http://en.wikipedia.org/wiki/Shebang_%28Unix%29 shebang line] (`#!/path/to/v8cgi`).
+
+Windows users will find this approach problematic, as there is no way to execute arbitrary files with shebang on Windows.
+
+== 3. CGI binary - centralized approach ==
+
+This is the least preferred way.
+
+{{{
+ScriptAlias /v8cgi/ /YOUR_PATH/
+AddHandler v8cgi-handler .ssjs
+Action v8cgi-handler /v8cgi/BINARY_NAME
+}}}
