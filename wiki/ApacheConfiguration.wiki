@@ -45,3 +45,7 @@ ScriptAlias /v8cgi/ /YOUR_PATH/
 AddHandler v8cgi-handler .ssjs
 Action v8cgi-handler /v8cgi/BINARY_NAME
 }}}
+
+while substituting:
+  * YOUR_PATH with path to your v8cgi directory,
+  * BINARY_NAME with name of your v8cgi binary.
