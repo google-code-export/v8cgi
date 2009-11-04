@@ -9,3 +9,27 @@ v8cgi ships with various libraries (modules), which provide additional functiona
 = First steps =
 
 In order to use v8cgi, you first have to get the binary. Windows users can just download a [http://code.google.com/p/v8cgi/downloads/list precompiled release], otherwise one has to compile v8cgi from source. There is a separated wikipage dedicated to [Compiling Compiling v8cgi].
+
+When you have a v8cgi working, you need to setup the configuration file. It needs to be placed to a pre-defined location, which is set at compile time. If unsure, just run v8cgi - it will tell you if the configuration file is not at the correct location.
+
+= Running =
+
+== As a command-line program ==
+
+Syntax (Linux/BSD/MacOS/Posix):
+{{{
+v8cgi [-c configfile] [-d debugger_port] myscript.js
+}}}
+
+Syntax (Windows):
+{{{
+v8cgi.exe [-c configfile] [-d debugger_port] myscript.js
+}}}
+
+If no `-c` option is specified, then the system-wide config file is used. The location for this file is set at compile time. If no system config file exists, then v8cgi will refuse to run.
+
+The `-d` options specifies a TCP port for the V8 debugger agent to listen at. If no `-d` option is specified, the debugger agent is disabled.
+
+== As Apache module ==
+
+This is described at [ApacheConfiguration separate page].
