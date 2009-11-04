@@ -1,4 +1,5 @@
 #summary v8cgi User manual
+#labels Featured
 
 = User manual =
 
