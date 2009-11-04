@@ -14,6 +14,8 @@ When you have a v8cgi working, you need to setup the configuration file. It need
 
 You should check the configuration file and edit it if necessary. The most important value is `require.paths`, which corresponds to the directory in which v8cgi modules are located.
 
+*Windows users only:* v8cgi requires v8.dll to be present; additional v8cgi modules (most notably PostgreSQL) have more dll dependencies. These files are located in `dll/` subdirectory of Windows distribution, copy them either to system path or to v8cgi directory as necessary.
+
 = Running =
 
 == As a command-line program ==
@@ -40,3 +42,4 @@ This is described at [ApacheConfiguration separate page].
   * [API API Documentation]
   * [CodeSnippets Short code examples]
   * [Modules Using and creating modules]
+  * [InstallationUbuntu Detailed instructions for Ubuntu]
