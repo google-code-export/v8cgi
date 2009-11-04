@@ -3,6 +3,7 @@
 = What needs to be done =
 
 == Major tasks ==
+  * Fix all acknowledged [http://code.google.com/p/v8cgi/issues/list issues]
   * MacOSX compilation & installation
   * Binary (as per commonjs spec)
 
