@@ -1,6 +1,8 @@
 #summary How to install v8cgi
 #labels Featured
 
+<font color="red">This document is obsolete, see [Manual] instead.</font>
+
 = Installation =
 
 To compile the code, see [Compiling].
