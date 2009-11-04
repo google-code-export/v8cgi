@@ -35,5 +35,6 @@ The `-d` options specifies a TCP port for the V8 debugger agent to listen at. If
 This is described at [ApacheConfiguration separate page].
 
 = Additional reading =
-  * [API]
-  * 
+  * [API API Documentation]
+  * [CodeSnippets Short code examples]
+  * [Modules Using and creating modules]
