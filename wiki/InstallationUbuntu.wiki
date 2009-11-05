@@ -1,5 +1,7 @@
 #summary v8cgi on Unbuntu (Januty)
 
+<font color="red">Some of this might be obsolete</font>
+
 = v8cgi on Ubuntu (Jaunty) ==
 
 NOTE: replace ~/src with path to where you checkout and build v8 and v8cgi!
@@ -31,10 +33,10 @@ scons module=1 gd=1 mysql=1
 sudo cp v8cgi.config.posix /etc/v8cgi.config
 }}}
 
-*configure /etc/v8cgi.configL*
+*configure /etc/v8cgi.config*
 {{{
 sudo vi /etc/v8cgi.config
-Config["libraryPath"] = '~/src/v8cgi/lib';
+require.paths = ['~/src/v8cgi/lib'];
 }}}
 
 *configure apache module:*
