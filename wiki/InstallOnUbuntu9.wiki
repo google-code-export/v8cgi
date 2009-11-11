@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Please note that I have actually built this step-by-step.  This should work on pretty much any clean installation of Ubuntu 9.10 (32-bit), but I wouldn't want to guarantee it.  When I did my build it was actually onto a VirtualBox vdi hard-disk.
+Please note that I have actually built this step-by-step.  This should work on pretty much any clean installation of Ubuntu 9.10 (32-bit), but I wouldn't want to guarantee it.  When I did my build it was actually onto a VirtualBox vdi hard-disk.  When installing the OS it's easiest to go ahead and let it do a LAMP installation, otherwise you'll have to install apache2 before going further with these instructions.  I also like to install OpenSSH at that time, although it's not completely necessary.
 
 
 = Build v8 and v8cgi =
