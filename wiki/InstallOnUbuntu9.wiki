@@ -5,7 +5,7 @@
 Please note that I have actually built this step-by-step.  This should work on pretty much any clean installation of Ubuntu 9.10 (32-bit), but I wouldn't want to guarantee it.  When I did my build it was actually onto a VirtualBox vdi hard-disk.
 
 
-= Details =
+= Build v8 and v8cgi =
 
 Install dependencies:
 
@@ -59,6 +59,8 @@ Use your favorite editor to change the v8cgi.conf file.  I prefer `sudo nano /et
 {{{
 Config["libraryPath"] = '/opt/v8/v8cgi/lib';
 }}}
+
+= Configure Apache =
 
 Now edit v8cgi.load inside your apache directory structure.  'sudo nano /etc/apache2/mods-available/v8cgi.load'.  Again, the only line should be:
 {{{
