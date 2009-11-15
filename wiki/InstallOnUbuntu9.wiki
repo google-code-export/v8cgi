@@ -129,3 +129,9 @@ Edit the index.sjs to use response.write() instead of printbr()
 You need to do this because printbr() is not recognized by v8cgi (is this deprecated code?).
 
 Restart apache with `/etc/init.d/apache2 restart` and you should be good to go!
+
+[http://www.zshare.net/download/68363030e5a67b6f/ Here's a link to the vm I built]
+Username: user
+Password: user
+*Please note that this vm is not fit for production, just for development!!  If you expose this machine to the world without hardening its security first you will be sorry.*
+The vm includes a LAMP installation, openSSH server, v8, v8cgi, and subversion
