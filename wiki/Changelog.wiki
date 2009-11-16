@@ -1,0 +1,11 @@
+#summary v8cgi release changelog
+
+= Version 0.7.5 (16.11.2009) =
+
+  * MinGW used instead of MSVC
+  * Global variables cleared on each request with context reusing
+  * Modules/1.1 compatibility
+  * Main file executed as module
+  * Multiple search roots
+  * DOM and PgSQL compiles on windows
+  * Refactoring: CGI version has own class
