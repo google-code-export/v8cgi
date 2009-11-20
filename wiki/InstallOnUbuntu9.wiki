@@ -55,9 +55,9 @@ scons module=1 gd=1 mysql=1 pgsql=1 sqlite=1 dom=1
 sudo cp v8cgi.conf.posix /etc/v8cgi.conf
 }}}
 
-Use your favorite editor to change the v8cgi.conf file.  I prefer `sudo nano /etc/v8cgi.conf`.  The only line should be:
+Use your favorite editor to change the v8cgi.conf file.  I prefer `sudo nano /etc/v8cgi.conf`.  The only changed line should be:
 {{{
-Config["libraryPath"] = '/opt/v8/v8cgi/lib';
+require.paths = ['/opt/v8/v8cgi/lib'];
 }}}
 
 = Configure Apache =
