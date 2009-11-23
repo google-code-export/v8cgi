@@ -81,6 +81,9 @@ Documented on [API_Assert separate wikipage].
 === DOM ===
 Documented on [API_DOM separate wikipage].
 
+=== XDOM ===
+Documented on [API_XDOM separate wikipage].
+
 === GD ===
 Documented on [API_GD separate wikipage].
 
