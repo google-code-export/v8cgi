@@ -13,7 +13,7 @@ In order to use v8cgi, you first have to get the binary. Windows users can just 
 
 When you have a v8cgi working, you need to setup the configuration file. It needs to be placed to a pre-defined location, which is set at compile time. If unsure, just run v8cgi - it will tell you if the configuration file is not at the correct location.
 
-You should check the configuration file and edit it if necessary. The most important value is `require.paths`, which corresponds to the directory in which v8cgi modules are located.
+You should check the configuration file and edit it if necessary. The most important value is `require.paths`, which corresponds to the directory in which v8cgi modules are located. *It is not possible to directly modify require.paths property; one must use array methods to modify its contents.*
 
 *Windows users only:* v8cgi requires v8.dll to be present; additional v8cgi modules (most notably PostgreSQL) have more dll dependencies. These files are located in `dll/` subdirectory of Windows distribution, copy them either to system path or to v8cgi directory as necessary.
 
