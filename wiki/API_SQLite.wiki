@@ -10,7 +10,7 @@ Classes: *SQLite*.
   * `db.queryCount` - number of executed queries
   * `db.open(filename)` - opens/creates a database
   * `db.close()` - closes database file
-  * `db.changed()` - returns number of rows affected by a query
+  * `db.changes()` - returns number of rows affected by a query
   * `db.insertId()` - returns ID of last inserted row
 
   * `var r = db.query(query)` - executes a query
