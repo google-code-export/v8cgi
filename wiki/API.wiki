@@ -29,9 +29,7 @@ These are automatically available once you launch v8cgi.
   * `system.getcwd()` - returns current working directory
   * `system.sleep(num)` - delays execution for `num` seconds
   * `system.args` - array with command-line arguments
-<wiki:comment>
   * `system.usleep(num)` - delays execution for `num` microseconds
-</wiki:comment>
 
 === Files ===
 
