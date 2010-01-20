@@ -1,0 +1,15 @@
+#summary Module "http"
+
+= Binary module =
+
+Defined in files `binary.js` and `binary.so`/`binary.dll`/`binary.dylib`.
+
+== Binary/B ==
+
+This module aims to implement CommonJS Binary/B specification. So far, the following is done:
+
+  * exports.Binary
+  * exports.ByteString
+  * ByteString::length, codeAt, get, byteAt, valueAt, toString
+  * ByteString::indexOf, lastIndexOf with first argument being only Number
+
