@@ -68,13 +68,16 @@ Classes: *Directory*.
 
 v8cgi comes with a set of modules which act as code libraries, containing extended functionality, classes, methods and functions.
 
-Modules are represented by files (`.js`, `.so`, `.dll`) and can be loaded with `include()` or `require()` call.
+Modules are represented by files (`.js`, `.so`, `.dll`, `.dylib`) and can be loaded with `require()` or `include()` call.
 
 === !ActiveRecord ===
 Documented on [API_ActiveRecord separate wikipage].
 
 === Assert ===
 Documented on [API_Assert separate wikipage].
+
+=== Binary ===
+Documented on [API_Binary separate wikipage].
 
 === DOM ===
 Documented on [API_DOM separate wikipage].
