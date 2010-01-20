@@ -10,5 +10,5 @@ This module aims to implement CommonJS Binary/B specification. So far, the follo
 
   * exports.Binary
   * exports.!ByteString
-  * !ByteString::length, codeAt, get, byteAt, valueAt, toString
+  * !ByteString::length, codeAt, get, byteAt, valueAt, toString, toArray, toSource
   * !ByteString::indexOf, lastIndexOf with first argument being only Number
