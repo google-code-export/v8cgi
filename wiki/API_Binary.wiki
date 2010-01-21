@@ -9,6 +9,8 @@ Defined in files `binary.js` and `binary.so`/`binary.dll`/`binary.dylib`.
 This module aims to implement CommonJS Binary/B specification. So far, the following is *NOT* done yet:
 
   * calling constructors without new
+  * indexOf/lastIndexOf with non-Number first argument
+  * ByteString.join
   * transcoding
   * ByteArray resizing + modifying
   * copy(), split(), fill(), concat()
