@@ -1,4 +1,4 @@
-#summary Module "http"
+#summary Module "binary"
 
 = Binary module =
 
@@ -11,4 +11,5 @@ This module aims to implement CommonJS Binary/B specification. So far, the follo
   * exports.Binary
   * exports.!ByteString
   * !ByteString::length, codeAt, get, byteAt, valueAt, toString, toArray, toSource
+  * !ByteString::slice, substring, substr
   * !ByteString::indexOf, lastIndexOf with first argument being only Number
