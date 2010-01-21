@@ -10,7 +10,6 @@ This module aims to implement CommonJS Binary/B specification. So far, the follo
 
   * calling constructors without new
   * transcoding
-  * Binary::toArray(charset)
   * ByteArray resizing + modifying
   * copy(), split(), fill(), concat()
   * pop(), push(), shift(), unshift()
