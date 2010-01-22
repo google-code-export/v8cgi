@@ -11,7 +11,7 @@ This module aims to implement the [http://wiki.commonjs.org/wiki/Binary/B Common
   * calling constructors without new
   * !ByteString.join
 
-  * copy(), split(), fill(), concat()
+  * copy(), split(), fill()
   * splice(), reduce(), reduceRight(), displace()
 
 Also, the implementation differs from the standard a bit:
