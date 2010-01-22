@@ -10,10 +10,9 @@ This module aims to implement CommonJS Binary/B specification. So far, the follo
 
   * calling constructors without new
   * indexOf/lastIndexOf with non-Number first argument
-  * ByteString.join
+  * !ByteString.join
 
-  * ByteArray resizing + modifying
+  * !ByteArray resizing + modifying
   * copy(), split(), fill(), concat()
   * pop(), push(), shift(), unshift()
   * extendLeft(), extendRight(), reverse(), splice(), reduce(), reduceRight(), displace()
-  * JS 1.6 Array methods
