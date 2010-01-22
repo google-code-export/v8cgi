@@ -12,7 +12,6 @@ This module aims to implement CommonJS Binary/B specification. So far, the follo
   * indexOf/lastIndexOf with non-Number first argument
   * !ByteString.join
 
-  * !ByteArray resizing + modifying
   * copy(), split(), fill(), concat()
   * pop(), push(), shift(), unshift()
   * extendLeft(), extendRight(), reverse(), splice(), reduce(), reduceRight(), displace()
