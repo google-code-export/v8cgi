@@ -12,7 +12,7 @@ This module aims to implement the [http://wiki.commonjs.org/wiki/Binary/B Common
   * !ByteString.join
 
   * copy(), split(), fill()
-  * splice(), reduce(), reduceRight(), displace()
+  * splice(), displace()
 
 Also, the implementation differs from the standard a bit:
 
