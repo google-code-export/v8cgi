@@ -17,4 +17,4 @@ Also, the implementation differs from the standard a bit:
 
   * indexOf/lastIndexOf accepts only Number as a first argument
   * pop/push/shift/unshift methods accept Number, Array, !ByteString and !ByteArray arguments
-  * new ByteString does not throw
+  * `new ByteString` does not throw
