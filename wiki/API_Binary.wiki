@@ -8,7 +8,6 @@ Defined in files `binary.js` and `binary.so`/`binary.dll`/`binary.dylib`.
 
 This module aims to implement the [http://wiki.commonjs.org/wiki/Binary/B CommonJS Binary/B] specification. So far, the following is *NOT* done yet:
 
-  * calling constructors without new
   * !ByteString.join
 
   * copy(), split(), fill()
@@ -18,3 +17,4 @@ Also, the implementation differs from the standard a bit:
 
   * indexOf/lastIndexOf accepts only Number as a first argument
   * pop/push/shift/unshift methods accept Number, Array, !ByteString and !ByteArray arguments
+  * new ByteString does not throw
