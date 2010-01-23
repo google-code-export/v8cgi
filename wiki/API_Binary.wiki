@@ -10,7 +10,7 @@ This module aims to implement the [http://wiki.commonjs.org/wiki/Binary/B Common
 
   * !ByteString.join
 
-  * copy(), split(), fill()
+  * split(), fill()
   * splice(), displace()
 
 Also, the implementation differs from the standard a bit:
