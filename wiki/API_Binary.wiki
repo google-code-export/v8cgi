@@ -13,7 +13,7 @@ This module aims to implement the [http://wiki.commonjs.org/wiki/Binary/B Common
 
 Also, the implementation differs from the standard a bit:
 
-  * indexOf/lastIndexOf accepts only Number as a first argument
+  * indexOf/lastIndexOf/split accepts only Number as a first argument
   * pop/push/shift/unshift methods accept Number, Array, !ByteString and !ByteArray arguments
   * `new ByteString()` does not throw
   * !ByteString.join == !ByteArray.join
