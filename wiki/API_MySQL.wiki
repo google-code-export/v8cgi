@@ -21,3 +21,4 @@ Classes: *MySQL*.
   * `r.fetchNames()` - returns an array with field names
   * `r.fetchArrays()` - returns query results as an array of arrays
   * `r.fetchObjects()` - returns query results as an array of hashes
+  * `r.close()` - closes the result and deallocates its memory
