@@ -1,5 +1,5 @@
-#summary Module "assert"
+#summary Modules "assert" and "test"
 
-= Assertion module =
+= Assertion + testing module =
 
-Defined in file `assert.js`. This module is compliant with [http://wiki.commonjs.org/wiki/Unit_Testing/1.0 CommonJS Unit Testing 1.0].
+Defined in files `assert.js` and `test.js`. These modules are compliant with [http://wiki.commonjs.org/wiki/Unit_Testing/1.0 CommonJS Unit Testing 1.0].
