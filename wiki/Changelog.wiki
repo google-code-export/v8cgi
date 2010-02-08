@@ -1,5 +1,21 @@
 #summary v8cgi release changelog
 
+= Version 0.8.0 (8.2.2010) =
+
+  * new commonjs-compatible test/assert modules
+  * multi-mysql-queries
+  * Binary/B module
+  * GC support refactored
+  * support for hybrid modules
+  * all source files renamed
+  * easier building on mac
+  * several memory leaks fixed
+  * individual require for each module, require.main
+  * usleep
+  * v8cgi free variable
+  * HTTP basic auth
+  * new JS-DOM library (old DOM renamed to XDOM)
+
 = Version 0.7.5 (16.11.2009) =
 
   * MinGW used instead of MSVC
