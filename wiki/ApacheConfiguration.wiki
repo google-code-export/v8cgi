@@ -24,6 +24,8 @@ AddHandler v8cgi-script .ssjs .sjs
 v8cgi_Config /path/to/v8cgi.conf
 }}}
 
+*Windows:* add `ThreadsPerChild 1` to your configuration file. v8cgi does not support multiple threads.
+
 == 2. CGI binary - traditional approach ==
 
 This variant is not specific to v8cgi. Apache configured in this way will just *execute* all assigned files (*.ssjs in the example below) and return output.
