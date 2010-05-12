@@ -1,5 +1,15 @@
 #summary v8cgi release changelog
 
+= Version 0.8.1 (12.5.2010) =
+
+  * http globals moved to js module
+  * native apache header support
+  * require-related fixes
+  * binary-f, old binary renamed to binary-b
+  * better entity handling in dom module
+  * removed config.httpHandler
+  * apache module builds on snow leopard
+
 = Version 0.8.0 (8.2.2010) =
 
   * new commonjs-compatible test/assert modules
