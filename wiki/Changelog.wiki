@@ -1,5 +1,10 @@
 #summary v8cgi release changelog
 
+= Version 0.8.2 (23.5.2010) =
+
+  * segfault fix in accept()
+  * incorrect SConstruct in source package
+
 = Version 0.8.1 (12.5.2010) =
 
   * http globals moved to js module
