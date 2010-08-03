@@ -4,7 +4,6 @@
 
 == Major tasks ==
   * Fix all acknowledged [http://code.google.com/p/v8cgi/issues/list issues]
-  * MacOSX compilation & installation
   * Binary (as per commonjs spec)
 
 == Minor tasks ==
@@ -16,6 +15,7 @@
   * zlib
 
 = What has been done recently =
+  * MacOSX compilation & installation
   * reworked code layout (specific subclass for cgi binary)
   * test before using Cast()
   * multiple include paths
