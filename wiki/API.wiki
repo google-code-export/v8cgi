@@ -30,6 +30,7 @@ These are automatically available once you launch v8cgi.
   * `system.sleep(num)` - delays execution for `num` seconds
   * `system.args` - array with command-line arguments
   * `system.usleep(num)` - delays execution for `num` microseconds
+  * `system.getpid()` - returns current process's ID
 
 === Files ===
 
@@ -49,6 +50,7 @@ Classes: *File*.
   * `f.copy(newName)` - copies file to `newName`, returns copied file object
   * `f.isFile()` - tests whether the path is really a file
   * `var f2 = f.copy(newName)` - copies file to `newName` and returns instance of new file
+  * `f.flush()` - flushes any file changes to disk
 
 === Directories ===
 
