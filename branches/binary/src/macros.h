@@ -1,9 +1,13 @@
 /**
  * Shorthands for various lengthy V8 syntaxt constructs.
  */
+ 
 
 #ifndef _JS_MACROS_H
 #define _JS_MACROS_H
+
+#include "app.h"
+#include "lib/binary/bytestorage.h"
 
 #define _STRING(x) #x
 #define STRING(x) _STRING(x)
@@ -34,8 +38,8 @@
 
 #define JS_GLOBAL v8::Context::GetCurrent()->Global()
 #define GLOBAL_PROTO v8::Handle<v8::Object>::Cast(JS_GLOBAL->GetPrototype())
-#define APP_PTR reinterpret_cast<v8cgi_App *>(v8::Handle<v8::External>::Cast(GLOBAL_PROTO->GetInternalField(0))->Value());
-#define GC_PTR reinterpret_cast<GC *>(v8::Handle<v8::External>::Cast(GLOBAL_PROTO->GetInternalField(1))->Value());
+#define APP_PTR reinterpret_cast<v8cgi_App *>(v8::Handle<v8::External>::Cast(GLOBAL_PROTO->GetInternalField(0))->Value())
+#define GC_PTR reinterpret_cast<GC *>(v8::Handle<v8::External>::Cast(GLOBAL_PROTO->GetInternalField(1))->Value())
 
 #define ASSERT_CONSTRUCTOR if (!args.IsConstructCall()) { return JS_ERROR("Invalid call format. Please use the 'new' operator."); }
 #define ASSERT_NOT_CONSTRUCTOR if (args.IsConstructCall()) { return JS_ERROR("Invalid call format. Please do not use the 'new' operator."); }
@@ -49,5 +53,12 @@
 #else
 #   define SHARED_INIT() extern "C" void init(v8::Handle<v8::Function> require, v8::Handle<v8::Object> exports, v8::Handle<v8::Object> module)
 #endif
+
+inline v8::Handle<v8::Value> JS_BUFFER(unsigned char * data, size_t length) {
+	v8::Handle<v8::Function> buffer = v8::Handle<v8::Function>::Cast((APP_PTR)->require("binary", "")->Get(JS_STR("Buffer")));
+	ByteStorage * bs = new ByteStorage((unsigned char *) & data, length);
+	v8::Handle<v8::Value> newargs[] = { v8::External::New((void*)bs) };
+	return v8::Handle<v8::Function>::Cast(buffer)->NewInstance(1, newargs);
+}
 
 #endif

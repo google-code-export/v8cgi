@@ -111,7 +111,7 @@ def build_gd(env):
 	)
 	e.SharedLibrary(
 		target = "lib/gd", 
-		source = ["src/common", "src/lib/gd/gd.cc"],
+		source = ["src/common", "src/lib/gd/gd.cc", "src/app.cc", "src/path.cc", "src/cache.cc", "src/lib/binary/bytestorage.cc"],
 		SHLIBPREFIX=""
 	)
 # def
@@ -140,13 +140,8 @@ def build_binary(env):
 		)
 	# if
 	e.SharedLibrary(
-		target = "lib/binary-b", 
-		source = ["src/lib/binary-b/binary-b.cc", "src/lib/binary-b/bytestring.cc", "src/lib/binary-b/bytearray.cc", "src/lib/binary-b/bytestorage.cc"],
-		SHLIBPREFIX=""
-	)
-	e.SharedLibrary(
-		target = "lib/binary-f", 
-		source = ["src/lib/binary-f/binary-f.cc", "src/lib/binary-f/bytestorage.cc"],
+		target = "lib/binary", 
+		source = ["src/lib/binary/binary.cc", "src/lib/binary/bytestorage.cc"],
 		SHLIBPREFIX=""
 	)
 # def
