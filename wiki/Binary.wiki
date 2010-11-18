@@ -1,0 +1,16 @@
+#summary Exposing binary data from native modules
+
+= Exposing binary data from native modules =
+
+== C++ code ==
+{{{
+#include "macros.h"
+return JS_BUFFER( (unsigned char *) data, (size_t) length );
+}}}
+
+== Compile with ==
+
+  * src/app.cc
+  * src/path.cc
+  * src/cache.cc
+  * src/lib/binary/bytestorage.cc"
