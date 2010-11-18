@@ -13,4 +13,4 @@ return JS_BUFFER( (unsigned char *) data, (size_t) length );
   * src/app.cc
   * src/path.cc
   * src/cache.cc
-  * src/lib/binary/bytestorage.cc"
+  * src/lib/binary/bytestorage.cc
