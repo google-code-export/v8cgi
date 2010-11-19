@@ -1,8 +1,8 @@
-#summary Module "binary"
+#summary Module "binary-b"
 
 = Binary module =
 
-Defined in files `binary.js` and `binary.so`/`binary.dll`/`binary.dylib`.
+Defined in files `binary-b.js` and `binary-b.so`/`binary-b.dll`/`binary-b.dylib`.
 
 == Binary/B ==
 
