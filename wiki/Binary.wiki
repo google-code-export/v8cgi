@@ -1,6 +1,6 @@
-#summary Exposing binary data from native modules
+#summary Exposing and using binary data from native modules
 
-= Exposing binary data from native modules =
+= Exposing and using binary data from native modules =
 
 == C++ code ==
 {{{
