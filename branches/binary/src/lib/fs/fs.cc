@@ -215,7 +215,7 @@ JS_METHOD(_write) {
 	}
 	
 	FILE * f = LOAD_PTR(1, FILE *);
-	if (args[0]->IsObject()) {
+	if (IS_BUFFER(args[0])) {
 		size_t size = 0;
 		char * data = JS_BUFFER_TO_CHAR(args[0], &size);
 		fwrite(data, sizeof(char), size, f);

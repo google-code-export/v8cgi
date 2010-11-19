@@ -61,14 +61,10 @@ JS_METHOD(_stdin) {
  */
 JS_METHOD(_stdout) {
 	v8cgi_App * app = APP_PTR;
-	if (args[0]->IsArray()) {
-		v8::Handle<v8::Array> arr = v8::Handle<v8::Array>::Cast(args[0]);
-		uint32_t len = arr->Length();
-		std::string data;
-		for (unsigned int i=0;i<len;i++) {
-			data += (char) arr->Get(JS_INT(i))->Int32Value();
-		}
-		app->writer((char *) data.data(), len);
+	if (IS_BUFFER(args[0])) {
+		size_t size = 0;
+		char * data = JS_BUFFER_TO_CHAR(args[0], &size);
+		app->writer(data, size);
 	} else {
 		v8::String::Utf8Value str(args[0]);
 		app->writer(*str, str.length());

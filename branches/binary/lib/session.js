@@ -1,3 +1,5 @@
+var fs = require("fs");
+
 var Session = function(request, response) {
 	this.request = request;
 	this.response = response;
@@ -15,7 +17,7 @@ var Session = function(request, response) {
     var ok = false;
     if (this.request.cookie[this._name]) { /* cookie here */
 		var id = this.request.cookie[this._name];
-		var f = new File(this._fileName(id));
+		var f = new fs.File(this._fileName(id));
 		if (f.exists()) { /* matching file */
 			this._id = id;
 			this._file = f;
@@ -53,7 +55,7 @@ Session.prototype.save = function() {
 		if (this._file.exists()) { this._file.remove(); }
 		return;
     }
-    var str = Util.serialize(this._data);
+    var str = JSON.stringify(this._data);
     this._file.open("w").write(str).close();
 }
 
@@ -64,7 +66,7 @@ Session.prototype.getId = function() {
 Session.prototype.setId = function(id) {
     this._id = id || this._newId();
     this._cookie();
-    this._file = new File(this._fileName(this._id));
+    this._file = new fs.File(this._fileName(this._id));
 }
 
 Session.prototype._newId = function() {
@@ -80,11 +82,11 @@ Session.prototype._fileName = function(id) {
 }
 
 Session.prototype._gc = function() {
-    var d = new Directory(this._path);
+    var d = new fs.Directory(this._path);
     var files = d.listFiles();
     var now = Math.round(new Date().getTime()/1000);
     for (var i=0;i<files.length;i++) {
-		var file = new File(this._path + files[i]);
+		var file = new fs.File(this._path + files[i]);
 		var data = file.stat();
 		if (now - data.atime > this._lifetime && now - data.mtime > this._lifetime) {
 			try { file.remove(); } catch(e) { }
@@ -99,9 +101,9 @@ Session.prototype._cookie = function() {
 }
 
 Session.prototype._load = function() {
-    var str = this._file.open("r").read();
+    var str = this._file.open("r").read().toString("utf-8");
     this._file.close();
-    this._data = Util.deserialize(str);
+    this._data = JSON.parse(str);
 }
 
 exports.Session = Session;

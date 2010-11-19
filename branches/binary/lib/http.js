@@ -108,7 +108,7 @@ HTTP.ServerRequest.prototype._parsePOST = function() {
 HTTP.ServerRequest.prototype.requestBody = function(length) {
     	var datarr = [];
 		while (datarr.length < length) {
-			var tmp = this._input(length, true);
+			var tmp = this._input(length);
 			for (var i=0;i<tmp.length;i++) { datarr.push(tmp[i]); }
 		}
 		var retstr = "";
@@ -306,7 +306,7 @@ HTTP.ClientRequest.prototype.send = function(follow) {
 	
 	var received = "";
 	do {
-		var part = s.receive(1024, true);
+		var part = s.receive(1024);
 		for (var i=0;i<part.length;i++) {
 			received += String.fromCharCode(part[i]);
 		}

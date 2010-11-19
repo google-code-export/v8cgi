@@ -68,4 +68,8 @@ inline char * JS_BUFFER_TO_CHAR(v8::Handle<v8::Value> value, size_t * size) {
 	return bs->getData();
 }
 
+inline bool IS_BUFFER(v8::Handle<v8::Value> value) {
+	return (value->IsObject() && value->ToObject()->InternalFieldCount() == 1);
+}
+
 #endif

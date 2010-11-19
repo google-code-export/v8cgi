@@ -103,6 +103,18 @@ def build_sqlite(env):
 	)
 # def
 
+def build_zlib(env):
+	e = env.Clone()
+	e.Append(
+		LIBS = ["z"]
+	)
+	e.SharedLibrary(
+		target = "lib/zlib", 
+		source = ["src/lib/zlib/zlib.cc", "src/app", "src/path", "src/cache", "src/lib/binary/bytestorage"],
+		SHLIBPREFIX=""
+	)
+# def
+
 def build_gd(env):
 	e = env.Clone()
 	libname = ("gd", "bgd")[env["os"] == "windows"]
@@ -119,7 +131,7 @@ def build_gd(env):
 def build_socket(env):
 	env.SharedLibrary(
 		target = "lib/socket", 
-		source = ["src/lib/socket/socket.cc"],
+		source = ["src/lib/socket/socket.cc", "src/app", "src/path", "src/cache", "src/lib/binary/bytestorage"],
 		SHLIBPREFIX=""
 	)
 # def
@@ -275,6 +287,7 @@ vars.Add(BoolVariable("process", "Process library", 1))
 vars.Add(BoolVariable("fs", "Filesystem I/O library", 1))
 vars.Add(BoolVariable("xdom", "DOM Level 3 library (xerces based, for XML/XHTML)", 0))
 vars.Add(BoolVariable("gl", "OpenGL library", 0))
+vars.Add(BoolVariable("zlib", "zlib library", 1))
 vars.Add(BoolVariable("module", "Build Apache module", 1))
 vars.Add(BoolVariable("cgi", "Build CGI binary", 1))
 vars.Add(BoolVariable("fcgi", "FastCGI support (for CGI binary)", 0))
@@ -407,6 +420,7 @@ if env["gd"] == 1: build_gd(env)
 if env["socket"] == 1: build_socket(env)
 if env["process"] == 1: build_process(env)
 if env["fs"] == 1: build_fs(env)
+if env["zlib"] == 1: build_zlib(env)
 if env["xdom"] == 1: build_xdom(env)
 if env["gl"] == 1: build_gl(env)
 if env["module"] == 1: build_module(env, sources)
