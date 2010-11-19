@@ -52,11 +52,7 @@ JS_METHOD(_stdin) {
 		delete[] tmp;
 	}
 	
-	if (args.Length() > 1 && args[1]->IsTrue()) {
-		return JS_CHARARRAY((char *) data.data(), size);
-	} else {
-		return JS_STR(data.data(), size);
-	}
+	return JS_BUFFER((char *) data.data(), size);
 }
 
 /**

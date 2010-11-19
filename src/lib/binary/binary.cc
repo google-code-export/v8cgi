@@ -65,7 +65,7 @@ void Buffer_fromString(const v8::Arguments& args) {
 	v8::String::Utf8Value str(args[0]);
 	v8::String::Utf8Value charset(args[1]);
 	
-	ByteStorage bs_tmp((unsigned char *) (*str), str.length());
+	ByteStorage bs_tmp((char *) (*str), str.length());
 	ByteStorage * bs = bs_tmp.transcode("utf-8", *charset);
 	SAVE_PTR(0, bs);
 }
@@ -79,7 +79,7 @@ void Buffer_fromArray(const v8::Arguments& args) {
 	
 	size_t index = 0;
 	for (size_t i=index1; i<index2; i++) {
-		unsigned char value = arr->Get(JS_INT(i))->IntegerValue();
+		char value = arr->Get(JS_INT(i))->IntegerValue();
 		bs->setByte(index++, value);
 	}
 	SAVE_PTR(0, bs);
@@ -94,7 +94,7 @@ JS_METHOD(_Buffer) {
 			v8::Handle<v8::External> ext = v8::Handle<v8::External>::Cast(args[0]);
 			SAVE_PTR(0, ext->Value());
 		} else if (args[0]->IsNumber()) { /* length, [fill] */
-			unsigned char fill = (args.Length() > 1 ? (unsigned char) args[1]->IntegerValue() : 0);
+			char fill = (args.Length() > 1 ? (char) args[1]->IntegerValue() : 0);
 			ByteStorage * bs = new ByteStorage(args[0]->IntegerValue());
 			bs->fill(fill);
 			SAVE_PTR(0, bs);
@@ -178,7 +178,7 @@ JS_METHOD(Buffer_fill) {
 	ByteStorage * bs = BS_THIS;
 	size_t index1 = firstIndex(args[1], bs->getLength());
 	size_t index2 = lastIndex(args[2], bs->getLength());
-	unsigned char fill = (unsigned char) args[0]->IntegerValue();
+	char fill = (char) args[0]->IntegerValue();
 	
 	for (size_t i = index1; i<index2; i++) {
 		bs->setByte(i, fill);
@@ -220,7 +220,7 @@ v8::Handle<v8::Value> Buffer_copy_impl(const v8::Arguments& args, bool source) {
 	}
 	size_t index2 = MIN(length, lastIndex(args[3], bs->getLength()));
 
-	unsigned char byte;
+	char byte;
 	size_t index;
 
 	if (source) {
@@ -270,17 +270,15 @@ v8::Handle<v8::Value> Buffer_get(uint32_t index, const v8::AccessorInfo &info) {
 	size_t len = bs->getLength();
 	if (index < 0 || index >= len) { return JS_RANGE_ERROR("Non-existent index"); }
 	
-	return JS_INT(bs->getByte(index));
+	return JS_INT((unsigned char) bs->getByte(index));
 }
 
 v8::Handle<v8::Value> Buffer_set(uint32_t index, v8::Local<v8::Value> value, const v8::AccessorInfo &info) {
 	ByteStorage * bs = BS_OTHER(info.This());
 	size_t len = bs->getLength();
 	if (index < 0 || index >= len) { return JS_RANGE_ERROR("Non-existent index"); }
-	
-	size_t number = value->IntegerValue();
-	bs->setByte(index, (unsigned char) number);
 
+	bs->setByte(index, (unsigned char) value->IntegerValue());
 	return value;
 }
 

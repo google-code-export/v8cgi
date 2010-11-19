@@ -402,18 +402,10 @@ JS_METHOD(_receive) {
 		delete[] data;
         return JS_ERROR(strerror(errno));
     } else {
-		v8::Handle<v8::Value> output;
-		
-		if (args.Length() > 1 && args[1]->IsTrue()) {
-			output = JS_CHARARRAY((char *) data, result);
-		} else {
-			output = JS_STR(data, result);
-		}
-		
-		v8::Handle<v8::Value> text = JS_STR(data, result);
+		v8::Handle<v8::Value> buffer = JS_BUFFER(data, result);
 		delete[] data;
 		if (type == SOCK_DGRAM) { SAVE_VALUE(1, create_peer((sockaddr *) &addr)); }
-		return output;
+		return buffer;
     }
 }
 
