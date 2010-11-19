@@ -328,7 +328,7 @@ if env["debug"] == 1:
   v8_lib = "v8_g"
 else:
   v8_lib = "v8"
-
+  
 # default built-in values
 env.Append(
 	LIBS = [v8_lib],
