@@ -54,11 +54,18 @@
 #   define SHARED_INIT() extern "C" void init(v8::Handle<v8::Function> require, v8::Handle<v8::Object> exports, v8::Handle<v8::Object> module)
 #endif
 
-inline v8::Handle<v8::Value> JS_BUFFER(unsigned char * data, size_t length) {
+inline v8::Handle<v8::Value> JS_BUFFER(char * data, size_t length) {
 	v8::Handle<v8::Function> buffer = v8::Handle<v8::Function>::Cast((APP_PTR)->require("binary", "")->Get(JS_STR("Buffer")));
-	ByteStorage * bs = new ByteStorage((unsigned char *) & data, length);
+	ByteStorage * bs = new ByteStorage(data, length);
 	v8::Handle<v8::Value> newargs[] = { v8::External::New((void*)bs) };
 	return v8::Handle<v8::Function>::Cast(buffer)->NewInstance(1, newargs);
+}
+
+inline char * JS_BUFFER_TO_CHAR(v8::Handle<v8::Value> value, size_t * size) {
+	v8::Handle<v8::Object> object = value->ToObject();
+	ByteStorage * bs = reinterpret_cast<ByteStorage *>(object->GetPointerFromInternalField(0));
+	*size = bs->getLength();
+	return bs->getData();
 }
 
 #endif

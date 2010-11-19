@@ -14,7 +14,6 @@
 
 #include "app.h"
 #include "system.h"
-#include "fs.h"
 #include "macros.h"
 #include "cache.h"
 #include "path.h"
@@ -110,7 +109,6 @@ int v8cgi_App::prepare(char ** envp) {
 
 	setup_v8cgi(g);
 	setup_system(g, envp, this->mainfile, this->mainfile_args);
-	setup_fs(g);
 	
 	/* default libraries */
 	this->autoload();

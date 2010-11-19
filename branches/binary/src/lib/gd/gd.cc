@@ -133,7 +133,7 @@ JS_METHOD(_save) {
 		if (result == -1) { return JS_ERROR("Cannot open file"); }
 		return v8::Undefined();
 	} else {
-		v8::Handle<v8::Value> buffer = JS_BUFFER((unsigned char *) data, size);
+		v8::Handle<v8::Value> buffer = JS_BUFFER((char *)data, size);
 		gdFree(data);
 		return buffer;
 	}
