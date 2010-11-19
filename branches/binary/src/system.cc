@@ -23,7 +23,6 @@ namespace {
 /**
  * Read characters from stdin
  * @param {int} count How many; 0 == all
- * @param {bool} [arr=false] Return as array of bytes?
  */
 JS_METHOD(_stdin) {
 	v8cgi_App * app = APP_PTR;
@@ -57,7 +56,7 @@ JS_METHOD(_stdin) {
 
 /**
  * Dump data to stdout
- * @param {string|int[]} String or array of bytes
+ * @param {string||Buffer} String or Buffer
  */
 JS_METHOD(_stdout) {
 	v8cgi_App * app = APP_PTR;
