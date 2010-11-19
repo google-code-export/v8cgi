@@ -5,12 +5,23 @@
 == C++ code ==
 {{{
 #include "macros.h"
-return JS_BUFFER( (unsigned char *) data, (size_t) length );
+
+v8::Handle<v8::Value> test;
+
+/* testing for binary value */
+if (IS_BINARY(test)) { ... }
+
+/* converting value to bytestorage */
+size_t size = 0;
+char * data = JS_BUFFER_TO_CHAR(test, &size);
+
+/* converting bytestorage to value */
+return JS_BUFFER(data, size);
 }}}
 
 == Compile with ==
 
-  * src/app.cc
-  * src/path.cc
-  * src/cache.cc
-  * src/lib/binary/bytestorage.cc
+  * src/app
+  * src/path
+  * src/cache
+  * src/lib/binary/bytestorage
