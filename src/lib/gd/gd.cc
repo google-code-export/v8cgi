@@ -92,7 +92,7 @@ JS_METHOD(_image) {
 
 /**
  * @param {int} type Image.JPEG|PNG|GIF
- * @param {string} [file] File name. If not present, image data is returned as array of byte numers.
+ * @param {string} [file] File name. If not present, image data is returned as a Buffer
  */
 JS_METHOD(_save) {
 	GD_PTR;
