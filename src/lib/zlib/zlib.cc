@@ -6,7 +6,7 @@
 namespace {
 
 JS_METHOD(_compress) {
-	if (args.Length() < 1) { return JS_TYPE_ERROR("Bad argument count. Use 'compress(buffer)'"); }
+	if (args.Length() < 1) { return JS_TYPE_ERROR("Bad argument count. Use 'compress(buffer[, level])'"); }
 	if (!IS_BUFFER(args[0])) { return JS_TYPE_ERROR("First argument must be an instance of Buffer"); }
 	
 	size_t inputLength = 0;
@@ -14,7 +14,11 @@ JS_METHOD(_compress) {
 	unsigned long outputLength = compressBound(inputLength);
 
 	char * output = (char*) malloc(outputLength);
-	compress2((uint8_t*) output, &outputLength, (const uint8_t *) data, inputLength, 9);
+	int level = 9;
+	if (args.Length() > 1) {
+		level = args[1]->IntegerValue();
+	}
+	compress2((uint8_t*) output, &outputLength, (const uint8_t *) data, inputLength, level);
 	
 	v8::Handle<v8::Value> buffer = JS_BUFFER(output, outputLength);
 	free(output);
@@ -23,7 +27,7 @@ JS_METHOD(_compress) {
 }
 
 JS_METHOD(_decompress) {
-	if (args.Length() < 1) { return JS_TYPE_ERROR("Bad argument count. Use 'compress(buffer)'"); }
+	if (args.Length() < 1) { return JS_TYPE_ERROR("Bad argument count. Use 'decompress(buffer)'"); }
 	if (!IS_BUFFER(args[0])) { return JS_TYPE_ERROR("First argument must be an instance of Buffer"); }
 
 	size_t inputLength = 0;
