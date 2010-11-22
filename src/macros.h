@@ -54,22 +54,34 @@
 #   define SHARED_INIT() extern "C" void init(v8::Handle<v8::Function> require, v8::Handle<v8::Object> exports, v8::Handle<v8::Object> module)
 #endif
 
-inline v8::Handle<v8::Value> JS_BUFFER(char * data, size_t length) {
+inline v8::Handle<v8::Value> BYTESTORAGE_TO_JS(ByteStorage * bs) {
 	v8::Handle<v8::Function> buffer = v8::Handle<v8::Function>::Cast((APP_PTR)->require("binary", "")->Get(JS_STR("Buffer")));
-	ByteStorage * bs = new ByteStorage(data, length);
 	v8::Handle<v8::Value> newargs[] = { v8::External::New((void*)bs) };
 	return v8::Handle<v8::Function>::Cast(buffer)->NewInstance(1, newargs);
 }
 
-inline char * JS_BUFFER_TO_CHAR(v8::Handle<v8::Value> value, size_t * size) {
+inline ByteStorage * JS_TO_BYTESTORAGE(v8::Handle<v8::Value> value) {
 	v8::Handle<v8::Object> object = value->ToObject();
-	ByteStorage * bs = reinterpret_cast<ByteStorage *>(object->GetPointerFromInternalField(0));
+	return reinterpret_cast<ByteStorage *>(object->GetPointerFromInternalField(0));
+}
+
+
+inline v8::Handle<v8::Value> JS_BUFFER(char * data, size_t length) {
+	ByteStorage * bs = new ByteStorage(data, length);
+	return BYTESTORAGE_TO_JS(bs);
+}
+
+inline char * JS_BUFFER_TO_CHAR(v8::Handle<v8::Value> value, size_t * size) {
+	ByteStorage * bs = JS_TO_BYTESTORAGE(value);
 	*size = bs->getLength();
 	return bs->getData();
 }
 
 inline bool IS_BUFFER(v8::Handle<v8::Value> value) {
-	return (value->IsObject() && value->ToObject()->InternalFieldCount() == 1);
+	if (!value->IsObject()) { return false; }
+	v8::Handle<v8::Value> proto = value->ToObject()->GetPrototype();
+	v8::Handle<v8::Value> prototype = (APP_PTR)->require("binary", "")->Get(JS_STR("Buffer"))->ToObject()->Get(JS_STR("prototype"));
+	return proto->Equals(prototype);
 }
 
 #endif
