@@ -11,12 +11,26 @@ v8::Handle<v8::Value> test;
 /* testing for binary value */
 if (IS_BINARY(test)) { ... }
 
-/* converting value to bytestorage */
+
+
+/* high-level access */
+
+/* converting value to array of chars */
 size_t size = 0;
 char * data = JS_BUFFER_TO_CHAR(test, &size);
 
-/* converting bytestorage to value */
+/* converting array of chars to value */
 return JS_BUFFER(data, size);
+
+
+
+/* low-level access */
+
+/* converting value to bytestorage */
+ByteStorage * bs = JS_TO_BYTESTORAGE(test, &size);
+
+/* converting bytestorage to value */
+test = BYTESTORAGE_TO_JS(bs);
 }}}
 
 == Compile with ==
