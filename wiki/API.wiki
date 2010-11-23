@@ -34,33 +34,37 @@ These are automatically available once you launch v8cgi.
 
 == Available modules ==
 
+v8cgi comes with a set of modules which act as code libraries, containing extended functionality, classes, methods and functions.
+
+Modules are represented by files (`.js`, `.so`, `.dll`, `.dylib`) and can be loaded with `require()` or `include()` call.
+
 || *Module name* || *Summary* || *Module type* || *Documentation* ||
-|| active_record || Active Record stuff || js || API_ActiveRecord ||
-|| assert || CommonJS assertions || js || API_Assert ||
-|| base64 || Base64 encoding and decoding || js || API_Base64 ||
-|| binary || CommonJS Binary/F Buffer || hybrid || API_Binary ||
-|| binary-b || CommonJS Binary/D || hybrid || API_Binary_B ||
-|| dom || DOM, Serializer, Parser  || js || API_DOM ||
-|| fs || Filesystem access || native || API_FS ||
-|| gd || GD image manipulation || native || API_GD ||
-|| getopt || Command line option parsing || js || API_GetOpt ||
-|| GL || OpenGL || native || API_GL ||
-|| hash || MD5 and SHA1 || js || API_Hash ||
-|| html || HTML helpers || js || API_HTML ||
-|| http || Server/Client Request/Response || js || API_HTTP ||
-|| js || JS enhancements || js || API_JS ||
-|| jsonRpcHandler || JSON-RPC || js || API_JsonRpcHandler ||
-|| mysql || MySQL database || native || API_MySQL ||
-|| memcached || Memcached || native || API_Memcached ||
-|| mail || Sending email || js || API_Mail ||
-|| pgsql || PostgreSQL database || native || API_PgSQL ||
-|| process || (sub)process control || native || API_Process ||
-|| query || SQL query abstraction || js || API_Query ||
-|| session || HTTP session || js || API_Session ||
-|| socket || Sockets || native || API_Sockets ||
-|| sqlite || SQLite database || native || API_SQLite ||
-|| template || Simple templating language || js || API_Template ||
-|| xdom || (old) Xerces-based DOM || native || API_XDOM ||
+|| active_record || Active Record stuff || js || [API_ActiveRecord] ||
+|| assert || CommonJS assertions || js || [API_Assert] ||
+|| base64 || Base64 encoding and decoding || js || [API_Base64] ||
+|| binary || CommonJS Binary/F Buffer || hybrid || [API_Binary] ||
+|| binary-b || CommonJS Binary/D || hybrid || [API_Binary_B] ||
+|| dom || DOM, Serializer, Parser  || js || [API_DOM] ||
+|| fs || Filesystem access || native || [API_FS] ||
+|| gd || GD image manipulation || native || [API_GD] ||
+|| getopt || Command line option parsing || js || [API_GetOpt] ||
+|| GL || OpenGL || native || [API_GL] ||
+|| hash || MD5 and SHA1 || js || [API_Hash] ||
+|| html || HTML helpers || js || [API_HTML] ||
+|| http || Server/Client Request/Response || js || [API_HTTP] ||
+|| js || JS enhancements || js ||[ API_JS] ||
+|| jsonRpcHandler || JSON-RPC || js || [API_JsonRpcHandler] ||
+|| mysql || MySQL database || native || [API_MySQL] ||
+|| memcached || Memcached || native || [API_Memcached] ||
+|| mail || Sending email || js || [API_Mail] ||
+|| pgsql || PostgreSQL database || native || [API_PgSQL] ||
+|| process || (sub)process control || native || [API_Process] ||
+|| query || SQL query abstraction || js || [API_Query] ||
+|| session || HTTP session || js || [API_Session] ||
+|| socket || Sockets || native || [API_Sockets] ||
+|| sqlite || SQLite database || native || [API_SQLite] ||
+|| template || Simple templating language || js || [API_Template] ||
+|| xdom || (old) Xerces-based DOM || native || [API_XDOM] ||
 
 
 === Files ===
@@ -96,69 +100,3 @@ Classes: *Directory*.
   * `d.remove()` - deletes the directory
   * `d.isDirectory()` - tests whether the path is really a directory
   * `d.stat()` - returns object with several stat properties
-
-== Modules ==
-
-v8cgi comes with a set of modules which act as code libraries, containing extended functionality, classes, methods and functions.
-
-Modules are represented by files (`.js`, `.so`, `.dll`, `.dylib`) and can be loaded with `require()` or `include()` call.
-
-=== !ActiveRecord ===
-Documented on [API_ActiveRecord separate wikipage].
-
-=== Assert ===
-Documented on [API_Assert separate wikipage].
-
-=== Binary ===
-Documented on [API_Binary separate wikipage].
-
-=== DOM ===
-Documented on [API_DOM separate wikipage].
-
-=== XDOM ===
-Documented on [API_XDOM separate wikipage].
-
-=== GD ===
-Documented on [API_GD separate wikipage].
-
-=== !GetOpt ===
-Documented on [API_GetOpt separate wikipage].
-
-=== HTML ===
-Documented on [API_HTML separate wikipage].
-
-=== HTTP ===
-Documented on [API_HTTP separate wikipage].
-
-=== !JavaScript enhancements ===
-Documented on [API_JS separate wikipage].
-
-=== JSON RPC Handler ===
-Documented on [API_JsonRpcHandler separate wikipage].
-
-=== MySQL ===
-Documented on [API_MySQL separate wikipage]
-
-=== PostgreSQL ===
-Documented on [API_PostgreSQL separate wikipage].
-
-=== Process ===
-Documented on [API_Process separate wikipage].
-
-=== Query ===
-Documented on [API_Query separate wikipage].
-
-=== Session ===
-Documented on [API_Session separate wikipage].
-
-=== Sockets ===
-Documented on [API_Socket separate wikipage].
-
-=== SQLite ===
-Documented on [API_SQLite separate wikipage].
-
-=== Template ===
-Documented on [API_Template separate wikipage].
-
-=== Utility ===
-Documented on [API_Util separate wikipage].
