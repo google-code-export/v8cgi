@@ -57,11 +57,11 @@ Modules are represented by files (`.js`, `.so`, `.dll`, `.dylib`) and can be loa
 || mysql || MySQL database || native || [API_MySQL] ||
 || memcached || Memcached || native || [API_Memcached] ||
 || mail || Sending email || js || [API_Mail] ||
-|| pgsql || PostgreSQL database || native || [API_PgSQL] ||
+|| pgsql || PostgreSQL database || native || [API_PostgreSQL] ||
 || process || (sub)process control || native || [API_Process] ||
 || query || SQL query abstraction || js || [API_Query] ||
 || session || HTTP session || js || [API_Session] ||
-|| socket || Sockets || native || [API_Sockets] ||
+|| socket || Sockets || native || [API_Socket] ||
 || sqlite || SQLite database || native || [API_SQLite] ||
 || template || Simple templating language || js || [API_Template] ||
 || xdom || (old) Xerces-based DOM || native || [API_XDOM] ||
