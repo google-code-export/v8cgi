@@ -382,23 +382,10 @@ HTTP.ClientResponse = function(buffer) {
 	this.status = 0;
 	this.statusReason = "";
 	this._headers = {};
-	
-	var separator = new Buffer("\r\n\r\n", "ascii");
-	var index = -1;
-	var ptr = 0;
-	while (ptr + separator.length <= buffer.length) {
-		var ok = true;
-		for (var i=0;i<separator.length;i++) { 
-			if (separator[i] != buffer[ptr+i]) { ok = false; }
-		}
-		if (ok) { 
-			index = ptr;
-			break;
-		}
-		ptr++;
-	}
-	
-	if (ptr == -1) { throw new Error("No header-body separator found"); }
+
+	var index = buffer.indexOf("\r\n\r\n");
+
+	if (index == -1) { throw new Error("No header-body separator found"); }
 	var head = buffer.range(0, index).toString("utf-8");
 	var body = buffer.range(index+4);
 	var arr = head.split("\r\n");
