@@ -14,7 +14,7 @@ These are automatically available once you launch v8cgi.
 === Global functions ===
   * `global` - reference to global object
   * `include(module)` - require() other file (see below) and populate global object with resulting exports
-  * `require(module)` - includes other module in a way compatible with [https://wiki.mozilla.org/ServerJS/Modules/SecurableModules]. Module's contents are executed within a separate scope; loaded file must register its exports in an `exports` object, which is returned from this call. Module's file is searched according to these rules:
+  * `require(module)` - includes other module in a way compatible with [http://wiki.commonjs.org/wiki/Modules/1.1.1]. Module's contents are executed within a separate scope; loaded file must register its exports in an `exports` object, which is returned from this call. Module's file is searched according to these rules:
     # absolute module name = file name
     # relative module name starting with a dot = relative to the module currently being executed
     # relative module name NOT starting with a dot = relative to global module directory (set in config file)
@@ -45,6 +45,7 @@ Modules are represented by files (`.js`, `.so`, `.dll`, `.dylib`) and can be loa
 || binary || CommonJS Binary/F Buffer || hybrid || [API_Binary] ||
 || binary-b || CommonJS Binary/D || hybrid || [API_Binary_B] ||
 || dom || DOM, Serializer, Parser  || js || [API_DOM] ||
+|| fibers || Fibers || native || [API_Fibers] ||
 || fs || Filesystem access || native || [API_FS] ||
 || gd || GD image manipulation || native || [API_GD] ||
 || getopt || Command line option parsing || js || [API_GetOpt] ||
@@ -54,17 +55,23 @@ Modules are represented by files (`.js`, `.so`, `.dll`, `.dylib`) and can be loa
 || http || Server/Client Request/Response || js || [API_HTTP] ||
 || js || JS enhancements || js ||[ API_JS] ||
 || jsonRpcHandler || JSON-RPC || js || [API_JsonRpcHandler] ||
+|| Jst || JS templates by Mark Gregory Turansky || js ||[ API_Jst] ||
 || mysql || MySQL database || native || [API_MySQL] ||
 || memcached || Memcached || native || [API_Memcached] ||
 || mail || Sending email || js || [API_Mail] ||
 || pgsql || PostgreSQL database || native || [API_PostgreSQL] ||
 || process || (sub)process control || native || [API_Process] ||
+|| profiler || V8 profiling || native || [API_Profiler] ||
 || query || SQL query abstraction || js || [API_Query] ||
+|| requestHandler || HTTP request controller || js || [API_RequestHandler] ||
 || session || HTTP session || js || [API_Session] ||
 || socket || Sockets || native || [API_Socket] ||
+|| sprintf || sprintf implementation || js || [API_Sprintf] ||
 || sqlite || SQLite database || native || [API_SQLite] ||
 || template || Simple templating language || js || [API_Template] ||
+|| test || CommonJS testing || js || [API_Test] ||
 || xdom || (old) Xerces-based DOM || native || [API_XDOM] ||
+|| zlib || zlib compression || native || [API_Zlib] ||
 
 
 === Files ===
