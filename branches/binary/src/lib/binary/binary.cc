@@ -210,38 +210,36 @@ v8::Handle<v8::Value> Buffer_copy_impl(const v8::Arguments& args, bool source) {
 		length = bs2->getLength();
 	} else { return JS_TYPE_ERROR(errmsg); }
 	
-	size_t index1source, index1target;
+	size_t offsetSource, offsetTarget, amount;
 	if (source) {
-		index1target = firstIndex(args[1], length);
-		index1source = firstIndex(args[2], bs->getLength());
+		offsetSource = firstIndex(args[2], bs->getLength());
+		offsetTarget = firstIndex(args[1], length);
+		amount = MIN(length - offsetTarget, lastIndex(args[3], bs->getLength()) - offsetSource);
 	} else {
-		index1source = firstIndex(args[1], length);
-		index1target = firstIndex(args[2], bs->getLength());
+		offsetSource = firstIndex(args[1], length);
+		offsetTarget = firstIndex(args[2], bs->getLength());
+		amount = MIN(length - offsetSource, lastIndex(args[3], bs->getLength()) - offsetTarget);
 	}
-	size_t index2 = MIN(length, lastIndex(args[3], bs->getLength()));
 
 	char byte;
-	size_t index;
 
 	if (source) {
-		for (size_t i=index1source; i<index2; i++) {
-			index = index1target + (i-index1source);
-			byte = bs->getByte(i);
+		for (size_t i=0; i<amount; i++) {
+			byte = bs->getByte(i + offsetSource);
 			if (bs2) {
-				bs2->setByte(index, byte);
+				bs2->setByte(i + offsetTarget, byte);
 			} else {
-				arr->Set(JS_INT(index), JS_INT(byte));
+				arr->Set(JS_INT(i + offsetTarget), JS_INT(byte));
 			}
 		}
 	} else {
-		for (size_t i=index1source; i<index2; i++) {
-			index = index1target + (i-index1source);
+		for (size_t i=0; i<amount; i++) {
 			if (bs2) {
-				byte = bs2->getByte(i);
+				byte = bs2->getByte(i + offsetSource);
 			} else {
-				byte = arr->Get(JS_INT(i))->IntegerValue();
+				byte = arr->Get(JS_INT(i + offsetSource))->IntegerValue();
 			}
-			bs->setByte(index, byte);
+			bs->setByte(i + offsetTarget, byte);
 		}
 	}
 	

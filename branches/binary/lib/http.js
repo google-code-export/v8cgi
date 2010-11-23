@@ -248,6 +248,7 @@ HTTP.ClientRequest.prototype.header = function(obj) {
 
 HTTP.ClientRequest.prototype.send = function(follow) {
 	var Socket = require("socket").Socket;
+	var Buffer = require("binary").Buffer;
 	
 	var items = this._splitUrl();
 	var host = items[0];
@@ -304,15 +305,15 @@ HTTP.ClientRequest.prototype.send = function(follow) {
 	s.connect(ip, port);
 	s.send(data);
 	
-	var received = "";
+	var received = new Buffer(0);
 	do {
 		var part = s.receive(1024);
-		for (var i=0;i<part.length;i++) {
-			received += String.fromCharCode(part[i]);
-		}
+		var tmp = new Buffer(received.length + part.length);
+		tmp.copyFrom(received);
+		tmp.copyFrom(part, 0, received.length);
+		received = tmp;
 	} while (part.length > 0);
 	s.close();
-	received = Util.utf8encode(received);
 	
 	return this._handleResponse(received, follow);
 }
@@ -337,9 +338,13 @@ HTTP.ClientRequest.prototype._splitUrl = function() {
 	return [host, port, url];
 }
 
-HTTP.ClientRequest.prototype._handleResponse = function(data, follow) {
+/**
+ * @param {Buffer} data
+ * @param {bool} follow Follow redirects?
+ */
+HTTP.ClientRequest.prototype._handleResponse = function(buffer, follow) {
 	var codes = [301, 302, 303, 307];
-	var r = new HTTP.ClientResponse(data);
+	var r = new HTTP.ClientResponse(buffer);
 	if (!follow) { return r; }
 	
 	var code = r.status;
@@ -370,16 +375,33 @@ HTTP.ClientRequest.prototype._handleResponse = function(data, follow) {
 	return this.send(follow);
 }
 
-HTTP.ClientResponse = function(data) {
-	this.data = "";
+HTTP.ClientResponse = function(buffer) {
+	var Buffer = require("binary").Buffer;
+
+	this.data = null;
 	this.status = 0;
 	this.statusReason = "";
 	this._headers = {};
 	
-	var index = data.indexOf("\r\n\r\n");
-	var body = data.substring(index+4);
-	var h = data.substring(0, index);
-	var arr = h.split("\r\n");
+	var separator = new Buffer("\r\n\r\n", "ascii");
+	var index = -1;
+	var ptr = 0;
+	while (ptr + separator.length <= buffer.length) {
+		var ok = true;
+		for (var i=0;i<separator.length;i++) { 
+			if (separator[i] != buffer[ptr+i]) { ok = false; }
+		}
+		if (ok) { 
+			index = ptr;
+			break;
+		}
+		ptr++;
+	}
+	
+	if (ptr == -1) { throw new Error("No header-body separator found"); }
+	var head = buffer.range(0, index).toString("utf-8");
+	var body = buffer.range(index+4);
+	var arr = head.split("\r\n");
 	
 	var parts = arr.shift().match(/^ *http\/[^ ]+ *([0-9]+) *(.*)$/i);
 	this.status = parseInt(parts[1], 10);
@@ -407,20 +429,24 @@ HTTP.ClientResponse.prototype.headers = function() {
 	return this._headers;
 }
 
-HTTP.ClientResponse.prototype._parseChunked = function(origBody) {
+/**
+ * @param {Buffer} body
+ */
+HTTP.ClientResponse.prototype._parseChunked = function(body) {
+	var Buffer = require("binary").Buffer;
+	
 	var index = 0
-	var ch;
-	var result = "";
-	var body = Util.utf8decode(origBody);
+	var num, hex;
+	var result = new Buffer(0);
 	
 	while (index < body.length) {
 		hex = "";
 		
 		/* fetch hex number at the beginning of each chunk. this is terminated by \r\n */
 		while (index < body.length) {
-			ch = body.charAt(index);
-			if (ch == "\r") { break; }
-			hex += ch;
+			num = body[index];
+			if (num == 13) { break; }
+			hex += String.fromCharCode(num);
 			index++; 
 		}
 		
@@ -431,14 +457,17 @@ HTTP.ClientResponse.prototype._parseChunked = function(origBody) {
 		if (!chunkLength) { break; }
 
 		/* read the chunk */
-		result += body.substring(index, index + chunkLength);
+		var tmp = new Buffer(result.length + chunkLength);
+		tmp.copyFrom(result);
+		tmp.copyFrom(body, index, result.length);
+		result = tmp;
 		index += chunkLength;
 		
 		/* skip CRLF after chunk */
 		index += 2;
 	}
 	
-	return Util.utf8encode(result);
+	return result;
 }
 
 exports.HTTP = HTTP;
