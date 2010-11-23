@@ -4,9 +4,9 @@
 == This module is obsolete and no longer present in v8cgi ==
 More specifically:
   * `serialize()` and `deserialize()` functions are *already natively supported* by V8, see http://wiki.ecmascript.org/doku.php?id=es3.1:json_support
-  * `md5()`, `sha1()`, `base64encode()` and `base64decode()` functions should be separated into a "crypto" module
-  * `utf8encode()` and `utf8decode()` functions will be probably supported by Binary module
-  * `mail()` should be separated into a "mail" module
+  * `md5()`, `sha1()`, `base64encode()` and `base64decode()` functions were separated into "base64" and "hash" modules
+  * `utf8encode()` and `utf8decode()` are supported by Binary module
+  * `mail()` was separated into a "mail" module
 </font>
 
 = Utility module =
