@@ -45,7 +45,7 @@ system.stdout(str);
 Client opens a socket and send some serialized object there. Then recieves answer form server.
 
 {{{
-var Socket = require('socket.so').Socket;
+var Socket = require('socket').Socket;
 
 var family = Socket.PF_INET;
 var type = Socket.SOCK_STREAM;
@@ -65,7 +65,7 @@ function send( data ){
        var data = sock.receive( 4 * 1024 );
 
        if (data)
-           system.stdout( "II Recieved response: " + data + "\n");
+           system.stdout( "II Recieved response: " + data.toString("utf-8") + "\n");
    }
    catch (e){
        system.stdout( "EE " + e + "\n");
@@ -93,7 +93,7 @@ send( JSON.stringify({
 Server binds to port and waits for connecntion. Then handle it ( JSON.parse() ). And finaly decide to die or not to by checking the parsed object `close` property. If it is not going to die the server awaits new connection.
 
 {{{
-var Socket = require('socket.so').Socket;
+var Socket = require('socket').Socket;
 
 function handle( clientConnection ) {
    var data = null;
@@ -131,7 +131,7 @@ try {
        if ( !response )
            continue;
 
-       response = JSON.parse( response );
+       response = JSON.parse( response.toString("utf-8") );
 
        system.stdout( "II Client [" + response.sender
                        + "] sended [" + response.body + "]\n");
