@@ -32,6 +32,37 @@ These are automatically available once you launch v8cgi.
   * `system.usleep(num)` - delays execution for `num` microseconds
   * `system.getpid()` - returns current process's ID
 
+== Available modules ==
+
+|| *Module name* || *Summary* || *Module type* || *Documentation* ||
+|| active_record || Active Record stuff || js || API_ActiveRecord ||
+|| assert || CommonJS assertions || js || API_Assert ||
+|| base64 || Base64 encoding and decoding || js || API_Base64 ||
+|| binary || CommonJS Binary/F Buffer || hybrid || API_Binary ||
+|| binary-b || CommonJS Binary/D || hybrid || API_Binary_B ||
+|| dom || DOM, Serializer, Parser  || js || API_DOM ||
+|| fs || Filesystem access || native || API_FS ||
+|| gd || GD image manipulation || native || API_GD ||
+|| getopt || Command line option parsing || js || API_GetOpt ||
+|| GL || OpenGL || native || API_GL ||
+|| hash || MD5 and SHA1 || js || API_Hash ||
+|| html || HTML helpers || js || API_HTML ||
+|| http || Server/Client Request/Response || js || API_HTTP ||
+|| js || JS enhancements || js || API_JS ||
+|| jsonRpcHandler || JSON-RPC || js || API_JsonRpcHandler ||
+|| mysql || MySQL database || native || API_MySQL ||
+|| memcached || Memcached || native || API_Memcached ||
+|| mail || Sending email || js || API_Mail ||
+|| pgsql || PostgreSQL database || native || API_PgSQL ||
+|| process || (sub)process control || native || API_Process ||
+|| query || SQL query abstraction || js || API_Query ||
+|| session || HTTP session || js || API_Session ||
+|| socket || Sockets || native || API_Sockets ||
+|| sqlite || SQLite database || native || API_SQLite ||
+|| template || Simple templating language || js || API_Template ||
+|| xdom || (old) Xerces-based DOM || native || API_XDOM ||
+
+
 === Files ===
 
 Classes: *File*.
