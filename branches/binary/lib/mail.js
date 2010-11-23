@@ -30,24 +30,27 @@ exports.mail = function(to, subject, body, headers, auth) {
 	
 	function send(text, nowait) {
 		// system.stdout("S: "+text+"\n");
-		sock.send(text+"\r\n");
+		sock.send(text);
+		sock.send("\r\n");
 		if (!nowait) {
 			var data = sock.receive(1024);
 			// system.stdout("R: "+data);
 		}
 	}
 
+	var Socket = require("socket").Socket;
 	var host = Socket.getHostName();
 	var sock = new Socket(Socket.PF_INET, Socket.SOCK_STREAM, Socket.SOL_TCP);
 	sock.connect(Config["smtpHost"], Config["smtpPort"]);
 	
 	if (auth && auth.type.match(/^login$/i)) {
-		send("HELO "+host);
-	} else {
+		var base64 = require("base64");
 		send("EHLO "+host); 
 		send("AUTH LOGIN"); 
-		send(Util.base64encode(auth.user));
-		send(Util.base64encode(auth.password)); 
+		send(base64.encode(auth.user));
+		send(base64.encode(auth.password)); 
+	} else {
+		send("HELO "+host);
 	}
 	
 	send("MAIL FROM:<"+from+">");

@@ -10,13 +10,19 @@ exports.Buffer.prototype.toSource = function() {
  * v8cgi-specific Buffer enhancement
  */
 exports.Buffer.prototype.indexOf = function(what, start) {
-	if (!(what instanceof exports.Buffer)) { what = new exports.Buffer(what, "utf-8"); }
+	if (!(what instanceof exports.Buffer)) { 
+		if (typeof(what) == "number") {
+			what = new exports.Buffer([what]); 
+		} else {
+			what = new exports.Buffer(what, "utf-8"); 
+		}
+	}
 	
 	var index = start || 0;
 	while (index + what.length <= this.length) {
 		var ok = true;
-		for (var i=0;i<what.length;i++) { 
-			if (what[i] != this[index+i]) { 
+		for (var i=0;i<what.length;i++) {
+			if (what[i] != this[index+i]) {
 				ok = false; 
 				break;
 			}
