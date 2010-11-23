@@ -254,8 +254,12 @@ JS_METHOD(Buffer_copyFrom) {
 	return Buffer_copy_impl(args, false);
 }
 
-JS_METHOD(Buffer_copyFromString) {
-	return JS_ERROR("Buffer::copyFromString not yet implemented");
+JS_METHOD(Buffer_read) {
+	return JS_ERROR("Buffer::read not yet implemented");
+}
+
+JS_METHOD(Buffer_write) {
+	return JS_ERROR("Buffer::write not yet implemented");
 }
 
 v8::Handle<v8::Value> Buffer_length(v8::Local<v8::String> property, const v8::AccessorInfo &info) {
@@ -295,7 +299,8 @@ SHARED_INIT() {
 	bufferPrototype->Set(JS_STR("fill"), v8::FunctionTemplate::New(Buffer_fill));
 	bufferPrototype->Set(JS_STR("copy"), v8::FunctionTemplate::New(Buffer_copy));
 	bufferPrototype->Set(JS_STR("copyFrom"), v8::FunctionTemplate::New(Buffer_copyFrom));
-	bufferPrototype->Set(JS_STR("copyFromString"), v8::FunctionTemplate::New(Buffer_copyFrom));
+	bufferPrototype->Set(JS_STR("read"), v8::FunctionTemplate::New(Buffer_read));
+	bufferPrototype->Set(JS_STR("write"), v8::FunctionTemplate::New(Buffer_write));
 
 	v8::Handle<v8::ObjectTemplate> bufferObject = bufferTemplate->InstanceTemplate();
 	bufferObject->SetInternalFieldCount(1);	
