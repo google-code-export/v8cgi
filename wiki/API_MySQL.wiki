@@ -2,7 +2,7 @@
 
 = MySQL module =
 
-Defined in file `mysql.so` or `mysql.dll`.
+Defined in file `mysql.so` or `mysql.dll` or `mysql.dylib`.
 
 Classes: *MySQL*. 
 
