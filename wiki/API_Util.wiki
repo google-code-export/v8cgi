@@ -1,7 +1,7 @@
 #summary Module "util"
 
-<font color="#cc2255">
-== This module might get obsoleted in future ==
+<font color="#dd2255">
+== This module is obsolete and no longer present in v8cgi ==
 More specifically:
   * `serialize()` and `deserialize()` functions are *already natively supported* by V8, see http://wiki.ecmascript.org/doku.php?id=es3.1:json_support
   * `md5()`, `sha1()`, `base64encode()` and `base64decode()` functions should be separated into a "crypto" module
