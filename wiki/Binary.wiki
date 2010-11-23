@@ -27,7 +27,7 @@ return JS_BUFFER(data, size);
 /* low-level access */
 
 /* converting value to bytestorage */
-ByteStorage * bs = JS_TO_BYTESTORAGE(test, &size);
+ByteStorage * bs = JS_TO_BYTESTORAGE(test);
 
 /* converting bytestorage to value */
 test = BYTESTORAGE_TO_JS(bs);
