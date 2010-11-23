@@ -74,11 +74,11 @@ Session.prototype._newId = function() {
     for (var i=0;i<3;i++) {
 		str += Math.random().toString();
     }
-    return Util.sha1(str);
+    return require("hash").sha1(str);
 }
 
 Session.prototype._fileName = function(id) {
-    return this._path + Util.sha1(id);
+    return this._path + require("hash").sha1(id);
 }
 
 Session.prototype._gc = function() {
