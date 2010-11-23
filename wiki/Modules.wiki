@@ -3,7 +3,7 @@
 
 = Modules =
 
-JS modules in v8cgi closely follow the [http://wiki.commonjs.org/wiki/Modules/1.1 CommonJS Modules specification, version 1.1]. While modules are simple JS libraries, special care should be taken to make them interoperable and correct.
+JS modules in v8cgi closely follow the [http://wiki.commonjs.org/wiki/Modules/1.1.1 CommonJS Modules specification, version 1.1.1]. While modules are simple JS libraries, special care should be taken to make them interoperable and correct.
 
 == Module scope ==
 
