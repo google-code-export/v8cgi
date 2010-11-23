@@ -4,7 +4,6 @@
 
 == Major tasks ==
   * Fix all acknowledged [http://code.google.com/p/v8cgi/issues/list issues]
-  * Binary (as per commonjs spec)
 
 == Minor tasks ==
   * better process module
@@ -12,9 +11,11 @@
 
 == Far tasks ==
   * mmap on windows
-  * zlib
 
 = What has been done recently =
+  * zlib
+  * refactoring of existing code to support binary
+  * Binary (as per commonjs spec)
   * MacOSX compilation & installation
   * reworked code layout (specific subclass for cgi binary)
   * test before using Cast()
