@@ -9,8 +9,8 @@ Classes: *File*, *Directory*.
   * `var f = new File(fileName)` - creates new file instance
   * `f.open(mode)` - opens the file with a given mode
   * `f.close()` - closes the file
-  * `f.read([count], [binary])` - reads `count` (or all) bytes from file.
-  * `f.write(data)` - writes `data` to the file
+  * `f.read([count])` - reads `count` (or all) bytes from file; returns a Buffer
+  * `f.write(data)` - writes `data` to the file (string or Buffer)
   * `f.rewind()` - rewinds internal pointer to the beginning of file
   * `f.remove()` - deletes the file
   * `f.stat()` - returns object with several stat properties
