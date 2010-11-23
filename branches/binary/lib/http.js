@@ -1,84 +1,84 @@
-var HTTP = {
-	_parseQueryString: function(qs) {
-		var result = {};
-		var parts = qs.split("&");
-		for (var i=0;i<parts.length;i++) {
-			var item = parts[i];
-			if (!item) { continue; }
-			var eq = item.indexOf("=");
-			var name = "";
-			var value = "";
-			
-			if (eq == -1) {
-				name = item;
-			} else {
-				name = item.substring(0,eq);
-				value = item.substring(eq+1);
-			}
-			if (name.substring(name.length-2) == "[]") { name = name.substring(0,name.length-2); }
-			
-			name = this._decode(name);
-			value = this._decode(value);
-			
-			this._mixIn(result, name, value);
-		}
-		return result;
-	},
-	_decode: function(str) {
-		var s = str.replace(/\+/g, " ");
-		try { s = decodeURIComponent(s); } catch(e) {} finally { return s; }
-	},
-	_mixIn: function(result, name, value) {
-		if (!(name in result)) {
-			result[name] = value;
-		} else if (result[name] instanceof Array) {
-			result[name].push(value);
+var parseQueryString = function(qs) {
+	var result = {};
+	var parts = qs.split("&");
+	for (var i=0;i<parts.length;i++) {
+		var item = parts[i];
+		if (!item) { continue; }
+		var eq = item.indexOf("=");
+		var name = "";
+		var value = "";
+		
+		if (eq == -1) {
+			name = item;
 		} else {
-			result[name] = [result[name], value];
+			name = item.substring(0,eq);
+			value = item.substring(eq+1);
 		}
+		if (name.substring(name.length-2) == "[]") { name = name.substring(0,name.length-2); }
+		
+		name = decode(name);
+		value = decode(value);
+		
+		mixIn(result, name, value);
 	}
-};
+	return result;
+}
 
-HTTP.ServerRequest = function(input, headers) {
+var decode = function(str) {
+	var s = str.replace(/\+/g, " ");
+	try { s = decodeURIComponent(s); } catch(e) {} finally { return s; }
+}
+
+var mixIn = function(result, name, value) {
+	if (!(name in result)) {
+		result[name] = value;
+	} else if (result[name] instanceof Array) {
+		result[name].push(value);
+	} else {
+		result[name] = [result[name], value];
+	}
+}
+
+var ServerRequest = function(input, headers) {
 	this._input = input;
 	this._headers = headers;
 
-    this.get = {};
-    this.post = {};
-    this.cookie = {};
-    this.files = {};
+	this.get = {};
+	this.post = {};
+	this.cookie = {};
+	this.files = {};
 
-    this.method = null;
-    if (this._headers["REQUEST_METHOD"]) { this.method = this._headers["REQUEST_METHOD"].toUpperCase(); }
-    if (!this.method) { return; }
+	this.method = null;
+	if (this._headers["REQUEST_METHOD"]) { this.method = this._headers["REQUEST_METHOD"].toUpperCase(); }
+	if (!this.method) { return; }
 
-    this._parseCookie();
-    this.get = HTTP._parseQueryString(this._headers["QUERY_STRING"] || "");
-    if (this.method == "POST") { this._parsePOST(); }
+	this._parseCookie();
+	this.get = parseQueryString(this._headers["QUERY_STRING"] || "");
+	if (this.method == "POST") { this._parsePOST(); }
 }
 
-HTTP.ServerRequest.prototype.headers = function() {
+ServerRequest.prototype.headers = function() {
 	return this._headers;
 }
 
-HTTP.ServerRequest.prototype.header = function(name) {
-    var n = "HTTP_" + name.toUpperCase().replace(/-/g,"_");
-    return (n in this._headers ? this._headers[n] : null);
+ServerRequest.prototype.header = function(name) {
+	var n = "HTTP_" + name.toUpperCase().replace(/-/g,"_");
+	return (n in this._headers ? this._headers[n] : null);
 }
 
-HTTP.ServerRequest.prototype._parseCookie = function() {
-    if (!("HTTP_COOKIE" in this._headers)) { return; }
-    var all = this._headers["HTTP_COOKIE"].split("; ");
-    for (var i=0;i<all.length;i++) {
+ServerRequest.prototype._parseCookie = function() {
+	if (!("HTTP_COOKIE" in this._headers)) { return; }
+	var all = this._headers["HTTP_COOKIE"].split("; ");
+	for (var i=0;i<all.length;i++) {
 		var row = all[i];
 		var eq = row.indexOf("=");
 		var name = row.substring(0,eq);
 		var value = row.substring(eq+1);
 		if (!this.cookie[name]) { this.cookie[name] = unescape(value); }
-    }
+	}
 }
 
-HTTP.ServerRequest.prototype._decode = function(str) {
+ServerRequest.prototype._decode = function(str) {
 	var s = str;
 	try {
 		s = decodeURIComponent(str.replace(/\+/g, " "));
@@ -86,14 +86,14 @@ HTTP.ServerRequest.prototype._decode = function(str) {
 	return s;
 }
 
-HTTP.ServerRequest.prototype._parsePOST = function() {
+ServerRequest.prototype._parsePOST = function() {
 	var ct = this._headers["CONTENT_TYPE"] || "";
 	var length = parseInt(this._headers["CONTENT_LENGTH"], 10);
 	if (!length) { return; }
 
 	if (ct.indexOf("application/x-www-form-urlencoded") != -1) {
 		var buffer = this._input(length);
-		this.post = HTTP._parseQueryString(buffer.toString("utf-8"));
+		this.post = parseQueryString(buffer.toString("utf-8"));
 	} else {
 		var boundary = ct.match(/boundary=(.*)/); /* find boundary */
 		if (boundary) {
@@ -108,7 +108,7 @@ HTTP.ServerRequest.prototype._parsePOST = function() {
  * @param {boundary} boundary
  * @param {string || null} fieldName form field name
  */
-HTTP.ServerRequest.prototype._parseMultipartBuffer = function(buffer, boundary, fieldName) {
+ServerRequest.prototype._parseMultipartBuffer = function(buffer, boundary, fieldName) {
 	boundary = "--"+boundary;
 	var index1 = 0; /* start of part in buffer */
 	var index2 = -1; /* end of part in buffer (start of next boundary) */
@@ -135,7 +135,7 @@ HTTP.ServerRequest.prototype._parseMultipartBuffer = function(buffer, boundary, 
  * @param {Buffer} body
  * @param {string} fieldName
  */
-HTTP.ServerRequest.prototype._processMultipartItem = function(header, body, fieldName) {
+ServerRequest.prototype._processMultipartItem = function(header, body, fieldName) {
 	var headers = {};
 	var headerArray = header.toString("utf-8").split("\r\n");
 	for (var i=0;i<headerArray.length;i++) {
@@ -167,46 +167,46 @@ HTTP.ServerRequest.prototype._processMultipartItem = function(header, body, fiel
 				originalName: r[1],
 				data: body
 			};
-			HTTP._mixIn(this.files, fieldName, file);
+			mixIn(this.files, fieldName, file);
 		} else { /* form field */
-			HTTP._mixIn(this.post, fieldName, body.toString("utf-8"));
+			mixIn(this.post, fieldName, body.toString("utf-8"));
 		}
 	}
 }
 
-HTTP.ServerResponse = function(output) {
+ServerResponse = function(output) {
 	this._output = output;
 	this._outputStarted = false;
 	this._ct = false; /* Content-type - the only header which must be present */
 }
 
-HTTP.ServerResponse.prototype.write = function(str) {
+ServerResponse.prototype.write = function(str) {
 	if (!this._outputStarted) {
 		if (!this._ct) { this.header({"Content-type":"text/html"}); }
 		this._outputStarted = true;
 		if (!global.apache) { this._output("\r\n"); }
 	}
-    this._output(str);
+	this._output(str);
 }
 
-HTTP.ServerResponse.prototype.cookie = function(name, value, expires, path, domain, secure, httponly) {
-    if (expires && !(expires instanceof Date)) { return false; }
-    var arr = [];
-    arr.push(encodeURIComponent(name)+"="+encodeURIComponent(value));
-    if (expires) { arr.push("expires="+expires.toGMTString()); }
-    if (path) { arr.push("path="+path); }
-    if (domain) { arr.push("domain="+domain); }
-    if (secure) { arr.push("secure"); }
-    if (httponly) { arr.push("httponly"); }
-    
-    var str = arr.join("; ");
-    this.header({"Set-Cookie":str});
-    return true;
+ServerResponse.prototype.cookie = function(name, value, expires, path, domain, secure, httponly) {
+	if (expires && !(expires instanceof Date)) { return false; }
+	var arr = [];
+	arr.push(encodeURIComponent(name)+"="+encodeURIComponent(value));
+	if (expires) { arr.push("expires="+expires.toGMTString()); }
+	if (path) { arr.push("path="+path); }
+	if (domain) { arr.push("domain="+domain); }
+	if (secure) { arr.push("secure"); }
+	if (httponly) { arr.push("httponly"); }
+
+	var str = arr.join("; ");
+	this.header({"Set-Cookie":str});
+	return true;
 }
 
-HTTP.ServerResponse.prototype.header = function(h) {
+ServerResponse.prototype.header = function(h) {
 	if (this._outputStarted) { throw new Error("Cannot send headers, output already started."); }
-    for (var p in h) {
+	for (var p in h) {
 		if (p.match(/content-type/i)) { this._ct = true; }
 		if (p.match(/location/i)) { this.status(303, "See Other"); }
 		
@@ -215,16 +215,16 @@ HTTP.ServerResponse.prototype.header = function(h) {
 		} else {
 			this._output(p+": "+h[p]+"\r\n");
 		}
-    }
+	}
 }
 
-HTTP.ServerResponse.prototype.status = function(number, reason) {
+ServerResponse.prototype.status = function(number, reason) {
 	var text = number.toString();
 	if (reason) { text += " "+reason; }
 	this.header({"Status":text});
 }
 
-HTTP.ClientRequest = function(url) {
+ClientRequest = function(url) {
 	this._headers = {};
 	this.method = "GET"; 
 	this.get = {};
@@ -236,7 +236,7 @@ HTTP.ClientRequest = function(url) {
 	if (index != -1) { /* parse user-supplied get */
 		u = url.substring(0, index);
 		var qs = url.substring(index+1);
-		this.get = HTTP._parseQueryString(qs);
+		this.get = parseQueryString(qs);
 	}
 	
 	if (u.indexOf("://") == -1) { u = "http://"+u; }
@@ -244,13 +244,13 @@ HTTP.ClientRequest = function(url) {
 	this._url = u;
 }
 
-HTTP.ClientRequest.prototype.header = function(obj) {
+ClientRequest.prototype.header = function(obj) {
 	for (var p in obj) { 
 		this._headers[p] = obj[p]; 
 	}
 }
 
-HTTP.ClientRequest.prototype.send = function(follow) {
+ClientRequest.prototype.send = function(follow) {
 	var Socket = require("socket").Socket;
 	var Buffer = require("binary").Buffer;
 	
@@ -322,7 +322,7 @@ HTTP.ClientRequest.prototype.send = function(follow) {
 	return this._handleResponse(received, follow);
 }
 
-HTTP.ClientRequest.prototype._serialize = function(obj) {
+ClientRequest.prototype._serialize = function(obj) {
 	var arr = [];
 	for (var p in obj) {
 		var val = obj[p];
@@ -334,7 +334,7 @@ HTTP.ClientRequest.prototype._serialize = function(obj) {
 	return arr.join("&");
 }
 
-HTTP.ClientRequest.prototype._splitUrl = function() {
+ClientRequest.prototype._splitUrl = function() {
 	var parts = this._url.match(/^ *(http:\/\/)?([^:\/]+)(:([0-9]+))?(.*)$/);
 	var host = parts[2];
 	var port = parts[4] || 80;
@@ -346,9 +346,9 @@ HTTP.ClientRequest.prototype._splitUrl = function() {
  * @param {Buffer} data
  * @param {bool} follow Follow redirects?
  */
-HTTP.ClientRequest.prototype._handleResponse = function(buffer, follow) {
+ClientRequest.prototype._handleResponse = function(buffer, follow) {
 	var codes = [301, 302, 303, 307];
-	var r = new HTTP.ClientResponse(buffer);
+	var r = new ClientResponse(buffer);
 	if (!follow) { return r; }
 	
 	var code = r.status;
@@ -379,7 +379,7 @@ HTTP.ClientRequest.prototype._handleResponse = function(buffer, follow) {
 	return this.send(follow);
 }
 
-HTTP.ClientResponse = function(buffer) {
+ClientResponse = function(buffer) {
 	var Buffer = require("binary").Buffer;
 
 	this.data = null;
@@ -412,18 +412,18 @@ HTTP.ClientResponse = function(buffer) {
 	}
 }
 
-HTTP.ClientResponse.prototype.header = function(name) {
+ClientResponse.prototype.header = function(name) {
 	return this._headers[name.toUpperCase()];
 }
 
-HTTP.ClientResponse.prototype.headers = function() {
+ClientResponse.prototype.headers = function() {
 	return this._headers;
 }
 
 /**
  * @param {Buffer} body
  */
-HTTP.ClientResponse.prototype._parseChunked = function(body) {
+ClientResponse.prototype._parseChunked = function(body) {
 	var Buffer = require("binary").Buffer;
 	
 	var index = 0
@@ -457,13 +457,16 @@ HTTP.ClientResponse.prototype._parseChunked = function(body) {
 		/* skip CRLF after chunk */
 		index += 2;
 	}
-	
+
 	return result;
 }
 
-exports.HTTP = HTTP;
+exports.ServerRequest = ServerRequest;
+exports.ServerResponse = ServerResponse;
+exports.ClientRequest = ClientRequest;
+exports.ClientResponse = ClientResponse;
 
 if (system.env["SERVER_SOFTWARE"]) {
-	global.request = new HTTP.ServerRequest(system.stdin, system.env);
-	global.response = new HTTP.ServerResponse(system.stdout);
+	global.request = new ServerRequest(system.stdin, system.env);
+	global.response = new ServerResponse(system.stdout);
 }
