@@ -62,7 +62,6 @@ Modules are represented by files (`.js`, `.so`, `.dll`, `.dylib`) and can be loa
 || process || (sub)process control || native || [API_Process] ||
 || profiler || V8 profiling || native || [API_Profiler] ||
 || query || SQL query abstraction || js || [API_Query] ||
-|| requestHandler || HTTP request controller || js || [API_RequestHandler] ||
 || session || HTTP session || js || [API_Session] ||
 || socket || Sockets || native || [API_Socket] ||
 || sprintf || sprintf implementation || js || [API_Sprintf] ||
