@@ -2,7 +2,7 @@
 
 = Binary module =
 
-Defined in files `binary-b.js` and `binary-b.so`/`binary-b.dll`/`binary-b.dylib`.
+Defined in files `binary-b.js` and `binary-b.so`/`binary-b.dll`/`binary-b.dylib`. To read more about binary data handling in general, see [Binary].
 
 == Binary/B ==
 
