@@ -20,6 +20,7 @@ function reverseBuffer(input) {
 
   return output;
 }
+}}}
 
 == Exposing and using binary data from native modules ==
 
