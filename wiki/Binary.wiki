@@ -2,7 +2,7 @@
 
 = Binary support in v8cgi =
 
-Javascript does not offer a suitable binary data type per se. For this reason, several proposals were created by [CommonJS http://www.commonjs.org/]; see all of them at http://wiki.commonjs.org/wiki/Binary. Recently, support for [Binary/F http://wiki.commonjs.org/wiki/Binary/F] was added to v8cgi.
+Javascript does not offer a suitable binary data type per se. For this reason, several proposals were created by [http://www.commonjs.org/ CommonJS ]; see all of them at http://wiki.commonjs.org/wiki/Binary. Recently, support for [http://wiki.commonjs.org/wiki/Binary/F Binary/F] was added to v8cgi.
 
 == Working with binary data in Javascript ==
 
