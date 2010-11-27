@@ -5,7 +5,7 @@
 
 v8cgi is an embedding of [http://code.google.com/p/v8/ V8], a !JavaScript interpreter from Google. v8cgi can be used in many ways; either as a CLI (Command-line Interface) program for executing (shell-)scripts, or as an Apache module / CGI binary for creating and serving web pages.
 
-v8cgi ships with various libraries (modules), which provide additional functionality. v8cgi runs on Posix-compliant systems and Microsoft Windows.
+v8cgi ships with various libraries (modules), which provide additional functionality. v8cgi runs on Linux distributions, MacOS X, FreeBSD and Microsoft Windows.
 
 = First steps =
 
