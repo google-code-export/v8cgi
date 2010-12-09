@@ -1,5 +1,17 @@
 #summary v8cgi release changelog
 
+= Version 0.9.0 (9.12.2010) =
+
+  * FreeBSD support
+  * binary/f used everywhere
+  * zlib module
+  * memcached module
+  * fibers module
+  * profiler module
+  * old module "util" is now "mail", "base64" and "hash"
+  * many DOM improvements
+  * stability fixes
+
 = Version 0.8.2 (23.5.2010) =
 
   * segfault fix in accept()
