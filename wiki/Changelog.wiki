@@ -8,6 +8,7 @@
   * memcached module
   * fibers module
   * profiler module
+  * session is now not created automatically
   * old module "util" is now "mail", "base64" and "hash"
   * many DOM improvements
   * stability fixes
