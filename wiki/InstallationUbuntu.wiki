@@ -88,6 +88,11 @@ This configuration should work, remember to replace ~/src with where you built v
 </VirtualHost>
 }}}
 
+*enable the site:*
+{{{
+sudo a2ensite v8cgi
+}}}
+
 *configure v8cgi hostname:*
 {{{
 sudo vi /etc/hosts
