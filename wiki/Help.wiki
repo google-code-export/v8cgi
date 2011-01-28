@@ -1,4 +1,5 @@
 #summary Getting help
+#labels Featured
 
 = Getting help =
 
