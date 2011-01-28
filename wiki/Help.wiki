@@ -1,0 +1,7 @@
+#summary Getting help
+
+= Getting help =
+
+  # [https://groups.google.com/forum/#!forum/v8cgi Discussion group]
+  # [ondrej.zara@gmail.com Author]
+  # #commonjs on freenode
