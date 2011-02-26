@@ -5,4 +5,4 @@
 
   # [https://groups.google.com/forum/#!forum/v8cgi Discussion group]
   # [mailto:ondrej.zara@gmail.com Author]
-  # #commonjs on freenode
+  # #v8cgi and/or #commonjs on freenode
