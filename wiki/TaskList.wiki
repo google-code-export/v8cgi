@@ -7,6 +7,7 @@
 
 == Minor tasks ==
   * better process module
+  * ODBC library
   * file copying without `mmap_*` (until mmap works on windows)
 
 == Far tasks ==
