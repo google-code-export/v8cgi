@@ -1,5 +1,14 @@
 #summary v8cgi release changelog
 
+= Version 0.9.1 (26.9.2011) =
+
+  * faster global object reusing
+  * refactored error handling
+  * thread safety
+  * better HTTP uploads in http.js and apache module
+  * performance fixes
+  * numerous bugfixes
+
 = Version 0.9.0 (9.12.2010) =
 
   * FreeBSD support
