@@ -23,7 +23,7 @@ These are automatically available once you launch v8cgi.
 
 === System functions ===
   * `system.env` - hash with environment variables. Read-only.
-  * `system.stdin(count)` - read `count` bytes from standard input. The data is returned as an instance of Buffer. If `count` == 0, data is read until EOF.
+  * `system.stdin(count)` - read `count` bytes from standard input. The data is returned as an instance of Buffer. If `count` == 0, all available data is read.
   * `system.stdout(data)` - write `data` to standard output. Data can be either string or Buffer.
   * `system.getcwd()` - returns current working directory
   * `system.sleep(num)` - delays execution for `num` seconds
