@@ -12,5 +12,5 @@ Classes: *TLS*
   * `tls.accept()` - accept client TLS handshake
   * `tls.send(data)` - send `data` to socket; data = string or Buffer
   * `tls.receive(num)` - retrieve max `num` bytes from socket. Returns an instance of Buffer.
-  * `sock.validateCertificate()` - returns certificate validation result (see http://www.openssl.org/docs/apps/verify.html for return codes)
+  * `tls.validateCertificate()` - returns certificate validation result (see http://www.openssl.org/docs/apps/verify.html for return codes)
   * `tls.close()` - close a TLS connection
