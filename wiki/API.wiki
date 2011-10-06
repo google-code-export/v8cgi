@@ -68,5 +68,6 @@ Modules are represented by files (`.js`, `.so`, `.dll`, `.dylib`) and can be loa
 || sqlite || SQLite database || native || [API_SQLite] ||
 || template || Simple templating language || js || [API_Template] ||
 || test || CommonJS testing || js || [API_Test] ||
+|| tls || SSL/TLS || native || [API_TLS] ||
 || xdom || (old) Xerces-based DOM || native || [API_XDOM] ||
 || zlib || zlib compression || native || [API_Zlib] ||
