@@ -18,6 +18,8 @@ Classes: *Socket*.
     * Socket.SO_REUSEADDR
     * Socket.SO_BROADCAST
     * Socket.SO_KEEPALIVE
+    * Socket.SO_ERROR
+    * Socket.TCP_NODELAY
 
   * `Socket.getProtoByName()` - convert protocol name to number
   * `Socket.getAddrInfo(name, [family])` - convert hostname to address
