@@ -25,12 +25,13 @@ Classes: *Socket*.
   * `Socket.getHostName()` - return current hostname
 
   * `var sock = new Socket(family, type, proto)` - create new socket
-  * `sock.connect(address, [port])` - connect to target `address`
+  * `sock.setBlocking(true/false)` - changes blocking mode
+  * `sock.connect(address, [port])` - connect to target `address`. Returns `true` or `false` or `false` (operation would block a non-blocking socket).
   * `sock.bind(address, [port])` - bind to target `address`
   * `sock.listen([backlog])` - listen for incoming connections
   * `var sock2 = sock.accept()` - accept a new connection
-  * `sock.send(data, [address], [port])` - send `data` to socket; data = string or Buffer. Strings will be serialized to UTF-8.
-  * `sock.receive(num)` - retrieve max `num` bytes from socket. Returns an instance of Buffer.
+  * `sock.send(data, [address], [port])` - send `data` to socket; data = string or Buffer. Strings will be serialized to UTF-8. Returns `true` or `false` or `false` (operation would block a non-blocking socket).
+  * `sock.receive(num)` - retrieve max `num` bytes from socket. Returns an instance of Buffer or `false` (operation would block a non-blocking socket).
   * `sock.getPeerName()` - returns array with peer address components
   * `sock.getOption(name, [length])` - returns a value of `SO_*` option
   * `sock.setOption(name, value)` - sets a `value` of `SO_*` option
