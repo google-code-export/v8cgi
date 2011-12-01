@@ -14,6 +14,8 @@
   * mmap on windows
 
 = What has been done recently =
+  * websocket module
+  * Socket.select
   * SSL/TLS
   * zlib
   * refactoring of existing code to support binary
