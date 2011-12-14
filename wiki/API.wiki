@@ -12,7 +12,6 @@ These are automatically available once you launch v8cgi.
 === Global functions ===
 
   * `global` - reference to global object
-  * `include(module)` - require() other file (see below) and populate global object with resulting exports
   * `require(module)` - includes other module in a way compatible with [http://wiki.commonjs.org/wiki/Modules/1.1.1]. Module's contents are executed within a separate scope; loaded file must register its exports in an `exports` object, which is returned from this call. Module's file is searched according to these rules:
     # module name must not contain extension
     # absolute module name = file name
