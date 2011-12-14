@@ -5,7 +5,7 @@
   * refactored error handling
   * tls module
   * removed include() and libraryAutoload
-  * ubuntu packages at https://launchpad.net/~ondras/+archive/v8cgi !
+  * ubuntu packages at https://launchpad.net/~ondras/+archive/v8cgi!
   * stream interfaces for stdin/stdout/stderr
   * numerous bugfixes
   * websocket library
