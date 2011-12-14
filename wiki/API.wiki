@@ -22,9 +22,23 @@ These are automatically available once you launch v8cgi.
   * `exit()` - terminate execution
 
 === System functions ===
+
+==== stdin ====
+  * `system.stdin.read(count)` - read `count` bytes from standard input. The data is returned as an instance of Buffer. If `count` == 0, all available data is read.
+  * `system.stdin.readLine([count])` - reads a line from standard input. If `count` is not specified, reads up to 65535 bytes. When no data is available, returns null.
+
+==== stdout ====
+  * `system.stdout.write(data)` - write `data` to standard output. Data can be either string or Buffer.
+  * `system.stdout.writeLine(data)` - write `data` followed by a line break to standard output. Data can be either string or Buffer.
+  * `system.stdout.flush()` - flushes stdout
+
+==== stderr ====
+  * `system.stderr.write(data)` - write `data` to standard error output. Data can be either string or Buffer.
+  * `system.stderr.writeLine(data)` - write `data` followed by a line break to standard error output. Data can be either string or Buffer.
+  * `system.stderr.flush()` - flushes stderr
+
+==== misc ====
   * `system.env` - hash with environment variables. Read-only.
-  * `system.stdin(count)` - read `count` bytes from standard input. The data is returned as an instance of Buffer. If `count` == 0, all available data is read.
-  * `system.stdout(data)` - write `data` to standard output. Data can be either string or Buffer.
   * `system.getcwd()` - returns current working directory
   * `system.sleep(num)` - delays execution for `num` seconds
   * `system.args` - array with command-line arguments
