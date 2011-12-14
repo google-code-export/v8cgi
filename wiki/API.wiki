@@ -49,7 +49,7 @@ These are automatically available once you launch v8cgi.
 
 v8cgi comes with a set of modules which act as code libraries, containing extended functionality, classes, methods and functions.
 
-Modules are represented by files (`.js`, `.so`, `.dll`, `.dylib`) and can be loaded with `require()` or `include()` call.
+Modules are represented by files (`.js`, `.so`, `.dll`, `.dylib`) and can be loaded with `require()` call.
 
 || *Module name* || *Summary* || *Module type* || *Documentation* ||
 || active_record || Active Record stuff || js || [API_ActiveRecord] ||
