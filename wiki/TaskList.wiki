@@ -14,6 +14,9 @@
   * mmap on windows
 
 = What has been done recently =
+  * readLine/writeLine
+  * refactored error handling
+  * stdin/stdout/stderr stream interface
   * websocket module
   * Socket.select
   * SSL/TLS
