@@ -1,4 +1,5 @@
 #summary v8cgi on Unbuntu (Januty)
+#labels Deprecated
 
 <font color="red">Some of this might be obsolete</font>
 
