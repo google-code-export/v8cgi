@@ -15,7 +15,7 @@ If you installed the libapache2-mod-v8cgi from v8cgi's PPA, just do
 sudo a2enmod v8cgi
 sudo /etc/init.d/apache2 restart
 }}}
-and you are all set :)
+and you are all set. Otherwise:
 
   # compile or download mod_v8cgi (.dll on Windows, .so on Linux)
   # load the resulting module into Apache: 
