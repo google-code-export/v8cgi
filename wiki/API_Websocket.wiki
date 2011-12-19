@@ -1,0 +1,36 @@
+#summary Module "websocket"
+
+= Websocket module =
+
+Defined in file `websocket.js`.
+
+Classes: *Server*. 
+
+  * `var Server = require("websocket").Server; var ws = new Server(ip, port, options)` - creates new Websocket listening server; the only available member of `options` object is a bool value "nodelay" (disable Nagle's TCP algorithm)
+  * `ws.setDebug(bool)` - enable/disable debug logging
+  
+
+== Examples ==
+
+{{{
+var o = new GetOpt();
+o.add("verbosity", "Verbosity level", 0, "v", "verbosity", GetOpt.OPTIONAL_ARGUMENT);
+o.add("interface", "Interface", "", "i", "interface", GetOpt.REQUIRED_ARGUMENT);
+o.add("human", "Human-readable output", false, "h", "human", GetOpt.NO_ARGUMENT);
+
+var help = o.help();
+/*
+  -v [value], --verbosity[=value] Verbosity level
+  -i value, --interface=value     Interface
+  -h, --human                     Human-readable output
+*/
+
+var args = ["--human", "-vv", "-i", "eth0", "someText1", "someText2"];
+o.parse(args);
+/*
+  o.get("verbosity") == 2;
+  o.get("human") == true;
+  o.get("interface") == "eth0";
+  o.get() == ["someText1", "someText2"];
+*/
+}}}
