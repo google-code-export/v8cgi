@@ -6,8 +6,10 @@ Defined in file `websocket.js`.
 
 Classes: *Server*. 
 
-  * {{{var Server = require("websocket").Server;
-var ws = new Server(ip, port, options)}}} - creates new Websocket listening server; the only available member of `options` object is a bool value "nodelay" (disable Nagle's TCP algorithm)
+{{{
+var Server = require("websocket").Server;
+}}}
+  * `var ws = new Server(ip, port, options)` - creates new Websocket listening server; the only available member of `options` object is a bool value "nodelay" (disable Nagle's TCP algorithm)
   * `ws.setDebug(bool)` - enable/disable debug logging
   
 
