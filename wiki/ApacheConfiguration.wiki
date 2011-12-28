@@ -2,7 +2,7 @@
 
 = Apache configuration =
 
-There are three main ways of using v8cgi with Apache.
+There are three main ways of using v8cgi with Apache. After you manage to prepare the configuration, go on by trying serving some [CodeSnippets sample html].
 
 *On windows, all necessary dlls must be available in system path!*
 
