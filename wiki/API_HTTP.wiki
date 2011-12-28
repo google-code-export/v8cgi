@@ -8,7 +8,8 @@ Defined in file `http.js`.
 
 Classes: *!ServerRequest*, *!ServerResponse*. These should be used in CGI/FastCGI scenario to process request and create a response page.
 
-  * `var request = new ServerRequest(input, headers)` - creates a new request instance. If running in CGI mode, this is done automatically.
+  * `require("http")`
+  * `request instanceof ServerRequest` - created automatically; use to process request info
   * `request.get` - hash with GET variables
   * `request.post` - hash with POST variables
   * `request.cookie` - hash with cookie variables
@@ -21,7 +22,7 @@ Classes: *!ServerRequest*, *!ServerResponse*. These should be used in CGI/FastCG
   * `request.headers()` - returns all request HTTP headers
   * `request.requestBody(length)` - returns `length` bytes from the request body. This is irrelevant for POST method; its data is processed automatically. Use `requestBody()` for PUT requests.
 
-  * `var response = new ServerResponse(output)` - creates a new response instance. If running in CGI mode, this is done automatically.
+  * `response instanceof ServerResponse` - created automatically; use to adjust HTTP response headers and body
   * `response.write(data)` - outputs `data`
   * `response.header(headers)` - outputs `headers` (hash) as HTTP response headers
   * `response.cookie(name, value, expires, path, domain, secure, httponly)` - sets a cookie (`expires` is a JS date object)
