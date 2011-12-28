@@ -6,6 +6,12 @@ This page shows some simple Javascript code examples to be used with v8cgi.
 
 == HTTP ==
 
+=== Create webpages with v8cgi (cgi/fcgi/apache module) ===
+{{{
+require("http");
+response.write("<html><head><title>Test page</title></head><body><h1>Hi!</h1></body></html>");
+}}}
+
 === Handle uploaded file(s) ===
 {{{
 for (var file in request.files) {
