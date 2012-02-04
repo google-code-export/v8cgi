@@ -25,6 +25,7 @@ Classes: *Socket*.
   * `Socket.getAddrInfo(name, [family])` - convert hostname to address
   * `Socket.getNameInfo(addr, family)` - convert address to cname
   * `Socket.getHostName()` - return current hostname
+  * `Socket.select(arrOfReadSockets, arrOfWriteSockets, arrOfExceptSockets, timeout)` - perform a `select()` call; timeout is specified in msec
 
   * `var sock = new Socket(family, type, proto)` - create new socket
   * `sock.setBlocking(true/false)` - changes blocking mode
