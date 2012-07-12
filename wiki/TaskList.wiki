@@ -14,6 +14,7 @@
   * mmap on windows
 
 = What has been done recently =
+  * eventloop module
   * readLine/writeLine
   * refactored error handling
   * stdin/stdout/stderr stream interface
