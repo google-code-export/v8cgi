@@ -1,0 +1,19 @@
+#summary Module "eventloop"
+
+= Event loop module =
+
+Defined in file `eventloop.js`.
+
+Classes: *Server*. 
+
+{{{
+var eventloop = require("eventloop");
+}}}
+  * `var id = eventloop.setTimeout(callback, delay)` - delayed execution; delay in msec
+  * `var id = eventloop.setInterval(callback, period)`
+  * `eventloop.clearTimeout(id)`, `eventloop.clearInterval(id)`
+  * `var id = eventloop.readSocket(callback, socket)` - will be executed once the socket is ready for reading
+  * `var id = eventloop.writeSocket(callback, socket)` - will be executed once the socket is ready for writing
+  * `eventloop.clearSocket(id)`, `eventloop.clearSocket(socket)` - cancel the scheduled listener(s)
+  * `eventloop.run(timeout)` - enter the main loop; timeout is optional
+  * `eventloop.abort()` - abort from a callback
