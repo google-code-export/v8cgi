@@ -57,6 +57,7 @@ Modules are represented by files (`.js`, `.so`, `.dll`, `.dylib`) and can be loa
 || binary || CommonJS Binary/F Buffer || hybrid || [API_Binary] ||
 || binary-b || CommonJS Binary/D || hybrid || [API_Binary_B] ||
 || dom || DOM, Serializer, Parser  || js || [API_DOM] ||
+|| eventloop || Global asynchronous event loop  || js || [API_Eventloop] ||
 || fibers || Fibers || native || [API_Fibers] ||
 || fs || Filesystem access || native || [API_FS] ||
 || gd || GD image manipulation || native || [API_GD] ||
