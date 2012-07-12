@@ -4,8 +4,6 @@
 
 Defined in file `eventloop.js`.
 
-Classes: *Server*. 
-
 {{{
 var eventloop = require("eventloop");
 }}}
@@ -17,3 +15,19 @@ var eventloop = require("eventloop");
   * `eventloop.clearSocket(id)`, `eventloop.clearSocket(socket)` - cancel the scheduled listener(s)
   * `eventloop.run(timeout)` - enter the main loop; timeout is optional
   * `eventloop.abort()` - abort from a callback
+
+== Example usage ==
+
+{{{
+var loop = require("eventloop");
+
+loop.setInterval(function() { /* write dots every 500msec */
+  system.stdout.writeLine("...");
+}, 500);
+
+loop.setTimeout(function() { /* abort looping after three seconds */
+  loop.abort();
+}, 3000);
+
+loop.run();
+}}}
