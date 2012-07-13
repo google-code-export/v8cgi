@@ -37,4 +37,8 @@ While building v8cgi, I focused mainly on these points:
 
 == Is this stuff usable? ==
 
-Absolutely. v8cgi is in development 
+Absolutely. v8cgi is in development from 2008; it is actually older than Node. I am using v8cgi for various tasks from its first versions. 
+
+* v8cgi is used as a WebSocket backend for all my JavaScript network projects: [https://developer.mozilla.org/en-US/demosdetail/just-spaceships Just Spaceships], [https://developer.mozilla.org/en-US/demosdetail/collaborative-draw Collaborative Draw], [https://developer.mozilla.org/en-US/demosdetail/atoms Atoms], [https://developer.mozilla.org/en-US/demosdetail/geometry-wars Geometry Wars]
+* v8cgi was used to extract and preprocess data for the [http://ondras.zarovi.cz/games/drago/ Drago] remake
+* v8cgi was used to prepare image sprites for the [http://ondras.zarovi.cz/games/js-like/ js-like roguelike game]
