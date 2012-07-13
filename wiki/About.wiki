@@ -2,7 +2,7 @@
 
 = About v8cgi =
 
-JavaScript on server is becoming very popular. There are many tools out there; there are also many different JS engines/interpreters to build upon. This document explains why you should try v8cgi - a full-featured scripting environment, powered by Google's V8 engine.
+!JavaScript on server is becoming very popular. There are many tools out there; there are also many different JS engines/interpreters to build upon. This document explains why you should try v8cgi - a full-featured scripting environment, powered by Google's V8 engine.
 
 == Server-side JS development is already taken over by Node ==
 
@@ -12,6 +12,17 @@ Moreover, v8cgi uses a different architectonic paradigm: it represents the more 
 
 v8cgi also strongly focuses on CommonJS compatibility. This is one of the primary design goals; I believe that a standardized API is a key value for successfull interoperability.
 
+== What can v8cgi do for me? ==
+
+There are many tasks that can be solved with v8cgi. It comes bundled with a large set of built-in modules, which means that you can use these features out-of-the-box:
+
+  * *Filesystem IO*: synchronous access to local files and directories
+  * *Networking*: low-level sockets, SSL/TLS, WebSocket server module; HTTP a SMTP protocols
+  * *Databases*: MySQL, PostgreSQL and SQLite modules
+  * *Miscellaneous*: assertion, unit testing, zlib compression, memcache client, GD image manipulation, XMLDOM
+  * *Generate web pages*: v8cgi can interface with your favorite webserver using CGI, FastCGI or Apache module APIs
+
+
 == Design goals ==
 
-
+== Is this stuff usable? ==
