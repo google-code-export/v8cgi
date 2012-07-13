@@ -1,0 +1,17 @@
+#summary v8cgi design goals, history, general info
+
+= About v8cgi =
+
+JavaScript on server is becoming very popular. There are many tools out there; there are also many different JS engines/interpreters to build upon. This document explains why you should try v8cgi - a full-featured scripting environment, powered by Google's V8 engine.
+
+== Server-side JS development is already taken over by Node ==
+
+I believe that diversity is necessary for a healthy ecosystem. While Node has a well-established user base and huge feature set, not everybody must be necessarily enthusiastic about its API, usage, installation, features etc.
+
+Moreover, v8cgi uses a different architectonic paradigm: it represents the more traditional, synchronous server-side programming model. People coming from different languages may find v8cgi's APIs more straightforward.
+
+v8cgi also strongly focuses on CommonJS compatibility. This is one of the primary design goals; I believe that a standardized API is a key value for successfull interoperability.
+
+== Design goals ==
+
+
