@@ -32,8 +32,7 @@ While building v8cgi, I focused mainly on these points:
 
 *CommonJS compliance.* I am a proud member of the CommonJS standardization body; we work closely to ratify and deliver a reasonable and consistent APIs. v8cgi is compliant with every CommonJS specification it implements: module loading, binary data handling, system module, unit testing.
 
-*CommonJS compliance.* I am a proud member of the CommonJS standardization body; we work closely to ratify and deliver a reasonable and consistent APIs. v8cgi is compliant with every CommonJS specification it implements: module loading, binary data handling, system module, unit testing.
-
+*Cooperation with existing webserver solutions.* One of the many v8cgi use cases is to serve and generate HTML pages, similarly to PHP. You do not need to throw away a properly configured Apache webserver; just delegate request processing to v8cgi. This can be done via CGI, FastCGI or native Apache module. Want some server-side templating, session management, HTTP response headers tuning? All available in v8cgi.
 
 == Is this stuff usable? ==
 
