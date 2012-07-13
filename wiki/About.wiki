@@ -9,7 +9,7 @@
 There are many tasks that can be solved with v8cgi. It comes bundled with a large set of built-in modules, which means that you can use these features out-of-the-box:
 
   * *Filesystem IO*: synchronous access to local files and directories
-  * *Networking*: low-level sockets, SSL/TLS, !WebSocket server module; HTTP a SMTP protocols
+  * *Networking*: low-level sockets, SSL/TLS, !WebSocket server module; HTTP and SMTP protocols
   * *Databases*: MySQL, PostgreSQL and SQLite modules
   * *Miscellaneous*: assertion, unit testing, zlib compression, memcache client, GD image manipulation, XMLDOM
   * *Asynchronous network IO*: support for nonblocking sockets; global "eventloop" module for callback-based timeouts and socket reading/writing
