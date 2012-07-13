@@ -16,7 +16,7 @@ There are many tasks that can be solved with v8cgi. It comes bundled with a larg
   * *Generate web pages*: v8cgi can interface with your favorite webserver using CGI, FastCGI or Apache module APIs. Support for sessions and templating.
   * *Native support for binary data*: all modules which handle binary data use the standardized Binary/F specification. 
 
-== Server-side JS development is already taken over by [insert your favorite tool] ==
+== Server-side JS development is already taken over by [insert-your-favorite-tool] ==
 
 I believe that diversity is necessary for a healthy ecosystem. While other products might have a well-established user base and huge feature set, not everybody must be necessarily enthusiastic about their APIs, usage, installation, features etc.
 
