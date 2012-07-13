@@ -17,12 +17,24 @@ v8cgi also strongly focuses on CommonJS compatibility. This is one of the primar
 There are many tasks that can be solved with v8cgi. It comes bundled with a large set of built-in modules, which means that you can use these features out-of-the-box:
 
   * *Filesystem IO*: synchronous access to local files and directories
-  * *Networking*: low-level sockets, SSL/TLS, WebSocket server module; HTTP a SMTP protocols
+  * *Networking*: low-level sockets, SSL/TLS, !WebSocket server module; HTTP a SMTP protocols
   * *Databases*: MySQL, PostgreSQL and SQLite modules
   * *Miscellaneous*: assertion, unit testing, zlib compression, memcache client, GD image manipulation, XMLDOM
+  * *Asynchronous network IO*: support for nonblocking sockets; global "eventloop" module for callback-based timeouts and socket reading/writing
   * *Generate web pages*: v8cgi can interface with your favorite webserver using CGI, FastCGI or Apache module APIs
-
+  * *Native support for binary data*: all modules which handle binary data use the standardized Binary/F specification. 
 
 == Design goals ==
 
+While building v8cgi, I focused mainly on these points:
+
+*Ease of use.* All modules offer a straightforward and documented API; v8cgi comes bundled with several usage examples; there is a support discussion group where people offer help. v8cgi offers tools to solve many everyday scripting isses and challenges.
+
+*CommonJS compliance.* I am a proud member of the CommonJS standardization body; we work closely to ratify and deliver a reasonable and consistent APIs. v8cgi is compliant with every CommonJS specification it implements: module loading, binary data handling, system module, unit testing.
+
+*CommonJS compliance.* I am a proud member of the CommonJS standardization body; we work closely to ratify and deliver a reasonable and consistent APIs. v8cgi is compliant with every CommonJS specification it implements: module loading, binary data handling, system module, unit testing.
+
+
 == Is this stuff usable? ==
+
+Absolutely. v8cgi is in development 
