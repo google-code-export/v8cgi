@@ -8,20 +8,3 @@ More specifically:
   * `utf8encode()` and `utf8decode()` are supported by Binary module
   * `mail()` was separated into a "mail" module
 </font>
-
-= Utility module =
-
-Defined in file `util.js`.
-
-  * `Util.serialize(val, [pretty])` - serializes `val` to JSON. If `pretty == true`, formatting is applied.
-  * `Util.deserialize(str)` - deserializes `str` back to JS value
-  * `Util.md5(str)` - calculates MD5 hash
-  * `Util.sha1(str)` - calculates SHA1 hash
-  * `Util.base64encode(str)` - encodes string in Base64
-  * `Util.base64decode(str)` - decodes string from Base64
-  * `Util.utf8decode(str)` - decodes all unicode characters into one-byte characters
-  * `Util.utf8encode(str)` - encodes relevant one-byte charcater sequences into unicode characters
-  * `Util.mail(to, subject, data, [additionalHeaders], [auth])` - sends an email. To perform an ESMTP authorization, set `auth` as a hash with three fields:
-    * type: "login",
-    * user: your user name,
-    * password: your password
