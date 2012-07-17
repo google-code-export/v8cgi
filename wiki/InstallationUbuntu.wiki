@@ -1,7 +1,7 @@
 #summary v8cgi on Unbuntu (Januty)
 #labels Deprecated
 
-<font color="red">*Some of this [http://www.seznam.cz/ might] be obsolete*</font>
+<font color="red">= *Some of this [http://www.seznam.cz/ might] be obsolete* =</font>
 
 = v8cgi on Ubuntu (Jaunty) ==
 
