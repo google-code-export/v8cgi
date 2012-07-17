@@ -1,5 +1,6 @@
 #summary Module "sqlite"
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/API_SQLite proper version of this page].*</font> =
 = SQLite module =
 
 Defined in file `sqlite.so` or `sqlite.dll`.

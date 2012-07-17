@@ -1,5 +1,6 @@
 #summary Binary data type
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/Binary proper version of this page].*</font> =
 = Binary support in v8cgi =
 
 Javascript does not offer a suitable binary data type per se. For this reason, several proposals were created by [http://www.commonjs.org/ CommonJS]; see all of them at http://wiki.commonjs.org/wiki/Binary. Recently, support for [http://wiki.commonjs.org/wiki/Binary/F Binary/F] was added to v8cgi.

@@ -1,5 +1,6 @@
 #summary Apache configuration for v8cgi
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/ApacheConfiguration proper version of this page].*</font> =
 = Apache configuration =
 
 There are three main ways of using v8cgi with Apache. After you manage to prepare the configuration, go on by trying serving some [CodeSnippets sample html].

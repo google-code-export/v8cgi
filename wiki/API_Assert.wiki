@@ -1,5 +1,6 @@
 #summary Modules "assert" and "test"
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/API_Assert proper version of this page].*</font> =
 = Assertion + testing module =
 
 Defined in files `assert.js` and `test.js`. These modules are compliant with [http://wiki.commonjs.org/wiki/Unit_Testing/1.0 CommonJS Unit Testing 1.0].

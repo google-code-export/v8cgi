@@ -1,5 +1,6 @@
 #summary v8cgi design goals, history, general info
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/About proper version of this page].*</font> =
 = About v8cgi =
 
 !JavaScript on server is becoming very popular. There are many tools out there; there are also many different JS engines/interpreters to build upon. This document explains why you should try v8cgi - a full-featured scripting environment, powered by Google's V8 engine.

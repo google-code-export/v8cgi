@@ -1,5 +1,6 @@
 #summary Module "mysql"
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/API_MySQL proper version of this page].*</font> =
 = MySQL module =
 
 Defined in file `mysql.so` or `mysql.dll` or `mysql.dylib`.

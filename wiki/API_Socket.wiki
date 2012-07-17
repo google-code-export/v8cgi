@@ -1,5 +1,6 @@
 #summary Module "socket"
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/API_Socket proper version of this page].*</font> =
 = Socket module =
 
 Defined in file `socket.so` or `socket.dll` or `socket.dylib`. 

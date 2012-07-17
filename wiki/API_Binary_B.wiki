@@ -1,5 +1,6 @@
 #summary Module "binary-b"
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/API_Binary_B proper version of this page].*</font> =
 = Binary module =
 
 Defined in files `binary-b.js` and `binary-b.so`/`binary-b.dll`/`binary-b.dylib`. To read more about binary data handling in general, see [Binary].

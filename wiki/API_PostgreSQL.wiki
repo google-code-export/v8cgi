@@ -1,5 +1,6 @@
 #summary Module "pgsql"
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/API_PostgreSQL proper version of this page].*</font> =
 = PostgreSQL module =
 
 Defined in file `pgsql.so` or `pgsql.dll`.

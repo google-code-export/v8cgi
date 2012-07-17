@@ -1,3 +1,4 @@
 #summary Module "test"
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/API_Test proper version of this page].*</font> =
 Please see [API_Assert].

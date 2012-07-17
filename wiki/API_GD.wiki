@@ -1,5 +1,6 @@
 #summary Module "gd"
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/API_GD proper version of this page].*</font> =
 = GD module =
 
 Defined in file `gd.so` or `gd.dll`. 

@@ -1,5 +1,6 @@
 #summary Module "mail"
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/API_Mail proper version of this page].*</font> =
 = Mail module =
 
 Defined in file `mail.js`.

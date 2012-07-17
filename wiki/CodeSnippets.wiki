@@ -1,5 +1,6 @@
 #summary Short code examples
 
+= <font color="red">*v8cgi is now known as [http://code.google.com/p/teajs/ TeaJS]! Please see the [http://code.google.com/p/teajs/wiki/CodeSnippets proper version of this page].*</font> =
 = Code Snippets =
 
 This page shows some simple Javascript code examples to be used with v8cgi. 
